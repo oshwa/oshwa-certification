@@ -39,8 +39,22 @@ timezone: America/New_York
 
 # Folder Structure
 source: ./source
-# sass_dir: source/css
+sass:
+    style: compressed
 
-plugins_dir:
-  - jekyll-seo-tag
-  - jekyll-sitemap
+contentful:
+  spaces:
+    - indexPage: # Jekyll _data folder identifier - Required
+        space: ENV_OSHWA_CONTENTFUL_SPACE_ID         # Required
+        access_token: ENV_OSHWA_CONTENTFUL_DELIVERY_TOKEN
+        base_path: ./source         # Optional - Defaults to Current directory
+        destination: /contentful # Optional - Defaults to _data/contentful/spaces
+        all_entries: true
+        cda_query:
+          content_type: indexPage
+
+# page_gen:
+#   - data:
+#     template:
+#     name:
+#     dir:
