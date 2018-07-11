@@ -9,5 +9,12 @@ $medium: screen and (min-width: 40em);
 $medium-only: screen and (min-width: 40em) and (max-width: 63.9375em);
 $large: screen and (min-width: 64em);
 
+// Colors
+$teal: #55BFAB;
+$blue: #1AACE2;
+$purple: #9255BF;
+$yellow: #FFEB80;
+$gray: #4D4D4D;
+
 @import 'breakpoint';
 @import 'base';
