@@ -1,0 +1,20 @@
+.top-section {
+  margin-top: -50px;
+  &--index {
+    background-color: white;
+    color: $gray;
+    text-align: left;
+    img {
+      margin-top: 50px;
+      padding-left: 15px;
+      padding-right: 15px;
+    }
+    a {
+      color: $blue;
+      font-size: 1.1rem;
+      font-weight: 600;
+      text-decoration: none;
+      text-transform: uppercase;
+    }
+  }
+}

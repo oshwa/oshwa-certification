@@ -1,0 +1,41 @@
+#index {
+  .page-section {
+    &--blocks {
+      .link {
+        color: white;
+        display: block;
+        font-size: 2.5rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        padding: 60px;
+        padding-top: 120px;
+        padding-bottom: 120px;
+        h2 {
+          display: inline-block;
+        }
+        &--process {
+          background-color: $teal;
+          &:hover {
+            background-color: darken($teal, 10);
+          }
+        }
+        &--certify {
+          background-color: $purple;
+          &:hover {
+            background-color: darken($purple, 10);
+          }
+        }
+      }
+    }
+    &--projects {
+      color: $gray;
+      padding-left: 50px;
+      padding-right: 50px;
+      h3 {
+        font-weight: bold;
+        margin-top: 0;
+
+      }
+    }
+  }
+}
