@@ -32,4 +32,7 @@ describe('Nav', function() {
   it('should make Overlay active', function() {
     assert.equal(overlay.classList.contains('js-active'), true);
   });
+  it('should have gray class added to nav button on Index', function() {
+    assert.equal(navButton.classList.contains('gray'), true);
+  });
 });

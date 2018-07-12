@@ -7,7 +7,6 @@ import Search from './search';
 import Slider from './slider';
 import Sticky from './sticky';
 import Utils from './utils';
-import ButtonColor from './buttonColor';
 
 // Footer.init();
 Modal.init();
@@ -18,4 +17,3 @@ Search.init();
 Slider.init();
 Sticky.init();
 Utils.markdownLinksNewPage();
-ButtonColor.init();
