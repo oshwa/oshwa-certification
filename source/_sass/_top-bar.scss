@@ -1,4 +1,33 @@
 .top-bar {
   background-color: rgba(0, 0, 0, 0.1);
   position: relative;
+  z-index: 3;
+}
+
+.gray {
+  background-color: $gray;
+  &:hover {
+    background-color: darken($gray, 10);
+  }
+}
+
+.teal {
+  background-color: $teal;
+  &:hover {
+    background-color: darken($teal, 10);
+  }
+}
+
+.purple {
+  background-color: $purple;
+  &:hover {
+    background-color: darken($purple, 10);
+  }
+}
+
+.yellow {
+  background-color: $yellow;
+  &:hover {
+    background-color: darken($yellow, 10);
+  }
 }

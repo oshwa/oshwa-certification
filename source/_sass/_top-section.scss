@@ -1,20 +1,53 @@
 .top-section {
   margin-top: -50px;
+  position: relative;
+  .img-overlay {
+    background-color: transparentize(white, .2);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+  .column {
+    z-index: 2;
+  }
   &--index {
     background-color: white;
+    background-image: url("/images/patent-line-transpo.png");
+    background-repeat: no-repeat;
+    background-position: right;
+    background-size: 50%;
+    @include breakpoint($medium-only) {
+      background-size: 70%;
+    }
+    @include breakpoint($small-only) {
+      background-image: none;
+    }
     color: $gray;
+    font-size: .9rem;
+    font-weight: 500;
+    padding-bottom: 70px;
     text-align: left;
     img {
       margin-top: 50px;
       padding-left: 15px;
       padding-right: 15px;
+      z-index: 100;
+    }
+    p {
+      padding-left: 10px;
     }
     a {
       color: $blue;
       font-size: 1.1rem;
       font-weight: 600;
+      padding-left: 10px;
       text-decoration: none;
       text-transform: uppercase;
+      &:hover {
+        color: darken($blue, 10);
+      }
     }
   }
 }
