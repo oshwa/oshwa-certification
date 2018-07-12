@@ -1,0 +1,69 @@
+#index {
+  .page-section {
+    &--blocks {
+      padding-top: 0;
+      .link {
+        color: white;
+        display: block;
+        font-size: 2.5rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        padding: 60px;
+        padding-top: 120px;
+        padding-bottom: 120px;
+        h2 {
+          display: inline-block;
+          font-size: 2.6rem;
+          font-weight: 800;
+          line-height: 1.1;
+          @include breakpoint($medium-only) {
+            font-size: 2rem;
+          }
+          @include breakpoint($small-only) {
+            font-size: 1.8rem;
+          }
+        }
+        &--process {
+          background-color: $teal;
+          &:hover {
+            background-color: darken($teal, 10);
+          }
+        }
+        &--certify {
+          background-color: $purple;
+          &:hover {
+            background-color: darken($purple, 10);
+          }
+        }
+      }
+    }
+    &--projects {
+      color: $gray;
+      @include breakpoint($large) {
+        padding-left: 50px;
+        padding-right: 50px;
+      }
+      h3 {
+        font-size: 1.8rem;
+        font-weight: 800;
+        padding-bottom: 10px;
+        margin-top: 0;
+        text-shadow: 2px 2px $yellow;
+      }
+      .button-container {
+        padding-bottom: 150px;
+        padding-top: 40px;
+        text-align: center;
+        .button {
+          background-color: $gray;
+          color: $yellow;
+          font-weight: 600;
+          padding: 10px 25px;
+          &:hover {
+            background-color: darken($gray, 10);
+          }
+        }
+      }
+    }
+  }
+}
