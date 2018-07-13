@@ -22,7 +22,8 @@
   &--basics,
   &--faq,
   &--process,
-  &--documentation {
+  &--documentation,
+  &--directory {
     background-color: white;
     background-image: url('/images/patent-line-transpo.png');
     background-repeat: no-repeat;
@@ -128,6 +129,35 @@
       text-transform: uppercase;
       font-weight: 700;
       font-size: 2rem;
+    }
+  }
+
+  &--directory {
+    background: linear-gradient(rgba($yellow, 0.85), rgba($yellow, 0.85)),
+      url('/images/patent-line-transpo.png') no-repeat right;
+    background-size: 50%;
+    h1 {
+      font-size: 2.6rem;
+      font-weight: 800;
+      margin-top: 4rem;
+      text-transform: uppercase;
+      @include breakpoint($small-only) {
+        font-size: 2rem;
+      }
+    }
+    .button {
+      color: $yellow;
+      background-color: $gray;
+      margin-top: 1.2rem;
+      margin-bottom: 2rem;
+      padding: 10px 55px;
+      &:hover {
+        color: $yellow;
+        background-color: darken($gray, 10);
+      }
+      @include breakpoint($small-only) {
+        font-size: 1rem;
+      }
     }
   }
 }
