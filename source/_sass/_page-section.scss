@@ -29,3 +29,91 @@
     }
   }
 }
+
+#process {
+  .certification-panel {
+    background-color: transparentize($blue, 0.99);
+    h3 {
+      color: $gray !important;
+    }
+    .logo-container {
+      text-align: center;
+      padding-top: 2rem;
+      img {
+        width: 10rem;
+      }
+    }
+  }
+  .page-section {
+    color: $gray;
+    &--panel {
+      padding-left: 10px;
+      h2 {
+        font-size: 1.6rem;
+        font-weight: 700;
+        color: $teal;
+      }
+      h3 {
+        font-size: 1rem;
+        font-weight: 700;
+        color: $teal;
+      }
+      p {
+        font-size: 0.9rem;
+      }
+      .button-container {
+        text-align: center;
+      }
+      .button {
+        padding: 0.9rem 2rem;
+        &--teal {
+          background-color: $teal;
+          color: #fff;
+          font-size: 1rem;
+          font-weight: 800;
+          @include breakpoint($medium-only) {
+            font-size: 0.8rem;
+          }
+          &:hover {
+            background-color: darken($teal, 10);
+            color: #fff;
+            @extend .u-transition;
+          }
+        }
+      }
+      .certification-elements {
+        a {
+          text-decoration: none;
+        }
+        list-style: none;
+        padding: 0;
+        .certification-element {
+          display: -webkit-box;
+          display: -ms-flexbox;
+          display: flex;
+          &__title {
+            text-transform: uppercase;
+            display: block;
+            font-weight: 800;
+            font-size: 0.8rem;
+          }
+          &__description {
+            font-size: 0.7rem;
+            font-weight: 500;
+          }
+          &__icon {
+            padding-right: 1rem;
+            .material-icons {
+              font-size: 2rem;
+              color: $teal;
+            }
+            img {
+              height: 2rem;
+              padding: 0 0.1rem 0 0.1rem;
+            }
+          }
+        }
+      }
+    }
+  }
+}
