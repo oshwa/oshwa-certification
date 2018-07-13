@@ -1,0 +1,54 @@
+.accordion {
+  &__item {
+    color: $gray;
+    border-bottom: solid 1px $gray;
+    &:nth-child(even) {
+    }
+  }
+
+  .js-active dd {
+    max-height: 90vh;
+  }
+
+  .js-active dt:before {
+    // content: 'close';
+    display: inline-block;
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+    cursor: pointer;
+  }
+
+  dt {
+    p {
+      font-size: 1.4rem;
+      font-weight: 100;
+    }
+  }
+
+  dd {
+    font-size: 0.9rem;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.8s ease;
+    box-sizing: border-box;
+    p {
+      padding: 0 1rem;
+    }
+
+    p:last-child {
+    }
+  }
+
+  dt:before {
+    @extend .u-material-icons;
+    @extend .u-transition;
+    font-size: 2rem;
+    color: $gray;
+    float: right;
+    content: 'add';
+    cursor: pointer;
+  }
+}
