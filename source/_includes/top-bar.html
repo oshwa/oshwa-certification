@@ -1,5 +1,5 @@
-<header class="top-bar">
-  <span class="top-bar__button js-trigger-menu">menu</span>
+<header class="top-bar top-bar--{{include.page_template}}">
+  <span class="top-bar__button top-bar__button--{{include.page_template}} js-trigger-menu">menu</span>
   <nav class="main-menu js-target-menu main-menu--left">
     <a href="{{'/'.html' | relative_url}}">Home</a>
     <a href="{{'/about.html' | relative_url}}">About</a>
