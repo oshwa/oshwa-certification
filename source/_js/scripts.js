@@ -8,6 +8,7 @@ import Search from './search';
 import Slider from './slider';
 import Sticky from './sticky';
 import Utils from './utils';
+import InternalNav from './internal_nav';
 
 // Footer.init();
 Accordion.init();
@@ -19,3 +20,4 @@ Search.init();
 Slider.init();
 Sticky.init();
 Utils.markdownLinksNewPage();
+InternalNav.init();
