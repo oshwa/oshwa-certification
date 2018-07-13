@@ -1,0 +1,31 @@
+#basics {
+  .page-section {
+    &--panel {
+      padding-left: 10px;
+      h2 {
+        font-size: 1.6rem;
+        font-weight: 700;
+      }
+      p {
+        font-size: 0.9rem;
+      }
+    }
+    &--panel:nth-child(even) {
+      background-color: $blue;
+      color: #fff;
+    }
+    &--panel:nth-child(odd) {
+      background-color: #fff;
+      color: $gray;
+      h2 {
+        color: $blue;
+      }
+      p {
+        max-width: 75%;
+        @include breakpoint($small-only) {
+          max-width: 100%;
+        }
+      }
+    }
+  }
+}

@@ -2,6 +2,14 @@
   background-color: rgba(0, 0, 0, 0.1);
   position: relative;
   z-index: 3;
+
+  &__button {
+    &--basics,
+    &--faq {
+      color: $blue;
+      background-color: #fff;
+    }
+  }
 }
 
 .gray {

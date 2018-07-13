@@ -1,4 +1,5 @@
 // import Footer from './Footer';
+import Accordion from './accordion';
 import Overlay from './overlay';
 import Modal from './modal';
 import Nav from './nav';
@@ -9,6 +10,7 @@ import Sticky from './sticky';
 import Utils from './utils';
 
 // Footer.init();
+Accordion.init();
 Modal.init();
 Nav.init();
 Overlay.init();

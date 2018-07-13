@@ -2,7 +2,7 @@
   margin-top: -50px;
   position: relative;
   .img-overlay {
-    background-color: transparentize(white, .2);
+    background-color: transparentize(white, 0.2);
     position: absolute;
     top: 0;
     left: 0;
@@ -12,9 +12,11 @@
   .intro {
     z-index: 2;
   }
-  &--index {
+  &--index,
+  &--basics,
+  &--faq {
     background-color: white;
-    background-image: url("/images/patent-line-transpo.png");
+    background-image: url('/images/patent-line-transpo.png');
     background-repeat: no-repeat;
     background-position: right;
     background-size: 50%;
@@ -25,7 +27,7 @@
       background-image: none;
     }
     color: $gray;
-    font-size: .9rem;
+    font-size: 0.9rem;
     font-weight: 500;
     padding-bottom: 70px;
     text-align: left;
@@ -48,6 +50,48 @@
       &:hover {
         color: darken($blue, 10);
       }
+    }
+  }
+  &--basics {
+    padding: 8rem 0 4rem 0;
+    background-color: #fff;
+    color: $gray;
+    text-align: left;
+    h1 {
+      padding-left: 10px;
+      color: $blue;
+      text-transform: uppercase;
+      font-weight: 700;
+      font-size: 2rem;
+    }
+    .button {
+      margin-left: 10px;
+      &--blue {
+        background-color: $blue;
+        color: #fff;
+        font-size: 1rem;
+        @include breakpoint($medium-only) {
+          font-size: 0.8rem;
+        }
+        &:hover {
+          background-color: darken($blue, 10);
+          color: #fff;
+          @extend .u-transition;
+        }
+      }
+    }
+  }
+  &--faq {
+    padding: 8rem 0;
+    background-color: #fff;
+    color: $gray;
+    text-align: left;
+    h1 {
+      padding-left: 10px;
+      color: $blue;
+      text-transform: uppercase;
+      font-weight: 700;
+      font-size: 2rem;
     }
   }
 }
