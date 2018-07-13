@@ -14,7 +14,8 @@
   }
   &--index,
   &--basics,
-  &--faq {
+  &--faq,
+  &--process {
     background-color: white;
     background-image: url('/images/patent-line-transpo.png');
     background-repeat: no-repeat;
@@ -89,6 +90,33 @@
     h1 {
       padding-left: 10px;
       color: $blue;
+      text-transform: uppercase;
+      font-weight: 700;
+      font-size: 2rem;
+    }
+  }
+  &--process {
+    .img-overlay {
+      background-color: $teal;
+      position: initial;
+    }
+    background: linear-gradient(rgba($teal, 0.85), rgba($teal, 0.85)),
+      url('/images/patent-line-transpo.png') no-repeat right;
+
+    background-size: 50%;
+    @include breakpoint($medium-only) {
+      background-size: 70%;
+    }
+    @include breakpoint($small-only) {
+      background-image: none;
+    }
+    padding: 8rem 0 4rem 0;
+    background-color: $teal;
+    color: #fff;
+    text-align: left;
+    h1 {
+      padding-left: 10px;
+      color: #fff;
       text-transform: uppercase;
       font-weight: 700;
       font-size: 2rem;
