@@ -1,0 +1,61 @@
+#documentation {
+  .page-section {
+    .modals-wrapper {
+      background-color: transparentize($blue, 0.99);
+    }
+    .modals-container {
+      h3 {
+        text-transform: none;
+        font-size: 1.2rem;
+        color: $gray;
+      }
+    }
+    .modal {
+      &__container {
+        margin: 1rem 0;
+        position: relative;
+        min-height: 10rem;
+        line-height: 1;
+      }
+      &__title {
+        font-size: 0.8rem;
+        padding: 0;
+        color: $teal;
+        letter-spacing: 0;
+      }
+      &__tags {
+        padding: 0.5rem 0;
+        .tag {
+          background-color: $teal;
+          color: #fff;
+          text-transform: uppercase;
+          font-size: 0.6rem;
+          font-weight: 700;
+          padding: 0.3rem;
+        }
+      }
+    }
+    .license-header {
+      padding: 0.3rem 0;
+      color: $teal;
+      text-transform: uppercase;
+      font-weight: 700;
+      font-size: 0.6rem;
+      display: block;
+    }
+    .license-name {
+      color: $gray;
+      text-transform: uppercase;
+      font-weight: 700;
+      font-size: 0.6rem;
+      display: block;
+    }
+    .learn-why {
+      text-transform: uppercase;
+      font-style: italic;
+      font-size: 0.7rem;
+      position: absolute;
+      bottom: 0;
+    }
+  }
+}

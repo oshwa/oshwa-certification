@@ -11,6 +11,11 @@
     }
   }
   .page-section {
+    padding-bottom: 0 !important;
+    h4 {
+      font-size: 1rem;
+      font-weight: 700;
+    }
     padding: 2rem 0;
     &--process {
       min-height: 60vh;
@@ -55,6 +60,17 @@
   }
   .spectrum-image {
     text-align: center;
+  }
+  .license-list {
+    text-align: center;
+    li {
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: $teal;
+      a {
+        text-decoration: none;
+      }
+    }
   }
 }
 

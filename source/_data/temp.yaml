@@ -1,0 +1,45 @@
+---
+licenses:
+  - sys:
+    title: CC 0
+    description: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repudiandae illum, officiis adipisci esse sequi delectus hic nam iste asperiores laboriosam.
+  - sys:
+    title: CC BY
+    description: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repudiandae illum, officiis adipisci esse sequi delectus hic nam iste asperiores laboriosam.
+  - sys:
+    title: CC BY-SA
+    description: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repudiandae illum, officiis adipisci esse sequi delectus hic nam iste asperiores laboriosam.
+
+licensing_examples:
+  - sys:
+    title: Sparkfun XBEE Explorer Serial
+    description: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repudiandae illum, officiis adipisci esse sequi delectus hic nam iste asperiores laboriosam.
+    license: CC BY
+    tags:
+      - Wireless
+      - USB
+    url: '#'
+  - sys:
+    title: MYCROFT Mark 1
+    description: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repudiandae illum, officiis adipisci esse sequi delectus hic nam iste asperiores laboriosam.
+    license: CC BY-SA
+    tags:
+      - Smartphone
+      - IOT
+    url: '#'
+  - sys:
+    title: F-F-Fiddle
+    description: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repudiandae illum, officiis adipisci esse sequi delectus hic nam iste asperiores laboriosam.
+    license: CC BY-SA
+    tags:
+      - Musical Instrument
+      - 3d Printing
+    url: '#'
+  - sys:
+    title: Open Source Project
+    description: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repudiandae illum, officiis adipisci esse sequi delectus hic nam iste asperiores laboriosam.
+    license: CC 0
+    tags:
+      - Wireless
+      - USB
+    url: '#'
