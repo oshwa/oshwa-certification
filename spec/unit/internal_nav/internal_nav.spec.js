@@ -17,7 +17,6 @@ describe('InternalNav', () => {
     global.$ = require('jquery')(window);
     body.innerHTML = templateHTML;
     InternalNav.init();
-    $navLinks = $('.internal-menu__item');
   });
   afterEach(function() {
     body.innerHTML = '';
