@@ -30,7 +30,8 @@
   }
 }
 
-#process {
+#process,
+#documentation {
   .certification-panel {
     background-color: transparentize($blue, 0.99);
     h3 {
@@ -46,21 +47,21 @@
   }
   .page-section {
     color: $gray;
+    h2 {
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: $teal;
+    }
+    h3 {
+      font-size: 1rem;
+      font-weight: 700;
+      color: $teal;
+    }
+    p {
+      font-size: 0.9rem;
+    }
     &--panel {
       padding-left: 10px;
-      h2 {
-        font-size: 1.6rem;
-        font-weight: 700;
-        color: $teal;
-      }
-      h3 {
-        font-size: 1rem;
-        font-weight: 700;
-        color: $teal;
-      }
-      p {
-        font-size: 0.9rem;
-      }
       .button-container {
         text-align: center;
       }

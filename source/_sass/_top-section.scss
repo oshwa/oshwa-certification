@@ -1,4 +1,10 @@
 .top-section {
+  h1 {
+    font-size: 2rem;
+    @include breakpoint($small-only) {
+      font-size: 1.5rem !important;
+    }
+  }
   margin-top: -50px;
   position: relative;
   .img-overlay {
@@ -15,7 +21,8 @@
   &--index,
   &--basics,
   &--faq,
-  &--process {
+  &--process,
+  &--documentation {
     background-color: white;
     background-image: url('/images/patent-line-transpo.png');
     background-repeat: no-repeat;
@@ -95,7 +102,8 @@
       font-size: 2rem;
     }
   }
-  &--process {
+  &--process,
+  &--documentation {
     .img-overlay {
       background-color: $teal;
       position: initial;

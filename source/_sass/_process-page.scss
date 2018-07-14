@@ -1,0 +1,67 @@
+#documentation {
+  .top-section {
+    h1 {
+      padding: 0;
+      white-space: nowrap;
+      &:before {
+        content: 'library_books';
+        @extend .u-material-icons;
+        padding-right: 1rem;
+      }
+    }
+  }
+  .page-section {
+    padding: 2rem 0;
+    &--process {
+      min-height: 60vh;
+    }
+    ul {
+      list-style: none;
+      font-size: 0.9rem;
+      li {
+        padding-bottom: 1rem;
+      }
+    }
+    &--nav {
+      margin: 0;
+      padding: 1rem;
+      background-color: $gray;
+
+      nav {
+        cursor: pointer;
+        text-align: center;
+        @include breakpoint($small-only) {
+          text-align: left;
+        }
+        .js-active-item {
+          color: #fff !important;
+        }
+        .internal-menu__item {
+          @include breakpoint($medium-only) {
+            padding: 0 1rem;
+          }
+          @include breakpoint($small-only) {
+            display: block;
+          }
+          padding: 0 3rem;
+          text-decoration: none;
+          text-transform: uppercase !important;
+          color: lighten($gray, 30);
+          font-weight: 700;
+          text-transform: none;
+        }
+      }
+    }
+  }
+  .spectrum-image {
+    text-align: center;
+  }
+}
+
+// js behavior
+.page-section--process {
+  display: none;
+}
+.js-active-section {
+  display: block;
+}
