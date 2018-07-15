@@ -2,13 +2,13 @@
 licenses:
   - sys:
     title: CC 0
-    description: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repudiandae illum, officiis adipisci esse sequi delectus hic nam iste asperiores laboriosam.
+    description: A CC 0 license lorem ipsum dolor sit amet, consectetur adipisicing elit. Repudiandae illum, officiis adipisci esse sequi delectus hic nam iste asperiores laboriosam.<p>A CC 0 license lorem ipsum dolor sit amet, consectetur adipisicing elit. Repudiandae illum, officiis adipisci esse sequi delectus hic nam iste asperiores laboriosam.</p>
   - sys:
     title: CC BY
-    description: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repudiandae illum, officiis adipisci esse sequi delectus hic nam iste asperiores laboriosam.
+    description: A CC BY license lorem ipsum dolor sit amet, consectetur adipisicing elit. Repudiandae illum, officiis adipisci esse sequi delectus hic nam iste asperiores laboriosam.
   - sys:
     title: CC BY-SA
-    description: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repudiandae illum, officiis adipisci esse sequi delectus hic nam iste asperiores laboriosam.
+    description: <p>A CC BY-SA license lorem ipsum dolor sit amet, consectetur adipisicing elit. Repudiandae illum, officiis adipisci esse sequi delectus hic nam iste asperiores laboriosam.</p><p>A CC BY-SA license lorem ipsum dolor sit amet, consectetur adipisicing elit. Repudiandae illum, officiis adipisci esse sequi delectus hic nam iste asperiores laboriosam.</p><p>A CC BY-SA license lorem ipsum dolor sit amet, consectetur adipisicing elit. Repudiandae illum, officiis adipisci esse sequi delectus hic nam iste asperiores laboriosam.</p>
 
 licensing_examples:
   - sys:

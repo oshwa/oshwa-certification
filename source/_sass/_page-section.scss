@@ -33,7 +33,7 @@
 #process,
 #documentation {
   .certification-panel {
-    background-color: transparentize($blue, 0.99);
+    background-color: $light-blue;
     h3 {
       color: $gray !important;
     }

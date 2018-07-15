@@ -1,0 +1,34 @@
+{%assign data = include.data %}
+{%assign type = include.type %}
+
+{%if type=="definition"%}
+  <div class="slide-panel__wrapper slide-panel__wrapper--definition">
+  <div class="slide-panel" data-direction="right" data-value="{{data.title | slugify}}">
+    <div class="slide-panel__container slide-panel__container--definition">
+      <div class="row slide-panel__close">
+        <a href="#" class="slide-panel__close-trigger"><i class="material-icons slide-close-definition"></i></a>
+      </div>
+      <div class="slide-panel__content">
+          {%include panel-definition.html data=data%}
+      </div>
+    </div>
+  </div>
+</div>
+
+{%else if type =="checklist" %}
+
+<div class="slide-panel__wrapper slide-panel__wrapper--checklist">
+  <div class="slide-panel" data-direction="right" data-value="checklist">
+    <div class="slide-panel__container slide-panel__container--checklist">
+      <div class="row slide-panel__close">
+        <a href="#" class="slide-panel__close-trigger"><i class="material-icons slide-close-checklist"></i></a>
+      </div>
+      <div class="slide-panel__content">
+        {% include checklist.html %}
+      </div>
+    </div>
+  </div>
+</div>
+{%endif%}
+
+
