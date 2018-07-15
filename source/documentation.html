@@ -11,7 +11,6 @@ page_template: documentation
 
 <main role="main" id="{{page.page_template}}"> <!-- main content starts here -->
 
-
   <section class="top-section top-section--{{page.page_template}}">
     <div class="img-overlay"></div>
     <div class="row">
@@ -21,7 +20,7 @@ page_template: documentation
     </div>
   </section>
 
-  <section class="page-section page-section--nav">
+  <section class="page-section--nav">
     <nav class="internal-menu">
       <a class="internal-menu__item js-active-item" data-order="1" data-target="#about">About</a>
       <a class="internal-menu__item" data-order="2" data-target="#spectrum" >Spectrum</a>
@@ -68,7 +67,7 @@ page_template: documentation
   <section class="page-section page-section--process" data-nav-order="3" id="licensing">
     <div class="row">
       <div class="column large-12">
-        <h2>License</h2>
+        <h2>Licensing</h2>
       </div>
     </div>
     <div class="row">
@@ -88,6 +87,7 @@ page_template: documentation
         </ul%>
       </div>
     </div>
+
     <div class="modals-wrapper">
       <div class="row">
         <div class="column small-12 large-12 modals-container">
@@ -96,17 +96,22 @@ page_template: documentation
         <div class="column large-12">
           <div class="row">
           {% for example in temp_licensing_examples %}
-          <div class="columns large-3 medium-6 small-12 modal__container">
-            <span class="modal__title">{{example.title}}</span>
-            <div class="modal__tags">
-              {% for tag in example.tags %}
-                <span class="tag">{{tag}}</span>
-              {% endfor %}
+
+            <div class="columns large-3 medium-6 small-12 modal-container js-open-modal">
+
+              <span class="modal-container__title">{{example.title}}</span>
+              <div class="modal-container__tags">
+                {% for tag in example.tags %}
+                  <span class="tag">{{tag}}</span>
+                {% endfor %}
+              </div>
+              <div class="modal-container__meta">
+                <span class="license-header">License</span>
+                <span class="license-name">{{example.license}}</span>
+              </div>
+              <span class="learn-why">Learn why</span>
+              {% include examples_documentation_modal.html example=example%}
             </div>
-            <span class="license-header">License</span>
-            <span class="license-name">{{example.license}}</span>
-            <span class="learn-why">Learn why</span>
-          </div>
           {% endfor %}
           </div>
         </div>
@@ -126,8 +131,5 @@ page_template: documentation
       </div>
     </div>
   </section>
-
-
-
 
 </main>

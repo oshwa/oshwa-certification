@@ -1,0 +1,17 @@
+{% assign example = include.example %}
+<div class="modal js-target-modal">
+  <div class="modal__header modal--top-section">
+    <i class=
+    "modal__close material-icons js-close-modal">close</i>
+  </div>
+  <div class="modal__content">
+    <h3>{{example.title}}</h3>
+    <p class="license-header">Documentation License:</p>
+    <p class="license-name">{{example.license}}</p>
+    <p class="license-why">Why this license?</p>
+    <p>{{example.description}}</p>
+    <div class="button-container">
+      <a href="" class="learn-more">Learn more about this project's licensing</a>
+    </div>
+  </div>
+</div>
