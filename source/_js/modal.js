@@ -2,10 +2,8 @@ const Modal = {
   openModal: () => {
     $('.js-open-modal').click(e => {
       $(e.currentTarget)
-        .parent()
         .find('.js-target-modal')
         .addClass('js-active');
-
       $('#overlay').addClass('js-active');
       $('body').addClass('js-body-modal-active');
     });
