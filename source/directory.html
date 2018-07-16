@@ -19,30 +19,77 @@ page_template: directory
   <section class="page-section page-section--categories">
     <div class="row expanded align-center">
       <h2>Project Categories</h2>
-      <div class="column large-2 small-6 category">
-        test
-      </div>
-      <div class="column large-2 small-6 category">
-        test
-      </div>
-      <div class="column large-2 small-6 category">
-        test
-      </div>
-      <div class="column large-2 small-6 category">
-        test
-      </div>
-      <div class="column large-2 small-6 category">
-        test
-      </div>
-      <div class="column large-2 small-6 category">
-        test
-      </div>
-      <div class="column large-2 small-6 category">
-        test
-      </div>
-      <div class="column large-2 small-6 category">
-        test
-      </div>
+      <a href="#" class="column large-2 medium-4 small-7 category">
+        <div class="container">
+          <i class="material-icons">
+            accessible
+          </i>
+          <h3>Accessibility</h3>
+        </div>
+      </a>
+      <a href="#" class="column large-2 medium-4 small-7 category">
+        <div class="container container--battery">
+          <svg class="battery" xmlns="http://www.w3.org/2000/svg" width="70" height="70" viewBox="0 0 24 24">
+            <path d="M0 0h24v24H0zm9 14.5h2V20l3.47-6.5H9.53zm4-2V7l-2.93 5.5-.54 1h4.94l.53-1z" fill="none"/>
+            <path d="M14.47 13.5L11 20v-5.5H9l.53-1H7v7.17C7 21.4 7.6 22 8.33 22h7.33c.74 0 1.34-.6 1.34-1.33V13.5h-2.53z"/>
+            <path fill-opacity=".3" d="M15.67 4H14V2h-4v2H8.33C7.6 4 7 4.6 7 5.33v8.17h2.53L13 7v5.5h2l-.53 1H17V5.33C17 4.6 16.4 4 15.67 4z"/>
+          </svg>
+          <svg class="battery-shadow" xmlns="http://www.w3.org/2000/svg" width="70" height="70" viewBox="0 0 24 24">
+            <path d="M0 0h24v24H0zm9 14.5h2V20l3.47-6.5H9.53zm4-2V7l-2.93 5.5-.54 1h4.94l.53-1z" fill="none"/>
+            <path fill="#ffeb80" d="M14.47 13.5L11 20v-5.5H9l.53-1H7v7.17C7 21.4 7.6 22 8.33 22h7.33c.74 0 1.34-.6 1.34-1.33V13.5h-2.53z"/>
+            <path fill="#ffeb80" d="M15.67 4H14V2h-4v2H8.33C7.6 4 7 4.6 7 5.33v8.17h2.53L13 7v5.5h2l-.53 1H17V5.33C17 4.6 16.4 4 15.67 4z"/>
+          </svg>
+          <h3>Batteries</h3>
+        </div>
+      </a>
+      <a href="#" class="column large-2 medium-4 small-7 category">
+        <div class="container">
+          <i class="material-icons">
+            cloud
+          </i>
+          <h3>Cloud</h3>
+        </div>
+      </a>
+      <a href="#" class="column large-2 medium-4 small-7 category">
+        <div class="container">
+          <i class="material-icons">
+            device_hub
+          </i>
+          <h3>Device Hub</h3>
+        </div>
+      </a>
+      <a href="#" class="column large-2 medium-4 small-7 category">
+        <div class="container">
+          <i class="material-icons">
+            memory
+          </i>
+          <h3>Memory</h3>
+        </div>
+      </a>
+      <a href="#" class="column large-2 medium-4 small-7 category">
+        <div class="container">
+          <i class="material-icons">
+            security
+          </i>
+          <h3>Security</h3>
+        </div>
+      </a>
+      <a href="#" class="column large-2 medium-4 small-7 category">
+        <div class="container">
+          <i class="material-icons">
+            videocam
+          </i>
+          <h3>Video</h3>
+        </div>
+      </a>
+      <a href="#" class="column large-2 medium-4 small-7 category">
+        <div class="container">
+          <i class="material-icons">
+            music_note
+          </i>
+          <h3>Music</h3>
+        </div>
+      </a>
     </div>
   </section>
 
@@ -52,9 +99,11 @@ page_template: directory
       <div class="column large-12">
         <form action="" class="search search--fixed js-target-search">
           <input class="search__input" id="searchfield" placeholder="Enter a project name or keyword (e.g. microcontroller)" type="text">
-
           <!-- <input class="search-submit js-search-submit js-trigger-search search__trigger" type=
           "submit" value="search"> -->
+          <div class="button-container">
+            <button class="button search-submit js-search-submit js-trigger-search search__trigger" value="submit" name="submit" type="submit"> Search</button>
+          </div>
 
         </form>
       </div>
