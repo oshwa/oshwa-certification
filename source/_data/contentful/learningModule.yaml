@@ -1,0 +1,262 @@
+---
+learningModule:
+- sys:
+    id: 2KOwo08xX2o6cEqiIYei8Y
+    created_at: !ruby/object:DateTime 2018-07-16 19:53:00.372000000 Z
+    updated_at: !ruby/object:DateTime 2018-07-16 20:28:41.080000000 Z
+    content_type_id: learningModule
+  module_title: Documentation
+  checklist: |-
+    Have you made your original design files publicly available?
+
+    Have you made your any auxiliary design files publicly available? (optional)
+
+    Have you made a bill of materials publicly available? (optional)
+
+    Have you made photos of your product at various stages of assembly publicly available? (optional)
+
+    Have you made any instructions or other explanations publicly available? (optional)
+
+    Have you made your product documentation publicly available through GitHub or a similar platform?
+
+    Have you reviewed Creative Commons licensing instructions and properly applied a CC license to your files?
+  about_description: "All OSHWA-certified hardware must provide “documentation including
+    design files, and must allow modification and distribution of the design files”
+    per the OSHWA Open Source Hardware Definition. The more robust and explanatory
+    this documentation is, the better. This is for two reasons:\n\n1. More robust
+    documentation makes it easier for downstream users to build, use, and iterate
+    on your product. \n2. Robust documentation, especially when paired with creative
+    design elements and descriptive text, takes on greater amounts of copyright protectability
+    to prevent against misuse. \n\nNote that copyrighted product documentation can
+    still be open and easily usable by downstream users. But stronger copyright protection
+    for product documentation makes it easier to attempt to enforce the terms of the
+    applied copyright license because opponents will not be able to argue that your
+    documentation does not have copyright protection., which would make the license
+    useless.\n\nTo ensure that downstream users are free to use your documentation,
+    all open source documentation is required to include an open copyright license,
+    such as a Creative Commons license. Which CC license you choose is up to you:
+    pick the one that most closely aligns with your desires for your project and follow
+    the CC guide to sharing your work.\n\nAll written or drawn materials have some
+    inherent copyright protection, so long as they are “fixed in a tangible medium.”
+    But, the amount of protection copyright offers varies depending on whether the
+    materials are purely functional or more creative and artistic.\n\nIt is important
+    to note that this protection only means that other creators cannot literally copy
+    your design documentation without your permission (which you grant them through
+    the CC license). However, it does not stop them from making a physical object
+    based on the instructions that the documentation provides or making their own
+    version of your documentation.\n\n\n"
+  spectrum_description: |-
+    Thorough, robust documentation, when paired with creative design elements and descriptive text, takes on greater amounts of copyright protectability to prevent against misuse. Note that copyrighted product documentation can still be open and easily usable by downstream users. The benefit of stronger copyright protections for product documentation is that attempts to enforce the terms of the applied copyright license will be easier, because opponents will not be able to argue that your documentation does not have copyright protection, thus voiding the license. For example, a Creative Common license that requires attribution, known as a CC-BY license, would be effective as applied to copyright protected elements in your documentation. For this reason, it is important to create thorough, robust and creative documentation that has copyrightable elements, to ensure the enforceability of the license.
+
+    All of these product’s documentations are “Open” documentation because they use a Creative Commons (or similar) license to enable downstream users to use the product documentation. But, with regards to protecting against misuse, the schematics towards the left side of the spectrum are less protectable because they are highly functional and less artistic. Both the HackEEG and Sparkfun schematics are almost purely functional, but the Sparkfun logo gives it a small amount of artistic flourish. The Smoothieware Guide and Sparkfun Guide are more protectable because they feature both images and text, which express a greater degree of creative thought and artistic design. The Handibot model is in the middle, because it is largely functional, but the color choices and visual elements do contain a degree of creativity.
+  spectrum_items:
+  - sys:
+      id: 1FWQNQdBMYiucW64ksYG8a
+      created_at: !ruby/object:DateTime 2018-07-16 20:03:42.590000000 Z
+      updated_at: !ruby/object:DateTime 2018-07-16 20:07:25.777000000 Z
+      content_type_id: spectrumItem
+    title: HackEEG schematic
+    image:
+      sys:
+        id: 2arKUHvDPeWYIAgyGKiuOC
+        created_at: !ruby/object:DateTime 2018-07-16 20:01:10.195000000 Z
+        updated_at: !ruby/object:DateTime 2018-07-16 20:01:10.195000000 Z
+      title: hackeeg-schematic
+      description: 
+      url: "//images.ctfassets.net/9mu5fp12mbct/2arKUHvDPeWYIAgyGKiuOC/834dafc3b2d3a270898862d226cbac16/hackeeg.jpg"
+    description: The HackEEG schematic is almost purely functional, making it relatively
+      less protectable against misuse.
+  - sys:
+      id: 1200B4zV2KIqKOMSwSoyIO
+      created_at: !ruby/object:DateTime 2018-07-16 20:07:17.552000000 Z
+      updated_at: !ruby/object:DateTime 2018-07-16 20:07:17.552000000 Z
+      content_type_id: spectrumItem
+    title: Sparkfun schematic
+    image:
+      sys:
+        id: 1xWwtAM732KU6kAsQi6464
+        created_at: !ruby/object:DateTime 2018-07-16 20:07:00.737000000 Z
+        updated_at: !ruby/object:DateTime 2018-07-16 20:07:00.737000000 Z
+      title: sparkfun-schematic
+      description: 
+      url: "//images.ctfassets.net/9mu5fp12mbct/1xWwtAM732KU6kAsQi6464/ef4cc70ec00048976b2bc4dc2c6034a5/sparkfun-schematic.jpg"
+    description: 'The Sparkfun schematic, like the HackEEG schematic is almost purely
+      functional, making it relatively less protectable against misuse. However, use
+      of the Sparkfun logo on the schematic gives it a small amount of artistic flourish,
+      and therefore slightly more protectable than the HackEEG schematic. '
+  licensing_description: In order to ensure downstream users are free and clear to
+    use your documentation, all open source documentation is required to include an
+    open copyright license. Which license you choose is up to you. We recommend using
+    a Creative Commons license on your product documentation. Pick the one that most
+    closely aligns with your desires for your project. Please visit the Creative Commons
+    website for a full description and explanation of the different CC licenses and
+    a guide to their use. Other open copyright licenses may be acceptable under the
+    OSHWA definition. We recommend Creative Commons, however, due to its widespread
+    acceptance, recognition, and ease of use.
+  recommended_licenses:
+  - sys:
+      id: 6xi3STVmLeCm4Ok48MgS66
+      created_at: !ruby/object:DateTime 2018-07-16 19:54:32.528000000 Z
+      updated_at: !ruby/object:DateTime 2018-07-16 19:57:47.624000000 Z
+      content_type_id: license
+    license_name: CC 0
+    license_description: |-
+      A CC 0 license is the most permissive option, which lets downstream users use your product documentation for any purpose without any limits. This license relinquishes any claim you may have over ownership of the product documentation.
+
+      This means that other open source hardware makers may use your product in way they see fit, as long as it confirms to the OSHWA Definition.
+
+      *Other open copyright licenses may be acceptable under the OSHWA definition. We recommend Creative Commons, however, due to its widespread acceptance, recognition, and ease of use.*
+
+      *The use of any CC “NonCommercial (NC)” and “NoDerivatives (ND)” licenses are not permissible under the OSHWA Definition.*
+    license_type:
+    - Documentation
+    - Software
+  - sys:
+      id: 5xFznrqOuAmGuKwWU8mkcy
+      created_at: !ruby/object:DateTime 2018-07-16 19:55:43.082000000 Z
+      updated_at: !ruby/object:DateTime 2018-07-16 19:57:36.574000000 Z
+      content_type_id: license
+    license_name: CC BY
+    license_description: |-
+      A CC BY license allows downstream users to use your product documentation for any purpose, so long as they attribute their use back to you.
+
+      This means that other open source hardware makers need to attribute your original copyrighted documentation to you in order to comply with the terms of the license. Doing so allows them to use your documentation for any purpose that fits within the OSHWA Definition.
+
+      *Other open copyright licenses may be acceptable under the OSHWA definition. We recommend Creative Commons, however, due to its widespread acceptance, recognition, and ease of use.*
+
+      *The use of any CC “NonCommercial (NC)” and “NoDerivatives (ND)” licenses are not permissible under the OSHWA Definition.*
+    license_type:
+    - Software
+    - Documentation
+  - sys:
+      id: NVbCBT1UWaSWo0i20my8u
+      created_at: !ruby/object:DateTime 2018-07-16 19:57:05.252000000 Z
+      updated_at: !ruby/object:DateTime 2018-07-16 19:57:21.463000000 Z
+      content_type_id: license
+    license_name: CC BY-SA
+    license_description: |-
+      A CC BY-SA license allows downstream users to use your product documentation for any purpose, so long as they give appropriate attribution and license any new creations under the same terms as your license.
+
+      This means that other open source hardware makers need to (1) attribute your original copyrighted documentation to you and (2) allow others to license their new copyrighted material in the smae matter in order to comply with the terms of the license. Doing so allows them to use your documentation for any purpose that fits within the OSHWA Definition.
+
+      *Other open copyright licenses may be acceptable under the OSHWA definition. We recommend Creative Commons, however, due to its widespread acceptance, recognition, and ease of use.*
+
+      *The use of any CC “NonCommercial (NC)” and “NoDerivatives (ND)” licenses are not permissible under the OSHWA Definition.*
+    license_type:
+    - Software
+    - Documentation
+  examples:
+  - sys:
+      id: 2VGAxECArCCuuSuACOoWuK
+      created_at: !ruby/object:DateTime 2018-07-16 20:22:28.653000000 Z
+      updated_at: !ruby/object:DateTime 2018-07-16 20:27:50.761000000 Z
+      content_type_id: exemplarProject
+    project_owner: SparkFun
+    project_name: XBee Explorer Serial
+    project_uid: US000002
+    project_version: '1.4'
+    project_website: https://www.sparkfun.com/products/13225
+    project_description: The SparkFun XBee Explorer Serial is a simple to use, RS232
+      to serial base unit for the XBee line.
+    hardware_license:
+      sys:
+        id: NVbCBT1UWaSWo0i20my8u
+        created_at: !ruby/object:DateTime 2018-07-16 19:57:05.252000000 Z
+        updated_at: !ruby/object:DateTime 2018-07-16 19:57:21.463000000 Z
+        content_type_id: license
+      license_name: CC BY-SA
+      license_description: |-
+        A CC BY-SA license allows downstream users to use your product documentation for any purpose, so long as they give appropriate attribution and license any new creations under the same terms as your license.
+
+        This means that other open source hardware makers need to (1) attribute your original copyrighted documentation to you and (2) allow others to license their new copyrighted material in the smae matter in order to comply with the terms of the license. Doing so allows them to use your documentation for any purpose that fits within the OSHWA Definition.
+
+        *Other open copyright licenses may be acceptable under the OSHWA definition. We recommend Creative Commons, however, due to its widespread acceptance, recognition, and ease of use.*
+
+        *The use of any CC “NonCommercial (NC)” and “NoDerivatives (ND)” licenses are not permissible under the OSHWA Definition.*
+      license_type:
+      - Software
+      - Documentation
+    hardware_license_explanation: At vero eos et accusamus et iusto odio dignissimos
+      ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores
+      et quas molestias excepturi sint occaecati cupiditate non provident, similique
+      sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum
+      fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore,
+      cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime
+      placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus.
+      Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus
+      saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae.
+      Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus
+      maiores alias consequatur aut perferendis doloribus asperiores repellat.
+    software_license:
+      sys:
+        id: NVbCBT1UWaSWo0i20my8u
+        created_at: !ruby/object:DateTime 2018-07-16 19:57:05.252000000 Z
+        updated_at: !ruby/object:DateTime 2018-07-16 19:57:21.463000000 Z
+        content_type_id: license
+      license_name: CC BY-SA
+      license_description: |-
+        A CC BY-SA license allows downstream users to use your product documentation for any purpose, so long as they give appropriate attribution and license any new creations under the same terms as your license.
+
+        This means that other open source hardware makers need to (1) attribute your original copyrighted documentation to you and (2) allow others to license their new copyrighted material in the smae matter in order to comply with the terms of the license. Doing so allows them to use your documentation for any purpose that fits within the OSHWA Definition.
+
+        *Other open copyright licenses may be acceptable under the OSHWA definition. We recommend Creative Commons, however, due to its widespread acceptance, recognition, and ease of use.*
+
+        *The use of any CC “NonCommercial (NC)” and “NoDerivatives (ND)” licenses are not permissible under the OSHWA Definition.*
+      license_type:
+      - Software
+      - Documentation
+    software_license_explanation: At vero eos et accusamus et iusto odio dignissimos
+      ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores
+      et quas molestias excepturi sint occaecati cupiditate non provident, similique
+      sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum
+      fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore,
+      cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime
+      placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus.
+      Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus
+      saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae.
+      Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus
+      maiores alias consequatur aut perferendis doloribus asperiores repellat.
+    documentation_license:
+      sys:
+        id: NVbCBT1UWaSWo0i20my8u
+        created_at: !ruby/object:DateTime 2018-07-16 19:57:05.252000000 Z
+        updated_at: !ruby/object:DateTime 2018-07-16 19:57:21.463000000 Z
+        content_type_id: license
+      license_name: CC BY-SA
+      license_description: |-
+        A CC BY-SA license allows downstream users to use your product documentation for any purpose, so long as they give appropriate attribution and license any new creations under the same terms as your license.
+
+        This means that other open source hardware makers need to (1) attribute your original copyrighted documentation to you and (2) allow others to license their new copyrighted material in the smae matter in order to comply with the terms of the license. Doing so allows them to use your documentation for any purpose that fits within the OSHWA Definition.
+
+        *Other open copyright licenses may be acceptable under the OSHWA definition. We recommend Creative Commons, however, due to its widespread acceptance, recognition, and ease of use.*
+
+        *The use of any CC “NonCommercial (NC)” and “NoDerivatives (ND)” licenses are not permissible under the OSHWA Definition.*
+      license_type:
+      - Software
+      - Documentation
+    documentation_license_explanation: At vero eos et accusamus et iusto odio dignissimos
+      ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores
+      et quas molestias excepturi sint occaecati cupiditate non provident, similique
+      sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum
+      fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore,
+      cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime
+      placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus.
+      Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus
+      saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae.
+      Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus
+      maiores alias consequatur aut perferendis doloribus asperiores repellat.
+    branding_information: SparkFun’s logo and brand name are both protected by registered
+      trademarks in the U.S. The “XBee Explorer Serial” product name, while not a
+      registered trademark, is also protected by trademark law but to a lesser degree
+      (because it is not registered) but it is still a unique product name. Their
+      product tutorial is protected by copyright and licensed under a CC license.
+      The red circuit board design may offer some trademark protection, because it
+      is unique to Sparkfun and not necessary for the functioning of the product.
+      The board’s schematic may receive some light protection in its color choices
+      and use of logos and the Sparkfun brand name. But, because the circuit board
+      itself and hardware on it are purely functional, they would likely receive no
+      protection.
+  commercialization_description: |-
+    More original, robust documentation is likely to have stronger copyright protection, which can prevent against misuse. But, copyright only protects against third parties misusing the product documentation itself, not against making a physical copy of the product by following the documentation instructions.
+
+    The definition of open-source hardware specifies that you must allow modification and commercial re-use of your design, so note that CC licenses with a no-derivatives or non-commercial clause are incompatible with certification.

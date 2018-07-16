@@ -1,0 +1,39 @@
+---
+basicsPage:
+- sys:
+    id: 2KwEjE9AaI0QG8EiIwQCsk
+    created_at: !ruby/object:DateTime 2018-07-16 19:38:20.477000000 Z
+    updated_at: !ruby/object:DateTime 2018-07-16 19:39:07.874000000 Z
+    content_type_id: basicsPage
+  page_title: Open Source Hardware Basics
+  header_copy: Interested in building your own hardware projects? Customizing other
+    projects? Have new ideas you want to share with the world? Open source hardware
+    may be for you. Learn about the basics of open source hardware.
+  section1: |-
+    Open Source Hardware (OSHW) is a term for tangible artifacts — machines, devices, or other physical things — whose design has been released to the public in such a way that anyone can make, modify, distribute, and use those things. This definition is intended to help provide guidelines for the development and evaluation of licenses for Open Source Hardware.
+
+    Hardware is different from software in that physical resources must always be committed for the creation of physical goods. Accordingly, persons or companies producing items (“products”) under an OSHW license have an obligation to make it clear that such products are not manufactured, sold, warrantied, or otherwise sanctioned by the original designer and also not to make use of any trademarks owned by the original designer.
+  section2: Open source hardware is hardware whose design is made publicly available
+    so that anyone can study, modify, distribute, make, and sell the design or hardware
+    based on that design. The hardware’s source, the design from which it is made,
+    is available in the preferred format for making modifications to it. Ideally,
+    open source hardware uses readily-available components and materials, standard
+    processes, open infrastructure, unrestricted content, and open-source design tools
+    to maximize the ability of individuals to make and use hardware. Open source hardware
+    gives people the freedom to control their technology while sharing knowledge and
+    encouraging commerce through the open exchange of designs.
+  section3: "There are four “elements” of an open source hardware project. Not all
+    projects will have all of these elements, and some may have features that do not
+    fall neatly within these categories. \n\nBroadly speaking, the __four main elements__
+    of an open source hardware project are:\n\n__Hardware__ - The physical functional
+    components/elements of the product (i.e. the product itself) (required)\n__Software__
+    - Any code, firmware, or software involved in product’s function\n__Documentation__
+    - Design files, schematics, instructions, etc. (required)\n__Branding__ - Brand
+    names, product names, logos, and product designs (optional, but recommended)"
+  section4: Hardware developers who meet the requirements for making their projects
+    open source may self-certify their projects as OSHWA-compliant open source hardware.
+    This allows users to know that the definition of “open source hardware” used by
+    a specific project matches the community definition. The OSHWA certification mark
+    can only be used by projects that comply with the community definition. Completing
+    the certification creates a legally binding and unique logo that can only be used
+    by projects that comply with the community definition of open source hardware.
