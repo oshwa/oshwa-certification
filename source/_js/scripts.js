@@ -9,6 +9,7 @@ import Slider from './slider';
 import Sticky from './sticky';
 import Utils from './utils';
 import InternalNav from './internal_nav';
+import CompactPanel from './compact_panel';
 
 // Footer.init();
 Accordion.init();
@@ -21,3 +22,4 @@ Slider.init();
 Sticky.init();
 Utils.markdownLinksNewPage();
 InternalNav.init();
+CompactPanel.init();

@@ -17,6 +17,8 @@ $yellow: #ffeb80;
 $gray: #4d4d4d;
 $white: #fff;
 
+$light-blue: transparentize($blue, 0.99);
+
 @import 'breakpoint';
 @import 'mixins';
 @import 'base';
@@ -28,3 +30,4 @@ $white: #fff;
 @import 'process-page';
 @import 'modals';
 @import 'directory';
+@import 'compact-panel';

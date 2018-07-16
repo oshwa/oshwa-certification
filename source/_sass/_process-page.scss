@@ -1,4 +1,17 @@
 #documentation {
+  .checklist {
+    position: absolute;
+    right: 0;
+    top: 0;
+    color: $teal;
+    font-size: 3rem;
+
+    cursor: pointer;
+
+    .material-icons {
+      font-size: 3rem;
+    }
+  }
   .top-section {
     h1 {
       padding: 0;
@@ -11,7 +24,9 @@
     }
   }
   .page-section {
-    padding-bottom: 0 !important;
+    &--modals {
+      padding-bottom: 0 !important;
+    }
     h4 {
       font-size: 1rem;
       font-weight: 700;
