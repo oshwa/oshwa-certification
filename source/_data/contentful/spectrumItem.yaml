@@ -1,0 +1,36 @@
+---
+spectrumItem:
+- sys:
+    id: 1FWQNQdBMYiucW64ksYG8a
+    created_at: !ruby/object:DateTime 2018-07-16 20:03:42.590000000 Z
+    updated_at: !ruby/object:DateTime 2018-07-16 20:07:25.777000000 Z
+    content_type_id: spectrumItem
+  title: HackEEG schematic
+  image:
+    sys:
+      id: 2arKUHvDPeWYIAgyGKiuOC
+      created_at: !ruby/object:DateTime 2018-07-16 20:01:10.195000000 Z
+      updated_at: !ruby/object:DateTime 2018-07-16 20:01:10.195000000 Z
+    title: hackeeg-schematic
+    description: 
+    url: "//images.ctfassets.net/9mu5fp12mbct/2arKUHvDPeWYIAgyGKiuOC/834dafc3b2d3a270898862d226cbac16/hackeeg.jpg"
+  description: The HackEEG schematic is almost purely functional, making it relatively
+    less protectable against misuse.
+- sys:
+    id: 1200B4zV2KIqKOMSwSoyIO
+    created_at: !ruby/object:DateTime 2018-07-16 20:07:17.552000000 Z
+    updated_at: !ruby/object:DateTime 2018-07-16 20:07:17.552000000 Z
+    content_type_id: spectrumItem
+  title: Sparkfun schematic
+  image:
+    sys:
+      id: 1xWwtAM732KU6kAsQi6464
+      created_at: !ruby/object:DateTime 2018-07-16 20:07:00.737000000 Z
+      updated_at: !ruby/object:DateTime 2018-07-16 20:07:00.737000000 Z
+    title: sparkfun-schematic
+    description: 
+    url: "//images.ctfassets.net/9mu5fp12mbct/1xWwtAM732KU6kAsQi6464/ef4cc70ec00048976b2bc4dc2c6034a5/sparkfun-schematic.jpg"
+  description: 'The Sparkfun schematic, like the HackEEG schematic is almost purely
+    functional, making it relatively less protectable against misuse. However, use
+    of the Sparkfun logo on the schematic gives it a small amount of artistic flourish,
+    and therefore slightly more protectable than the HackEEG schematic. '

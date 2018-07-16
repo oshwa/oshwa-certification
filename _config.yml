@@ -44,14 +44,78 @@ sass:
 
 contentful:
   spaces:
-    - indexPage: # Jekyll _data folder identifier - Required
+    - basicsPage: # Jekyll _data folder identifier - Required
         space: ENV_OSHWA_CONTENTFUL_SPACE_ID         # Required
         access_token: ENV_OSHWA_CONTENTFUL_DELIVERY_TOKEN
         base_path: ./source         # Optional - Defaults to Current directory
         destination: /contentful # Optional - Defaults to _data/contentful/spaces
         all_entries: true
         cda_query:
-          content_type: indexPage
+          content_type: basicsPage
+    - certificationPage: # Jekyll _data folder identifier - Required
+        space: ENV_OSHWA_CONTENTFUL_SPACE_ID         # Required
+        access_token: ENV_OSHWA_CONTENTFUL_DELIVERY_TOKEN
+        base_path: ./source         # Optional - Defaults to Current directory
+        destination: /contentful # Optional - Defaults to _data/contentful/spaces
+        all_entries: true
+        cda_query:
+          content_type: certificationPage
+    - exemplarProject: # Jekyll _data folder identifier - Required
+        space: ENV_OSHWA_CONTENTFUL_SPACE_ID         # Required
+        access_token: ENV_OSHWA_CONTENTFUL_DELIVERY_TOKEN
+        base_path: ./source         # Optional - Defaults to Current directory
+        destination: /contentful # Optional - Defaults to _data/contentful/spaces
+        all_entries: true
+        cda_query:
+          content_type: exemplarProject
+    - learningModule: # Jekyll _data folder identifier - Required
+        space: ENV_OSHWA_CONTENTFUL_SPACE_ID         # Required
+        access_token: ENV_OSHWA_CONTENTFUL_DELIVERY_TOKEN
+        base_path: ./source         # Optional - Defaults to Current directory
+        destination: /contentful # Optional - Defaults to _data/contentful/spaces
+        all_entries: true
+        cda_query:
+          content_type: learningModule
+    - license: # Jekyll _data folder identifier - Required
+        space: ENV_OSHWA_CONTENTFUL_SPACE_ID         # Required
+        access_token: ENV_OSHWA_CONTENTFUL_DELIVERY_TOKEN
+        base_path: ./source         # Optional - Defaults to Current directory
+        destination: /contentful # Optional - Defaults to _data/contentful/spaces
+        all_entries: true
+        cda_query:
+          content_type: license
+    - processPage: # Jekyll _data folder identifier - Required
+        space: ENV_OSHWA_CONTENTFUL_SPACE_ID         # Required
+        access_token: ENV_OSHWA_CONTENTFUL_DELIVERY_TOKEN
+        base_path: ./source         # Optional - Defaults to Current directory
+        destination: /contentful # Optional - Defaults to _data/contentful/spaces
+        all_entries: true
+        cda_query:
+          content_type: processPage
+    - project: # Jekyll _data folder identifier - Required
+        space: ENV_OSHWA_CONTENTFUL_SPACE_ID         # Required
+        access_token: ENV_OSHWA_CONTENTFUL_DELIVERY_TOKEN
+        base_path: ./source         # Optional - Defaults to Current directory
+        destination: /contentful # Optional - Defaults to _data/contentful/spaces
+        all_entries: true
+        cda_query:
+          content_type: project
+    - questions: # Jekyll _data folder identifier - Required
+        space: ENV_OSHWA_CONTENTFUL_SPACE_ID         # Required
+        access_token: ENV_OSHWA_CONTENTFUL_DELIVERY_TOKEN
+        base_path: ./source         # Optional - Defaults to Current directory
+        destination: /contentful # Optional - Defaults to _data/contentful/spaces
+        all_entries: true
+        cda_query:
+          content_type: questions
+    - spectrumItem: # Jekyll _data folder identifier - Required
+        space: ENV_OSHWA_CONTENTFUL_SPACE_ID         # Required
+        access_token: ENV_OSHWA_CONTENTFUL_DELIVERY_TOKEN
+        base_path: ./source         # Optional - Defaults to Current directory
+        destination: /contentful # Optional - Defaults to _data/contentful/spaces
+        all_entries: true
+        cda_query:
+          content_type: spectrumItem
 
 # page_gen:
 #   - data:
