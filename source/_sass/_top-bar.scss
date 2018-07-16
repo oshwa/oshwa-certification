@@ -12,33 +12,18 @@
     &--process {
       background-color: $teal;
     }
-  }
-}
-
-.gray {
-  background-color: $gray;
-  &:hover {
-    background-color: darken($gray, 10);
-  }
-}
-
-.teal {
-  background-color: $teal;
-  &:hover {
-    background-color: darken($teal, 10);
-  }
-}
-
-.purple {
-  background-color: $purple;
-  &:hover {
-    background-color: darken($purple, 10);
-  }
-}
-
-.yellow {
-  background-color: $yellow;
-  &:hover {
-    background-color: darken($yellow, 10);
+    &--index {
+      background-color: $gray;
+      &:hover {
+        background-color: darken($gray, 10);
+      }
+    }
+    &--directory {
+      background-color: $yellow;
+      color: $gray;
+      &:hover {
+        background-color: darken($yellow, 10);
+      }
+    }
   }
 }
