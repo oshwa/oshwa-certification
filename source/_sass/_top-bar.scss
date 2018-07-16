@@ -18,7 +18,8 @@
         background-color: darken($gray, 10);
       }
     }
-    &--directory {
+    &--directory,
+    &--list {
       background-color: $yellow;
       color: $gray;
       &:hover {

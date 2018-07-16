@@ -1,0 +1,54 @@
+---
+layout: default
+title: Open Source Hardware Association
+description:
+seo_image_path: #'/images/media/filename.jpg'
+page_template: list
+---
+
+<main role="main" id={{page.page_template}}> <!-- main content starts here -->
+  <section class="top-section top-section--{{page.page_template}}">
+    <div class="row expanded align-left">
+      <div class="column large-6">
+        <h1>Search by Keyword</h1>
+      </div>
+    </div>
+    <div class="row expanded align-center">
+      <div class="column large-12 small-12 search-form">
+        <form action="" class="search search--fixed js-target-search">
+          <input class="search__input" id="searchfield" placeholder="Enter a project name or keyword (e.g. microcontroller)" type="text">
+          <input class="search-submit js-search-submit js-trigger-search search__trigger" type=
+          "submit" value="search">
+        </form>
+      </div>
+      <h2 class="open-filters">filters</h2>
+      <i class="material-icons expand">
+        expand_more
+      </i>
+      <div class="column large-12 small-12 filter-container">
+        <span>Project Categories</span>
+        <div class="row">
+          {% for num in (1...20) %}
+          <div class="column large-3 small-6 medium-3">
+            <div class="checkbox">
+              <input class="" name="" value="" type="checkbox" data-value="" id="">
+              <label class="" for="Type {{num}}">Type {{num}}</label>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="page-section">
+    <div class="row">
+      <div class="column">
+
+      </div>
+    </div>
+  </section>
+
+
+
+</main>
