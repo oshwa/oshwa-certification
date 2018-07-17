@@ -6,6 +6,9 @@ seo_image_path: #'/images/media/filename.jpg'
 page_template: documentation
 ---
 
+{% assign content = site.data.contentful.learningModule.learningModule | where: 'module_title','Documentation' %}
+{% assign module = content[0]%}
+
 {%assign temp_licenses = site.data.temp.licenses%}
 {%assign temp_licensing_examples = site.data.temp.licensing_examples%}
 
@@ -15,7 +18,7 @@ page_template: documentation
     <div class="img-overlay"></div>
     <div class="row">
       <div class="column large-5 medium-5 small-12 intro">
-        <h1>{{page.title}}</h1>
+        <h1>{{module.module_title}}</h1>
       </div>
     </div>
   </section>
@@ -31,7 +34,7 @@ page_template: documentation
 
 
   <section class="page-section page-section--process js-active-section slide-panel__wrapper--compact" data-nav-order="1" id="about">
-      {% include checklist-button.html%}
+      {% include checklist-button.html content=module.checklist %}
     <div class="row">
       <div class="column large-12">
         <h2>About</h2>
@@ -39,45 +42,46 @@ page_template: documentation
     </div>
     <div class="row">
       <div class="column large-12">
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos cum fugiat numquam repellat quam accusamus rem a fugit dicta dolores hic libero sed dolore iste nam excepturi tempore facilis consequuntur natus nihil eveniet quia, placeat nulla mollitia. Dolores qui, explicabo omnis voluptatum, fugit fugiat consectetur distinctio nam dicta ipsam quidem.</p>
-        <ul>
-          <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus, sed.</li>
-          <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut, corporis? Facilis architecto ipsum possimus dolores, veniam commodi asperiores recusandae. Repudiandae.</li>
-        </ul>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos cum fugiat numquam repellat quam accusamus rem a fugit dicta dolores hic libero sed dolore iste nam excepturi tempore facilis consequuntur natus nihil eveniet quia, placeat nulla mollitia. Dolores qui, explicabo omnis voluptatum, fugit fugiat consectetur distinctio nam dicta ipsam quidem.</p>
+        {{ module.about_description | markdownify }}
       </div>
     </div>
   </section>
 
   <section class="page-section page-section--process slide-panel__wrapper--compact" data-nav-order="2" id="spectrum">
     <div class="row">
-      {% include checklist-button.html%}
+      {% include checklist-button.html content=module.checklist %}
       <div class="column large-12">
         <h2>Spectrum</h2>
       </div>
     </div>
     <div class="row">
       <div class="column large-12">
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos cum fugiat numquam repellat quam accusamus rem a fugit dicta dolores hic libero sed dolore iste nam excepturi tempore facilis consequuntur natus nihil eveniet quia, placeat nulla mollitia. Dolores qui, explicabo omnis voluptatum, fugit fugiat consectetur distinctio nam dicta ipsam quidem.</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos cum fugiat numquam repellat quam accusamus rem a fugit dicta dolores hic libero sed dolore iste nam excepturi tempore facilis consequuntur natus nihil eveniet quia, placeat nulla mollitia. Dolores qui, explicabo omnis voluptatum, fugit fugiat consectetur distinctio nam dicta ipsam quidem.</p>
+     {{ module.spectrum_description | markdownify}}
       </div>
     </div>
-      <div class="column large-12 spectrum-image">
-        <img src="http://via.placeholder.com/600x400" />
+    <div class="row">
+      <div class="column large-12 spectrum-container">
+        {% for schematic in module.spectrum_items %}
+          <h4>{{schematic.title}}</h4>
+          <div class="spectrum-image">
+            <img src="{{schematic.image.url}}" alt="{{schematic.image.title}}"/>
+          </div>
+          {{schematic.description | markdownify }}
+        {% endfor %}
       </div>
+    </div>
   </section>
 
   <section class="page-section page-section--process page-section--modals slide-panel__wrapper--compact" data-nav-order="3" id="licensing">
     <div class="row">
-      {% include checklist-button.html%}
+      {% include checklist-button.html content=module.checklist %}
       <div class="column large-12">
         <h2>Licensing</h2>
       </div>
     </div>
     <div class="row">
       <div class="column large-12">
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos cum fugiat numquam repellat quam accusamus rem a fugit dicta dolores hic libero sed dolore iste nam excepturi tempore facilis consequuntur natus nihil eveniet quia, placeat nulla mollitia. Dolores qui, explicabo omnis voluptatum, fugit fugiat consectetur distinctio nam dicta ipsam quidem.</p>
-        <p>Lorem ipsum dolor sit amet, adipiscing elit. Donec ac erat vehicula,malesuada ex id, sagittis nibh. Quisque vitae rutrum massa. Nullam libero eros, pretium sed ex non, dapibus porttitor dui. Donec fermentum augue sit amet turpis imperdiet pulvinar. Etiam gravida, diam id rhoncus aliquet, leo tellus pharetra nisi, eget pharetra velit sem eu justo. Curabitur ac urna ac velit pharetra egestas a eu est. In ac varius lectus, at tempus enim. Duis sodales  sed dui fringilla facilisis. Nam tincidunt eu lectus eu fermentum. Aliquam erat volutpat . Aenean aliquam auctor orci porttitor rutrum.</p>
+        {{ module.licensing_description | markdownify }}
         {%include slide-panel.html%}
       </div>
     </div>
@@ -88,16 +92,16 @@ page_template: documentation
       </div>
       <div class="column small-12 large-12">
         <ul class="license-list">
-          {% for license in temp_licenses %}
-            <li><a class="slide-panel__open-trigger" data-term="{{license.title | slugify}}">{{license.title}}</a></li>
+
+          {% for license in module.recommended_licenses %}
+            <li><a class="slide-panel__open-trigger" data-term="{{license.license_name | slugify}}">{{ license.license_name }}</a></li>
           {% endfor %}
         </ul%>
-        {% for license in temp_licenses %}
+        {% for license in module.recommended_licenses %}
           {% include slide-panel.html data=license type="definition"%}
         {% endfor %}
       </div>
     </div>
-
 
     <div class="modals-wrapper">
       <div class="row">
@@ -106,22 +110,21 @@ page_template: documentation
         </div>
         <div class="column large-12">
           <div class="row">
-          {% for example in temp_licensing_examples %}
-
+          {% for example in module.examples %}
             <div class="columns large-3 medium-6 small-12 modal-container js-open-modal">
 
-              <span class="modal-container__title">{{example.title}}</span>
+              <span class="modal-container__title">{{example.project_owner}} {{example.project_name}}</span>
               <div class="modal-container__tags">
-                {% for tag in example.tags %}
+                {% for tag in example.documentation_license.license_type %}
                   <span class="tag">{{tag}}</span>
                 {% endfor %}
               </div>
               <div class="modal-container__meta">
                 <span class="license-header">License</span>
-                <span class="license-name">{{example.license}}</span>
+                <span class="license-name">{{example.documentation_license.license_name}}</span>
               </div>
               <span class="learn-why">Learn why</span>
-              {% include examples_documentation_modal.html example=example%}
+              {% include examples_documentation_modal.html example=example license_type="documentation"%}
             </div>
           {% endfor %}
           </div>
@@ -132,14 +135,14 @@ page_template: documentation
 
   <section class="page-section page-section--process slide-panel__wrapper--compact" data-nav-order="4" id="commercialization">
     <div class="row">
-      {% include checklist-button.html%}
+      {% include checklist-button.html content=module.checklist %}
       <div class="column large-12">
         <h2>Commercialization</h2>
       </div>
     </div>
     <div class="row">
       <div class="column large-12">
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos cum fugiat numquam repellat quam accusamus rem a fugit dicta dolores hic libero sed dolore iste nam excepturi tempore facilis consequuntur natus nihil eveniet quia, placeat nulla mollitia. Dolores qui, explicabo omnis voluptatum, fugit fugiat consectetur distinctio nam dicta ipsam quidem.</p>
+        {{module.commercialization_description | markdownify }}
       </div>
     </div>
   </section>

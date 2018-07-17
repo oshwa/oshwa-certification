@@ -1,3 +1,4 @@
 
+{% assign content = include.content%}
   <a class="checklist slide-panel__open-trigger" data-term="checklist"><i class="material-icons">list</i> </a>
-  {% include slide-panel.html data="checklist" type="checklist" %}
+  {% include slide-panel.html data="checklist" type="checklist" content=content%}

@@ -35,11 +35,12 @@
     &--process {
       min-height: 60vh;
     }
-    ul {
+    ul,
+    ol {
       list-style: none;
       font-size: 0.9rem;
       li {
-        padding-bottom: 1rem;
+        padding: 0.5rem;
       }
     }
     &--nav {
@@ -75,8 +76,14 @@
       }
     }
   }
-  .spectrum-image {
-    text-align: center;
+  .spectrum-container {
+    .spectrum-image {
+      text-align: center;
+      img {
+        max-width: 65%;
+      }
+    }
+    text-left: center;
     padding: 2rem 0;
   }
   .license-list {
