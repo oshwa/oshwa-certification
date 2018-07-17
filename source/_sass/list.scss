@@ -1,0 +1,46 @@
+#list {
+  .projects {
+    @include breakpoint($large) {
+      padding-left: 2rem;
+      padding-right: 2rem;
+    }
+    table {
+      thead {
+        th {
+          background-color: white;
+          color: $gray;
+          padding-left: 1rem;
+          padding-bottom: 1rem;
+          i {
+            margin-top: -2px;
+            vertical-align: middle;
+            &:hover {
+              cursor: pointer;
+            }
+          }
+        }
+      }
+      tbody {
+        tr {
+          border-bottom: 1px solid lighten($gray, 40);
+          &:last-child {
+            border-bottom: none;
+          }
+          &:nth-of-type(odd) {
+            background-color: lighten($gray, 65);
+          }
+          &:nth-of-type(even) {
+            background-color: white;
+          }
+          td {
+            color: $gray;
+            font-weight: 400;
+            padding: 1rem 0 1rem 1rem;
+            text-transform: uppercase;
+          }
+        }
+      }
+    }
+  }
+
+}
