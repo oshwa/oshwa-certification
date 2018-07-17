@@ -1,9 +1,12 @@
 {%assign data = include.data %}
 {%assign type = include.type %}
+{% if include.content %}
+{% assign content = include.content%}
+{%endif %}
 
 {%if type=="definition"%}
   <div class="slide-panel__wrapper slide-panel__wrapper--definition">
-  <div class="slide-panel" data-direction="right" data-value="{{data.title | slugify}}">
+  <div class="slide-panel" data-direction="right" data-value="{{data.license_name | slugify}}">
     <div class="slide-panel__container slide-panel__container--definition">
       <div class="row slide-panel__close">
         <a href="#" class="slide-panel__close-trigger"><i class="material-icons slide-close-definition"></i></a>
@@ -24,7 +27,7 @@
         <a href="#" class="slide-panel__close-trigger"><i class="material-icons slide-close-checklist"></i></a>
       </div>
       <div class="slide-panel__content">
-        {% include checklist.html %}
+        {% include checklist.html content=content %}
       </div>
     </div>
   </div>
