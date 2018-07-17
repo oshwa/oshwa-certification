@@ -1,5 +1,8 @@
 {%assign data = include.data %}
 {%assign type = include.type %}
+{% if include.content %}
+{% assign content = include.content%}
+{%endif %}
 
 {%if type=="definition"%}
   <div class="slide-panel__wrapper slide-panel__wrapper--definition">
@@ -16,7 +19,7 @@
 </div>
 
 {%else if type =="checklist" %}
-{% assign content = include.content %}
+
 <div class="slide-panel__wrapper slide-panel__wrapper--checklist">
   <div class="slide-panel" data-direction="right" data-value="checklist">
     <div class="slide-panel__container slide-panel__container--checklist">
