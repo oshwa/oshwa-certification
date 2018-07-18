@@ -1,0 +1,115 @@
+---
+layout: default
+title: Open Source Hardware Association
+description:
+seo_image_path: #'/images/media/filename.jpg'
+page_template: list
+---
+
+<main role="main" id={{page.page_template}}> <!-- main content starts here -->
+  <section class="top-section top-section--{{page.page_template}}">
+    <div class="row expanded align-left">
+      <div class="column large-6">
+        <h1>Search by Keyword</h1>
+      </div>
+    </div>
+    <div class="row expanded align-center">
+      <div class="column large-12 small-12 search-form">
+        <form action="" class="search search--fixed js-target-search">
+          <input class="search__input" id="searchfield" placeholder="Enter a project name or keyword (e.g. microcontroller)" type="text">
+          <input class="search-submit js-search-submit js-trigger-search search__trigger" type=
+          "submit" value="search">
+        </form>
+      </div>
+      <div class="open-filters">
+        <h2 class="">filters</h2>
+        <i class="material-icons expand">
+          expand_more
+        </i>
+      </div>
+
+      <div class="column large-12 small-12 filter-container">
+        <span>Project Categories</span>
+        <div class="checkbox-container">
+          <form class="checkbox-form">
+            <div class="row">
+              {% for num in (1...20) %}
+                <div class="column large-3 small-6 medium-3">
+                  <div class="checkbox">
+                    <input class="" name="Type {{num}}" value="Type {{num}}" type="checkbox" data-value="" id="Type {{num}}">
+                    <label class="" for="Type {{num}}">Type {{num}}</label>
+                  </div>
+                </div>
+              {% endfor %}
+            </div>
+          </form>
+        </div>
+        <div class="row align-center">
+          <div class="column small-12 medium-8 large-4">
+            <span class="dropdown-title">Documentation License</span>
+            <div class="select" id=''>
+              <select class="dropdown" data-filter="" id="">
+                <option id="" selected>
+                  Select one
+                </option>
+                <option id="{{}}">test</option>
+              </select>
+            </div>
+          </div>
+          <div class="column small-12 medium-8 large-4">
+            <span class="dropdown-title">Hardware License</span>
+            <div class="select" id=''>
+              <select class="dropdown" data-filter="" id="">
+                <option id="" selected>
+                  Select one
+                </option>
+                <option id="{{}}">test</option>
+              </select>
+            </div>
+          </div>
+          <div class="column small-12 medium-8 large-4">
+            <span class="dropdown-title">Software License</span>
+            <div class="select" id=''>
+              <select class="dropdown" data-filter="" id="">
+                <option id="" selected>
+                  Select one
+                </option>
+                <option id="{{}}">test</option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="page-section projects">
+    <div class="row expanded align-center">
+      <div class="column large-12">
+        <table>
+          <thead>
+            <tr>
+              <th>Project name <i data-sort="project__name" class="material-icons">expand_more</i></th>
+              <th>UID <i data-sort="project__uid" class="material-icons">expand_more</i></th>
+              <th>Version <i data-sort="project__version" class="material-icons">expand_more</i></th>
+              <th>Project type <i data-sort="project__type" class="material-icons">expand_more</i></th>
+              <th>Certification date <i data-sort="project__date" class="material-icons">expand_more</i></th>
+            </tr>
+          </thead>
+          <tbody class="list">
+            {% for num in (1...20) %}
+              <tr>
+                <td>Title</td>
+                <td>ID</td>
+                <td>Version</td>
+                <td>Type</td>
+                <td>Date</td>
+              </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+</main>

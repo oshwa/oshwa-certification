@@ -10,6 +10,7 @@ import Sticky from './sticky';
 import Utils from './utils';
 import InternalNav from './internal_nav';
 import CompactPanel from './compact_panel';
+import Filters from './filters';
 
 // Footer.init();
 Accordion.init();
@@ -23,3 +24,4 @@ Sticky.init();
 Utils.markdownLinksNewPage();
 InternalNav.init();
 CompactPanel.init();
+Filters.init();

@@ -167,4 +167,113 @@
       }
     }
   }
+  &--list {
+    background-color: $yellow;
+    color: $gray;
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+    padding-bottom: 1rem;
+    @include breakpoint($small-only) {
+      padding-left: 0;
+      padding-right: 0;
+    }
+    h1 {
+      font-size: 1.6rem;
+      font-weight: 800;
+      text-align: left;
+      text-transform: uppercase;
+      padding-top: 1rem;
+      padding-bottom: 1rem;
+      @include breakpoint($medium-only) {
+        font-size: 1.5rem;
+      }
+      @include breakpoint($small-only) {
+        font-size: 1.3rem;
+      }
+    }
+
+    form {
+      text-align: center;
+      margin-bottom: 1rem;
+      input {
+        border-bottom: $gray solid 1px;
+        &::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+          color: lighten($gray, 10);
+          font-style: italic;
+          font-size: 1.1rem;
+        }
+        &::-moz-placeholder { /* Firefox 19+ */
+          color: lighten($gray, 10);
+          font-style: italic;
+          font-size: 1.1rem;
+        }
+        &:-ms-input-placeholder { /* IE 10+ */
+          color: lighten($gray, 10);
+          font-style: italic;
+          font-size: 1.1rem;
+        }
+        &:-moz-placeholder { /* Firefox 18- */
+          color: lighten($gray, 10);
+          font-style: italic;
+          font-size: 1.1rem;
+        }
+      }
+    }
+
+    .search input[type='text'] {
+      background-color: transparentize(white, .8);
+    }
+
+    .search--fixed {
+      z-index: 1;
+    }
+
+    .checkbox-container {
+      margin: 1rem auto 2rem auto;
+    }
+
+    h2 {
+      font-size: 1rem;
+      font-weight: 600;
+      margin-bottom: 0;
+    }
+    span {
+      font-size: 1rem;
+      font-weight: 600;
+      text-transform: uppercase;
+    }
+    .dropdown-title {
+      font-size: .8rem;
+      font-weight: 800;
+    }
+    .filter-container {
+      display: none;
+      padding-top: 1.5rem;
+
+    }
+    .expand {
+      display: inline;
+      width: 100%;
+    }
+    .open-filters {
+      cursor: pointer;
+    }
+    .select {
+      background-color: transparentize(white, .8);
+      margin: 1rem 5.2rem 4rem 5.2rem;
+      border-bottom: 1px solid $gray;
+      font-style: italic;
+      &:before {
+        @extend .u-material-icons;
+        content: 'arrow_drop_down_circle';
+        color: $gray;
+        position: absolute;
+        right: 0;
+        margin: 0 auto 0 auto;
+        padding: 9px 7px;
+        font-size: 1.5rem;
+      }
+    }
+  }
+
 }
