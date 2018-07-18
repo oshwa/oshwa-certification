@@ -31,17 +31,17 @@ page_template: list
       <div class="column large-12 small-12 filter-container">
         <span>Project Categories</span>
         <div class="checkbox-container">
-          <form class="">
+          <form class="checkbox-form">
             <div class="row">
               {% for num in (1...20) %}
                 <div class="column large-3 small-6 medium-3">
                   <div class="checkbox">
-                    <input class="box" name="" value="" type="checkbox" data-value="" id="">
+                    <input class="" name="Type {{num}}" value="Type {{num}}" type="checkbox" data-value="" id="Type {{num}}">
                     <label class="" for="Type {{num}}">Type {{num}}</label>
                   </div>
                 </div>
               {% endfor %}
-              </div>
+            </div>
           </form>
         </div>
         <div class="row align-center">

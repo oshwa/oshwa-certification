@@ -11,16 +11,8 @@ const Filters = {
       }
     });
   },
-  checkboxCheck: () => {
-    $('.checkbox').click(e => {
-      // e.checked = true;
-      // e.currentTarget
-      console.log(e.currentTarget)
-    });
-  },
   init() {
     this.openFilters();
-    this.checkboxCheck()
   }
 }
 
