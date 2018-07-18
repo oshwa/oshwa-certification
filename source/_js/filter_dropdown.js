@@ -1,4 +1,4 @@
-const Filters = {
+const FilterDropdown = {
   openFilters: () => {
     $('.open-filters').click(() => {
       $('.filter-container').toggleClass('js-active');
@@ -14,6 +14,6 @@ const Filters = {
   init() {
     this.openFilters();
   }
-}
+};
 
-module.exports = Filters;
+module.exports = FilterDropdown;

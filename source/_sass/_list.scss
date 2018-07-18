@@ -39,6 +39,11 @@
             text-transform: uppercase;
           }
         }
+        .project {
+          .hidden {
+            display: none;
+          }
+        }
       }
     }
   }
