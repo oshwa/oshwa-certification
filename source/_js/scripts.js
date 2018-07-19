@@ -12,6 +12,7 @@ import InternalNav from './internal_nav';
 import CompactPanel from './compact_panel';
 import FilterDropdown from './filter_dropdown';
 import ListFilter from './list_filter';
+import AddIcon from './add_icon';
 
 // Footer.init();
 Accordion.init();
@@ -27,3 +28,4 @@ InternalNav.init();
 CompactPanel.init();
 FilterDropdown.init();
 ListFilter.init();
+AddIcon.init();
