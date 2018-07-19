@@ -21,7 +21,9 @@ const ListFilter = {
   // projectList: new List('project_data', ListFilter.options),
   createList: () => {
     const projectList = new List('project_data', ListFilter.options);
-    projectList.sort('project__name', { order: 'asc' });
+    if (window.location.href.includes('list')) {
+      projectList.sort('project__name', { order: 'asc' });
+    }
   },
   filterByCheckboxes: () => {
     $('body').on('change', $('input[type="checkbox"]:checked'), () => {

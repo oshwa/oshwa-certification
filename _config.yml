@@ -117,8 +117,8 @@ contentful:
         cda_query:
           content_type: spectrumItem
 
-# page_gen:
-#   - data:
-#     template:
-#     name:
-#     dir:
+page_gen:
+  - data: 'contentful.project.project'
+    template: 'profile_template'
+    name: 'oshwa_uid'
+    dir: 'profile'

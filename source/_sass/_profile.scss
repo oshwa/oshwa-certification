@@ -1,0 +1,162 @@
+#profile {
+  .page-section--profile {
+    color: $gray;
+    h1 {
+      font-size: 3rem;
+      font-weight: 800;
+      line-height: 1;
+      margin-bottom: 0;
+      padding-top: 1rem;
+      text-transform: uppercase;
+      @include breakpoint($small-only) {
+        font-size: 2.3rem;
+      }
+    }
+    h2 {
+      color: lighten($gray, 15);
+      font-size: 1.8rem;
+      font-weight: 500;
+      margin-top: .5rem;
+      @include breakpoint($small-only) {
+        font-size: 1.3rem;
+      }
+    }
+    h3 {
+      font-size: 1.3rem;
+      font-weight: 800;
+      margin: 0;
+      line-height: 1;
+      @include breakpoint($small-only) {
+        font-size: 1.1rem;
+      }
+    }
+    .id {
+      display: block;
+      font-size: 2.2rem;
+      font-weight: 800;
+      width: 100%;
+    }
+    .button {
+      color: $yellow;
+      background-color: $gray;
+      font-size: 1.1rem;
+      font-weight: 600;
+      padding: 10px 25px;
+      &:hover {
+        background-color: darken($gray, 10);
+      }
+    }
+    p {
+      font-weight: 500;
+      margin: 0;
+      @include breakpoint($medium-only) {
+        margin: 2rem auto;
+      }
+      @include breakpoint($small-only) {
+        margin: 2rem auto;
+      }
+    }
+    h4 {
+      font-size: 1.2rem;
+      margin: 0;
+    }
+    .version {
+      font-size: 1.7rem;
+      font-weight: 800;
+    }
+    .previous-title {
+      margin: 3rem auto .5rem auto;
+    }
+    .previous-versions {
+      font-size: 1rem;
+      font-weight: 800;
+    }
+
+    h5 {
+      font-size: 2.2rem;
+      font-weight: 800;
+      margin: 0;
+      margin-bottom: .8rem;
+      text-transform: capitalize;
+    }
+
+    h6 {
+      font-weight: 500;
+      margin-bottom: 0;
+      @include breakpoint($large) {
+        margin: 0;
+      }
+      @include breakpoint($small-only) {
+        margin-top: 1rem;
+      }
+    }
+
+    .licenses {
+      font-size: 1.2rem;
+      font-weight: 800;
+      text-transform: uppercase;
+    }
+
+    .documentation-link {
+      display: block;
+      font-weight: 800;
+      text-transform: uppercase;
+    }
+
+    .project {
+      margin-bottom: 1rem;
+      &__type {
+        background-color: $yellow;
+        display: inline-block;
+        font-size: 1.2rem;
+        font-weight: 600;
+        margin: 1rem 1rem 1rem auto;
+        padding: .5rem 1rem;
+        text-transform: uppercase;
+        &:hover {
+          background-color: darken($yellow, 10);
+          text-decoration: none;
+        }
+      }
+    }
+
+    .keyword {
+      font-size: 1.2rem;
+      font-style: italic;
+      font-weight: 600;
+      text-transform: uppercase;
+    }
+
+    .citations {
+      margin-bottom: 6rem;
+      p {
+        margin: 0;
+        a {
+          font-size: 1.2rem;
+          font-style: italic;
+          font-weight: 600;
+          display: block;
+          margin-bottom: .5rem;
+          text-decoration: none;
+          text-transform: uppercase;
+        }
+        .launch {
+          font-size: 1rem;
+          padding-left: 10px;
+          vertical-align: middle;
+        }
+      }
+
+    }
+
+    hr {
+      background-color: lighten($gray, 30);
+      height: 1px;
+      border: 0;
+      margin: 4rem auto 4rem auto;
+      @include breakpoint($large) {
+        margin: 4rem 13rem 4rem 13rem;
+      }
+    }
+  }
+}
