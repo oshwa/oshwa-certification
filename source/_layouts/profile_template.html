@@ -1,0 +1,104 @@
+---
+layout: default
+title: Open Source Hardware Association
+description:
+seo_image_path: #'/images/media/filename.jpg'
+page_template: profile
+---
+
+<main role="main" id={{page.page_template}}>
+
+  <section class="page-section page-section--profile">
+    <div class="row align-left">
+      <div class="column large-12">
+        <h1>{{ page.project_name }}</h1>
+        <h2>{{ page.responsible_party }}</h2>
+      </div>
+    </div>
+    <div class="row">
+      <div class="column small-12 large-4">
+        <h3>OSHWA UID</h3>
+        <span class="id">{{ page.oshwa_uid }}</span>
+        <a href="{{ page.project_website }}" class="button" target="_blank">Project Website</a>
+      </div>
+      <div class="column small-12 large-6">
+        {{ page.project_description | markdownify }}
+      </div>
+      <div class="column small-12 large-2">
+        <h3>Version</h3>
+        <span class="version">V{{ page.project_version }}</span>
+
+        {% if page.previous_versions %}
+          <h3 class="previous-title">Previous Versions</h3>
+          {% for version in page.previous_versions %}
+            <div class="previous-versions"><a href="#">{{ version.oshwa_uid }}</a></div>
+          {% endfor %}
+        {% endif %}
+      </div>
+    </div>
+
+    <hr>
+
+    <div class="row align-left">
+      <div class="column large-12">
+        <h5>Licenses</h5>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="column large-4 small-12">
+        <h6>Hardware</h6>
+        <span class="licenses">{{ page.hardware_license }}</span>
+      </div>
+      <div class="column large-4 small-12">
+        <h6>Software</h6>
+        <span class="licenses">{{ page.software_license }}</span>
+      </div>
+      <div class="column large-4 small-12">
+        <h6>Documentation</h6>
+        <span class="licenses">{{ page.documentation_license }}</span>
+        <a href="{{ page.documentation_url }}" class="documentation-link">View Documentation</a>
+      </div>
+    </div>
+
+    <hr>
+
+    <div class="row">
+      <div class="column large-12">
+        <h5>Project Type</h5>
+        <div class="project">
+          <a href="#" class="project__type">{{ page.primary_type }}</a>
+          {% if page.additional_type %}
+            {% for type in page.additional_type %}
+              <a href="#" class="project__type">{{ type }}</a>
+            {% endfor %}
+          {% endif %}
+        </div>
+      </div>
+    </div>
+
+    {% if page.project_keywords %}
+      <div class="row">
+        <div class="column large-12">
+          <h5>Keywords</h5>
+            <span class="keyword">{{ page.project_keywords | join: ", " }}</span>
+        </div>
+      </div>
+    {% endif %}
+
+    {% if page.citations %}
+      <hr>
+
+      <div class="row">
+        <div class="column large-12">
+          <h5>Citations</h5>
+          <div class="citations">
+            {{ page.citations | markdownify }}
+          </div>
+        </div>
+      </div>
+    {% endif %}
+
+  </section>
+
+</main>
