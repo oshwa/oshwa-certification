@@ -122,3 +122,7 @@ page_gen:
     template: 'profile_template'
     name: 'oshwa_uid'
     dir: 'profile'
+  - data: 'contentful.exemplarProject.exemplarProject'
+    template: 'exemplar_template'
+    name: 'project_uid'
+    dir: 'exemplar'

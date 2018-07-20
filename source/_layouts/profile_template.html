@@ -48,16 +48,16 @@ page_template: profile
     <div class="row">
       <div class="column large-4 small-12">
         <h6>Hardware</h6>
-        <span class="licenses">{{ page.hardware_license }}</span>
+        <div class="licenses">{{ page.hardware_license }}</div>
       </div>
       <div class="column large-4 small-12">
         <h6>Software</h6>
-        <span class="licenses">{{ page.software_license }}</span>
+        <div class="licenses">{{ page.software_license }}</div>
       </div>
       <div class="column large-4 small-12">
         <h6>Documentation</h6>
-        <span class="licenses">{{ page.documentation_license }}</span>
-        <a href="{{ page.documentation_url }}" class="documentation-link">View Documentation</a>
+        <div class="licenses licenses--documentation">{{ page.documentation_license }}</div>
+        <a href="{{ page.documentation_url }}" class="documentation-link" target="_blank">View Documentation</a>
       </div>
     </div>
 
