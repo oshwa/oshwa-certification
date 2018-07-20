@@ -12,6 +12,13 @@
     &--process {
       background-color: $teal;
     }
+    &--exemplar {
+      background-color: $teal;
+      color: $gray;
+      &:hover {
+        background-color: darken($teal, 10);
+      }
+    }
     &--index {
       background-color: $gray;
       &:hover {
