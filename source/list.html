@@ -75,7 +75,7 @@ page_template: list
           <div class="column small-12 medium-8 large-4">
             <span class="dropdown-title">Documentation License</span>
             <div class="select" id="">
-              <select class="dropdown" data-filter="project__documentation_license" id="">
+              <select class="dropdown" id="documentation">
                 <option id="" selected>
                   Select one
                 </option>
@@ -88,7 +88,7 @@ page_template: list
           <div class="column small-12 medium-8 large-4">
             <span class="dropdown-title">Hardware License</span>
             <div class="select" id="">
-              <select class="dropdown" data-filter="project__hardware_license" id="">
+              <select class="dropdown" id="hardware">
                 <option id="" selected>
                   Select one
                 </option>
@@ -101,7 +101,7 @@ page_template: list
           <div class="column small-12 medium-8 large-4">
             <span class="dropdown-title">Software License</span>
             <div class="select" id="">
-              <select class="dropdown" data-filter="project__software_license" id="">
+              <select class="dropdown" id="software">
                 <option id="" selected>
                   Select one
                 </option>
@@ -135,12 +135,12 @@ page_template: list
                 <td class="project__name"><a href="#">{{ project.project_name }}</a></td>
                 <td class="project__uid">{{ project.oshwa_uid }}</td>
                 <td class="project__version">{{ project.project_version }}</td>
-                <td class="project__type" data-target="{{ project.primary_type | slugify }}">{{ project.primary_type }}</td>
+                <td class="project__type" data-target="{{ project.primary_type | slugify }} {{ project.primary_type }}">{{ project.primary_type }}</td>
                 <td class="project__date">{{ project.sys.created_at | date: "%B %d, %Y" }}</td>
                 <!-- Hidden fields -->
-                <td class="project__hardware_license hidden" data-target="{{project.hardware_license | slugify}}">{{project.hardware_license | slugify}}</td>
-                <td class="project__software_license hidden" data-target="{{project.software_license | slugify}}">{{project.software_license | slugify}}</td>
-                <td class="project__documentation_license hidden" data-target="{{project.documentation_license | slugify}}">{{project.documentation_license | slugify}}</td>
+                <td class="project__hardware_license hidden">{{project.hardware_license}}</td>
+                <td class="project__software_license hidden">{{project.software_license}}</td>
+                <td class="project__documentation_license hidden">{{project.documentation_license}}</td>
               </tr>
             {% endfor %}
           </tbody>
