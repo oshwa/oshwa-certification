@@ -4,14 +4,11 @@ const ListFilter = {
       'project__name',
       'project__uid',
       'project__version',
-      { name: 'project__type', attr: 'data-target' },
       'project__date',
-      'project__hardware_license',
-      'project__documentation_license',
-      'project__software_license'
-      // { name: 'project__hardware_license', attr: 'data-target'},
-      // { name: 'project__documentation_license', attr: 'data-target'},
-      // { name: 'project__software_license', attr: 'data-target'}
+      { name: 'project__type', attr: 'type' },
+      { name: 'hardware', attr: 'hardware'},
+      { name: 'documentation', attr: 'documentation'},
+      { name: 'software', attr: 'software'}
     ],
     fuzzySearch: {
       searchClass: 'fuzzy-search',
@@ -23,12 +20,28 @@ const ListFilter = {
   },
   projectList: undefined,
   searchString: '',
+  allFilters: $('.dropdown'),
+  searchQueries: { documentation: 'all', software: 'all', hardware: 'all' },
   createList: () => {
     ListFilter.projectList = new List('project_data', ListFilter.options);
 
     if (window.location.href.includes('list')) {
       ListFilter.projectList.sort('project__name', { order: 'asc' });
     }
+  },
+  filterList: () => {
+    ListFilter.projectList.filter( item => {
+      if (
+        item.values().hardware !== null &&
+        item.values().documentation !== null &&
+        item.values().software !== null &&
+        item.values().hardware.indexOf(ListFilter.searchQueries.hardware) !== -1 &&
+        item.values().documentation.indexOf(ListFilter.searchQueries.documentation) !== -1 &&
+        item.values().software.indexOf(ListFilter.searchQueries.software) !== -1
+      ) {
+        return true;
+      }
+    });
   },
   filterBySearch: () => {
     $('#searchfield').on('keyup', e => {
@@ -37,11 +50,16 @@ const ListFilter = {
     });
   },
   filterByDropdowns: () => {
-    $('.dropdown').on('change', e => {
-      const id = e.currentTarget.id;
-      const value = $(e.currentTarget).val();
+    ListFilter.allFilters.on('change', e => {
+      ListFilter.allFilters.each((selection) => {
+        $(selection).each(() => {
+          const filterSelection = e.currentTarget.id;
+          const selectedOption = $(e.currentTarget).children(':selected').attr('id');
 
-      id ? ListFilter.projectList.search(value) : false;
+          ListFilter.searchQueries[filterSelection] = selectedOption;
+        });
+      });
+      ListFilter.filterList();
     });
   },
   // filterByCheckboxes: () => {
