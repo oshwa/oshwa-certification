@@ -1,14 +1,14 @@
 const ListFilter = {
   options: {
     valueNames: [
-      'project__name',
-      'project__uid',
-      'project__version',
-      'project__date',
-      { name: 'project__type', attr: 'type' },
-      { name: 'hardware', attr: 'hardware'},
-      { name: 'documentation', attr: 'documentation'},
-      { name: 'software', attr: 'software'}
+      'name',
+      'uid',
+      'version',
+      'date',
+      { name: 'type', attr: 'type' },
+      { name: 'hardware', attr: 'hardware' },
+      { name: 'documentation', attr: 'documentation' },
+      { name: 'software', attr: 'software' }
     ],
     fuzzySearch: {
       searchClass: 'fuzzy-search',
@@ -22,15 +22,16 @@ const ListFilter = {
   searchString: '',
   allFilters: $('.dropdown'),
   searchQueries: { documentation: 'all', software: 'all', hardware: 'all' },
+  typeCheckedValues: [],
   createList: () => {
     ListFilter.projectList = new List('project_data', ListFilter.options);
 
     if (window.location.href.includes('list')) {
-      ListFilter.projectList.sort('project__name', { order: 'asc' });
+      ListFilter.projectList.sort('name', { order: 'asc' });
     }
   },
   filterList: () => {
-    ListFilter.projectList.filter( item => {
+    ListFilter.projectList.filter(item => {
       if (
         item.values().hardware !== null &&
         item.values().documentation !== null &&
@@ -42,6 +43,10 @@ const ListFilter = {
         return true;
       }
     });
+
+    ListFilter.typeCheckedValues.forEach(selectedType => {
+      ListFilter.projectList.search(selectedType, ['type']);
+    });
   },
   filterBySearch: () => {
     $('#searchfield').on('keyup', e => {
@@ -51,7 +56,7 @@ const ListFilter = {
   },
   filterByDropdowns: () => {
     ListFilter.allFilters.on('change', e => {
-      ListFilter.allFilters.each((selection) => {
+      ListFilter.allFilters.each(selection => {
         $(selection).each(() => {
           const filterSelection = e.currentTarget.id;
           const selectedOption = $(e.currentTarget).children(':selected').attr('id');
@@ -62,17 +67,24 @@ const ListFilter = {
       ListFilter.filterList();
     });
   },
-  // filterByCheckboxes: () => {
-  //   $('body').on('change', $('input[type="checkbox"]:checked'), () => {
-  //     console.log(ListFilter.allCheckboxes)
-  //     // ListFilter.allCheckboxes.push($('input[type="checkbox"]:checked').val())
-  //   });
-  // },
+  filterByCheckboxes: () => {
+    $('body').on('change', $('input[type="checkbox"]:checked'), () => {
+      ListFilter.typeCheckedValues = $('input[type="checkbox"]:checked').map(function() {
+        return this.value;
+      }).get();
+
+      if (ListFilter.typeCheckedValues.length === 0) {
+        ListFilter.typeCheckedValues = ['all'];
+      }
+
+      ListFilter.filterList();
+    });
+  },
   init() {
     this.createList();
     this.filterBySearch();
     this.filterByDropdowns();
-    // this.filterByCheckboxes();
+    this.filterByCheckboxes();
   }
 };
 

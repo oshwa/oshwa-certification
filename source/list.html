@@ -122,21 +122,21 @@ page_template: list
         <table>
           <thead>
             <tr>
-              <th>Project name <i data-sort="project__name" class="material-icons sort desc">expand_more</i></th>
-              <th>UID <i data-sort="project__uid" class="material-icons sort desc">expand_more</i></th>
-              <th>Version <i data-sort="project__version" class="material-icons sort desc">expand_more</i></th>
-              <th>Project type <i data-sort="project__type" class="material-icons sort desc">expand_more</i></th>
-              <th>Certification date <i data-sort="project__date" class="material-icons sort desc">expand_more</i></th>
+              <th>Project name <i data-sort="name" class="material-icons sort desc">expand_more</i></th>
+              <th>UID <i data-sort="uid" class="material-icons sort desc">expand_more</i></th>
+              <th>Version <i data-sort="version" class="material-icons sort desc">expand_more</i></th>
+              <th>Project type <i data-sort="type" class="material-icons sort desc">expand_more</i></th>
+              <th>Certification date <i data-sort="date" class="material-icons sort desc">expand_more</i></th>
             </tr>
           </thead>
           <tbody class="list">
             {% for project in projects %}
               <tr class="project">
-                <td class="project__name"><a href="#">{{ project.project_name }}</a></td>
-                <td class="project__uid">{{ project.oshwa_uid }}</td>
-                <td class="project__version">{{ project.project_version }}</td>
-                <td class="project__type" type="{{ project.primary_type | slugify }} {{ project.primary_type }}">{{ project.primary_type }}</td>
-                <td class="project__date">{{ project.sys.created_at | date: "%B %d, %Y" }}</td>
+                <td class="name"><a href="#">{{ project.project_name }}</a></td>
+                <td class="uid">{{ project.oshwa_uid }}</td>
+                <td class="version">{{ project.project_version }}</td>
+                <td class="type" type="all {{ project.primary_type | slugify }} {{ project.primary_type }}">{{ project.primary_type }}</td>
+                <td class="date">{{ project.sys.created_at | date: "%B %d, %Y" }}</td>
                 <!-- Hidden fields -->
                 <td class="hardware hidden" hardware="all {{project.hardware_license | slugify}} {{project.hardware_license}}">{{project.hardware_license}}</td>
                 <td class="software hidden" software="all {{project.software_license | slugify}} {{project.software_license}}">{{project.software_license}}</td>
