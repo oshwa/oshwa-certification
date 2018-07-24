@@ -4,6 +4,22 @@
       padding-left: 2rem;
       padding-right: 2rem;
     }
+    .search-results-count {
+      text-align: center;
+      p {
+        color: $gray;
+        font-weight: 600;
+        margin-top: 0;
+        text-transform: uppercase;
+      }
+    }
+    .search-results {
+      text-align: center;
+      p {
+        color: lighten($gray, 15);
+        margin-bottom: 1.5rem;
+      }
+    }
     table {
       thead {
         th {

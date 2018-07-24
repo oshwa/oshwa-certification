@@ -13,6 +13,7 @@ import CompactPanel from './compact_panel';
 import FilterDropdown from './filter_dropdown';
 import ListFilter from './list_filter';
 import AddIcon from './add_icon';
+import SearchSubmit from './search_submit';
 
 // Footer.init();
 Accordion.init();
@@ -29,3 +30,4 @@ CompactPanel.init();
 FilterDropdown.init();
 ListFilter.init();
 AddIcon.init();
+SearchSubmit.init();

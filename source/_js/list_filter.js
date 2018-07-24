@@ -44,14 +44,21 @@ const ListFilter = {
       }
     });
 
+    // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
     ListFilter.typeCheckedValues.forEach(selectedType => {
       ListFilter.projectList.search(selectedType, ['type']);
     });
+    // checkboxes not working when search is used //
+    // combine these somehow //
+    ListFilter.projectList.search(ListFilter.searchString);
+    // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
+
+    ListFilter.displayResults();
   },
   filterBySearch: () => {
     $('#searchfield').on('keyup', e => {
       ListFilter.searchString = $(e.currentTarget).val();
-      ListFilter.projectList.search(ListFilter.searchString);
+      ListFilter.filterList();
     });
   },
   filterByDropdowns: () => {
@@ -68,7 +75,7 @@ const ListFilter = {
     });
   },
   filterByCheckboxes: () => {
-    $('body').on('change', $('input[type="checkbox"]:checked'), () => {
+    $('.filter-container').on('change', $('input[type="checkbox"]:checked'), () => {
       ListFilter.typeCheckedValues = $('input[type="checkbox"]:checked').map(function() {
         return this.value;
       }).get();
@@ -80,11 +87,56 @@ const ListFilter = {
       ListFilter.filterList();
     });
   },
+  filterByUrlParams: () => {
+    const searchQuery = window.location.search.split('=')[0];
+    const searchParam = window.location.search.split('=')[1];
+
+    switch (searchQuery) {
+      case '?q':
+        ListFilter.projectList.search(decodeURI(searchParam));
+        break;
+      case '?type':
+        // filter by type
+        break;
+      default:
+    }
+  },
+  clearAllFilters: () => {
+    $('.clear_filters').on('click', e => {
+      e.preventDefault();
+      ListFilter.searchString = '';
+      ListFilter.projectList.search();
+      ListFilter.projectList.filter();
+      ListFilter.projectList.sort('name', { order: 'asc' });
+
+      $('.search__input').val('');
+      $('.dropdown').prop('selectedIndex', 0);
+      $('input[type="checkbox"]:checked').map(function() {
+        return $(this).attr('checked', false);
+      });
+
+      if (window.location.search !== '') {
+        window.location.href = window.location.origin + '/list.html';
+      }
+
+      ListFilter.displayResults();
+    });
+  },
+  displayResults: () => {
+    const projectCount = $('.project').length;
+    $('.results-count').html('<p>Displaying ' + projectCount + ' Projects</p>');
+  },
+  // displayResultQueries: () => {
+  //   // $('.results-message').html('<p>Results:</p>');
+  // },
   init() {
     this.createList();
     this.filterBySearch();
     this.filterByDropdowns();
     this.filterByCheckboxes();
+    this.filterByUrlParams();
+    this.clearAllFilters();
+    this.displayResults();
   }
 };
 
