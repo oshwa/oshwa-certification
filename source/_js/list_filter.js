@@ -49,11 +49,11 @@ const ListFilter = {
       ListFilter.projectList.search(selectedType, ['type']);
     });
     // checkboxes not working when search is used //
-    // combine these somehow //
     ListFilter.projectList.search(ListFilter.searchString);
     // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
 
     ListFilter.displayResults();
+    ListFilter.displayResultQueries();
   },
   filterBySearch: () => {
     $('#searchfield').on('keyup', e => {
@@ -120,15 +120,42 @@ const ListFilter = {
       }
 
       ListFilter.displayResults();
+      ListFilter.displayResultQueries();
     });
   },
   displayResults: () => {
     const projectCount = $('.project').length;
     $('.results-count').html('<p>Displaying ' + projectCount + ' Projects</p>');
   },
-  // displayResultQueries: () => {
-  //   // $('.results-message').html('<p>Results:</p>');
-  // },
+  displayResultQueries: () => {
+    const activeSearchParams = [];
+
+    if ($('#searchfield').val() !== '') {
+      const searchQuery = $('#searchfield').val();
+      activeSearchParams.push(decodeURI(searchQuery));
+    }
+
+    $('input[name="type"]:checked').map((val, item) => {
+      activeSearchParams.push(item.id);
+    });
+
+    $('.dropdown').map((val, item) => {
+      if (item.value !== 'Select one') {
+        activeSearchParams.push(item.value);
+      }
+    });
+
+    if (activeSearchParams.length > 0) {
+      $('.results-message').show();
+      if ($('.project').length === 0) {
+        $('.results-message').html('<p>No results for:<br>' + activeSearchParams.join('; ') + '</p>');
+      } else {
+        $('.results-message').html('<p>Results: ' + activeSearchParams.join('; ') + '</p>');
+      }
+    } else {
+      $('.results-message').hide();
+    }
+  },
   init() {
     this.createList();
     this.filterBySearch();
