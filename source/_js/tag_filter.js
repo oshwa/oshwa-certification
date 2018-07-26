@@ -4,7 +4,7 @@ const TagFilter = {
   filterByTag: () => {
     $('.project__type').on('click', e => {
       const query = e.target.getAttribute('type-tag');
-      const searchListUrl = TagFilter.url + TagFilter.listUrl + '?type=' + query;
+      const searchListUrl = `${TagFilter.url}${TagFilter.listUrl}?type=${query}`;
 
       window.location.href = searchListUrl;
     });

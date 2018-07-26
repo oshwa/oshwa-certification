@@ -5,7 +5,7 @@ const SearchSubmit = {
   submitSearch: () => {
     $('.js-search-submit').on('click', () => {
       const query = SearchSubmit.searchString.val();
-      const searchListUrl = SearchSubmit.url + SearchSubmit.listUrl + '?q=' + query;
+      const searchListUrl = `${SearchSubmit.url}${SearchSubmit.listUrl}?q=${query}`;
 
       window.location.href = searchListUrl;
     });
