@@ -14,6 +14,7 @@ import FilterDropdown from './filter_dropdown';
 import ListFilter from './list_filter';
 import AddIcon from './add_icon';
 import SearchSubmit from './search_submit';
+import TagFilter from './tag_filter';
 
 // Footer.init();
 Accordion.init();
@@ -31,3 +32,4 @@ FilterDropdown.init();
 ListFilter.init();
 AddIcon.init();
 SearchSubmit.init();
+TagFilter.init();

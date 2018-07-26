@@ -32,6 +32,13 @@ page_template: list
 {% endfor %}
 {% assign hardware_license = hardware_license | sort %}
 
+<!-- Assign types from data -->
+{% assign project_types = "" | split: "" %}
+{% for project in projects %}
+  {% assign project_types = project_types | push: project.primary_type | join: ", " %}
+  {% assign project_types = project_types | split: ", " | uniq %}
+{% endfor %}
+{% assign project_types = project_types | sort %}
 
 <main role="main" id={{page.page_template}}> <!-- main content starts here -->
   <section class="top-section top-section--{{page.page_template}}">
@@ -60,11 +67,11 @@ page_template: list
         <div class="checkbox-container">
           <form class="checkbox-form">
             <div class="row">
-              {% for num in (1...20) %}
+              {% for type in project_types %}
                 <div class="column large-3 small-6 medium-3">
                   <div class="checkbox">
-                    <input class="form-type" name="type" value="type-{{num}}" type="checkbox" data-value="type-{{num}}" id="Type {{num}}">
-                    <label class="project-type" for="Type {{num}}">Type {{num}}</label>
+                    <input class="form-type" name="type" value="{{type | slugify}}" type="checkbox" data-value="{{type | slugify}}" id="{{type}}">
+                    <label class="project-type" for="{{type}}">{{type}}</label>
                   </div>
                 </div>
               {% endfor %}
@@ -144,12 +151,13 @@ page_template: list
                 <td class="name"><a href="#">{{ project.project_name }}</a></td>
                 <td class="uid">{{ project.oshwa_uid }}</td>
                 <td class="version">{{ project.project_version }}</td>
-                <td class="type" type="all {{ project.primary_type | slugify }} {{ project.primary_type }}">{{ project.primary_type }}</td>
+                <td class="type" type="all {{ project.primary_type | slugify }} {{ project.primary_type }} {% for type in project.additional_type %} {{ type | slugify }} {{type}} {% endfor %}">{{ project.primary_type }}</td>
                 <td class="date">{{ project.sys.created_at | date: "%B %d, %Y" }}</td>
                 <!-- Hidden fields -->
                 <td class="hardware hidden" hardware="all {{project.hardware_license | slugify}} {{project.hardware_license}}">{{project.hardware_license}}</td>
                 <td class="software hidden" software="all {{project.software_license | slugify}} {{project.software_license}}">{{project.software_license}}</td>
                 <td class="documentation hidden" documentation="all {{project.documentation_license | slugify}} {{project.documentation_license}}">{{project.documentation_license}}</td>
+                <td class="keywords hidden">{% for word in project.project_keywords %}{{ word }} {% endfor %}</td>
               </tr>
             {% endfor %}
           </tbody>

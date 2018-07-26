@@ -5,6 +5,7 @@ const ListFilter = {
       'uid',
       'version',
       'date',
+      'keywords',
       { name: 'type', attr: 'type' },
       { name: 'hardware', attr: 'hardware' },
       { name: 'documentation', attr: 'documentation' },
@@ -48,8 +49,8 @@ const ListFilter = {
     ListFilter.typeCheckedValues.forEach(selectedType => {
       ListFilter.projectList.search(selectedType, ['type']);
     });
-    // checkboxes not working when search is used //
-    ListFilter.projectList.search(ListFilter.searchString);
+
+    // ListFilter.projectList.search(ListFilter.searchString);
     // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
 
     ListFilter.displayResults();
@@ -83,6 +84,7 @@ const ListFilter = {
       if (ListFilter.typeCheckedValues.length === 0) {
         ListFilter.typeCheckedValues = ['all'];
       }
+      // console.log(ListFilter.typeCheckedValues)
 
       ListFilter.filterList();
     });
@@ -93,10 +95,20 @@ const ListFilter = {
 
     switch (searchQuery) {
       case '?q':
-        ListFilter.projectList.search(decodeURI(searchParam));
+        ListFilter.searchString = decodeURI(searchParam);
+        ListFilter.projectList.search(decodeURI(ListFilter.searchString));
+        ListFilter.displayResultQueries();
         break;
       case '?type':
-        // filter by type
+        $('input[type=checkbox][value=' + searchParam + ']').prop('checked', true);
+        ListFilter.typeCheckedValues.push(searchParam);
+        ListFilter.displayResultQueries();
+
+        ListFilter.projectList.filter(item => {
+          if (item.values().type !== null && item.values().type.indexOf(searchParam) !== -1) {
+            return true;
+          }
+        });
         break;
       default:
     }
@@ -130,9 +142,8 @@ const ListFilter = {
   displayResultQueries: () => {
     const activeSearchParams = [];
 
-    if ($('#searchfield').val() !== '') {
-      const searchQuery = $('#searchfield').val();
-      activeSearchParams.push(decodeURI(searchQuery));
+    if (ListFilter.searchString !== '') {
+      activeSearchParams.push(ListFilter.searchString);
     }
 
     $('input[name="type"]:checked').map((val, item) => {

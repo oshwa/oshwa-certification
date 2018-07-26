@@ -67,10 +67,10 @@ page_template: profile
       <div class="column large-12">
         <h5>Project Type</h5>
         <div class="project">
-          <a href="#" class="project__type">{{ page.primary_type }}</a>
+          <div type-tag="{{ page.primary_type | slugify }}" class="project__type">{{ page.primary_type }}</div>
           {% if page.additional_type %}
             {% for type in page.additional_type %}
-              <a href="#" class="project__type">{{ type }}</a>
+              <div type-tag="{{ type | slugify }}" class="project__type">{{ type }}</div>
             {% endfor %}
           {% endif %}
         </div>
