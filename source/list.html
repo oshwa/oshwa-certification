@@ -32,6 +32,13 @@ page_template: list
 {% endfor %}
 {% assign hardware_license = hardware_license | sort %}
 
+<!-- Assign types from data -->
+{% assign project_types = "" | split: "" %}
+{% for project in projects %}
+  {% assign project_types = project_types | push: project.primary_type | join: ", " %}
+  {% assign project_types = project_types | split: ", " | uniq %}
+{% endfor %}
+{% assign project_types = project_types | sort %}
 
 <main role="main" id={{page.page_template}}> <!-- main content starts here -->
   <section class="top-section top-section--{{page.page_template}}">
@@ -43,7 +50,7 @@ page_template: list
     <div class="row expanded align-center">
       <div class="column large-12 small-12 search-form">
         <form action="" class="search search--fixed js-target-search">
-          <input class="search__input" id="searchfield" placeholder="Enter a project name or keyword (e.g. microcontroller)" type="text">
+          <input class="search__input fuzzy-search" id="searchfield" placeholder="Enter a project name or keyword (e.g. microcontroller)" type="text">
           <input class="search-submit js-search-submit js-trigger-search search__trigger" type=
           "submit" value="search">
         </form>
@@ -60,11 +67,11 @@ page_template: list
         <div class="checkbox-container">
           <form class="checkbox-form">
             <div class="row">
-              {% for num in (1...20) %}
+              {% for type in project_types %}
                 <div class="column large-3 small-6 medium-3">
                   <div class="checkbox">
-                    <input class="form-type" name="type" value="type-{{num}}" type="checkbox" data-value="type-{{num}}" id="Type {{num}}">
-                    <label class="project-type" for="Type {{num}}">Type {{num}}</label>
+                    <input class="form-type" name="type" value="{{type | slugify}}" type="checkbox" data-value="{{type | slugify}}" id="{{type}}">
+                    <label class="project-type" for="{{type}}">{{type}}</label>
                   </div>
                 </div>
               {% endfor %}
@@ -75,8 +82,8 @@ page_template: list
           <div class="column small-12 medium-8 large-4">
             <span class="dropdown-title">Documentation License</span>
             <div class="select" id="">
-              <select class="dropdown" data-filter="project__documentation_license" id="">
-                <option id="" selected>
+              <select class="dropdown" id="documentation" data-filter="documentation">
+                <option id="all" selected>
                   Select one
                 </option>
                 {% for license in documentation_license %}
@@ -88,8 +95,8 @@ page_template: list
           <div class="column small-12 medium-8 large-4">
             <span class="dropdown-title">Hardware License</span>
             <div class="select" id="">
-              <select class="dropdown" data-filter="project__hardware_license" id="">
-                <option id="" selected>
+              <select class="dropdown" id="hardware" data-filter="hardware">
+                <option id="all" selected>
                   Select one
                 </option>
                 {% for license in hardware_license %}
@@ -101,8 +108,8 @@ page_template: list
           <div class="column small-12 medium-8 large-4">
             <span class="dropdown-title">Software License</span>
             <div class="select" id="">
-              <select class="dropdown" data-filter="project__software_license" id="">
-                <option id="" selected>
+              <select class="dropdown" id="software" data-filter="software">
+                <option id="all" selected>
                   Select one
                 </option>
                 {% for license in software_license %}
@@ -110,6 +117,9 @@ page_template: list
                 {% endfor %}
               </select>
             </div>
+          </div>
+          <div class="column large-12">
+            <a href="#" class="button clear_filters">Clear Filters</a>
           </div>
         </div>
       </div>
@@ -119,28 +129,35 @@ page_template: list
   <section class="page-section projects" id="project_data">
     <div class="row expanded align-center">
       <div class="column large-12">
+        <div class="search-results-count">
+          <p class="results-count"></p>
+        </div>
+        <div class="search-results">
+          <p class="results-message"></p>
+        </div>
         <table>
           <thead>
             <tr>
-              <th>Project name <i data-sort="project__name" class="material-icons sort desc">expand_more</i></th>
-              <th>UID <i data-sort="project__uid" class="material-icons sort desc">expand_more</i></th>
-              <th>Version <i data-sort="project__version" class="material-icons sort desc">expand_more</i></th>
-              <th>Project type <i data-sort="project__type" class="material-icons sort desc">expand_more</i></th>
-              <th>Certification date <i data-sort="project__date" class="material-icons sort desc">expand_more</i></th>
+              <th>Project name <i data-sort="name" class="material-icons sort desc">expand_more</i></th>
+              <th>UID <i data-sort="uid" class="material-icons sort desc">expand_more</i></th>
+              <th>Version <i data-sort="version" class="material-icons sort desc">expand_more</i></th>
+              <th>Project type <i data-sort="type" class="material-icons sort desc">expand_more</i></th>
+              <th>Certification date <i data-sort="date" class="material-icons sort desc">expand_more</i></th>
             </tr>
           </thead>
           <tbody class="list">
             {% for project in projects %}
               <tr class="project">
-                <td class="project__name"><a href="#">{{ project.project_name }}</a></td>
-                <td class="project__uid">{{ project.oshwa_uid }}</td>
-                <td class="project__version">{{ project.project_version }}</td>
-                <td class="project__type" data-target="{{ project.primary_type | slugify }}">{{ project.primary_type }}</td>
-                <td class="project__date">{{ project.sys.created_at | date: "%B %d, %Y" }}</td>
+                <td class="name"><a href="#">{{ project.project_name }}</a></td>
+                <td class="uid">{{ project.oshwa_uid }}</td>
+                <td class="version">{{ project.project_version }}</td>
+                <td class="type" type="all {{ project.primary_type | slugify }} {{ project.primary_type }} {% for type in project.additional_type %} {{ type | slugify }} {{type}} {% endfor %}">{{ project.primary_type }}</td>
+                <td class="date">{{ project.sys.created_at | date: "%B %d, %Y" }}</td>
                 <!-- Hidden fields -->
-                <td class="project__hardware_license hidden" data-target="{{project.hardware_license | slugify}}">{{project.hardware_license | slugify}}</td>
-                <td class="project__software_license hidden" data-target="{{project.software_license | slugify}}">{{project.software_license | slugify}}</td>
-                <td class="project__documentation_license hidden" data-target="{{project.documentation_license | slugify}}">{{project.documentation_license | slugify}}</td>
+                <td class="hardware hidden" hardware="all {{project.hardware_license | slugify}} {{project.hardware_license}}">{{project.hardware_license}}</td>
+                <td class="software hidden" software="all {{project.software_license | slugify}} {{project.software_license}}">{{project.software_license}}</td>
+                <td class="documentation hidden" documentation="all {{project.documentation_license | slugify}} {{project.documentation_license}}">{{project.documentation_license}}</td>
+                <td class="keywords hidden">{% for word in project.project_keywords %}{{ word }} {% endfor %}</td>
               </tr>
             {% endfor %}
           </tbody>
