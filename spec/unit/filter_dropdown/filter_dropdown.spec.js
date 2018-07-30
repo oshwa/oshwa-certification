@@ -6,8 +6,8 @@ let { JSDOM } = require('jsdom');
 let { window } = new JSDOM(templateHTML);
 let { document } = window;
 let assert = require('chai').assert;
-
 let FilterDropdown = require('../../../source/_js/filter_dropdown.js');
+
 describe('FilterDropdown', function() {
   const body = document.body;
   let expand;

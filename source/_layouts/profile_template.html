@@ -78,10 +78,10 @@ page_template: profile
     </div>
 
     {% if page.project_keywords %}
-      <div class="row">
+      <div class="row keywords">
         <div class="column large-12">
           <h5>Keywords</h5>
-            <span class="keyword">{{ page.project_keywords | join: ", " }}</span>
+            <span class="keywords__keyword">{{ page.project_keywords | join: ", " }}</span>
         </div>
       </div>
     {% endif %}

@@ -9,3 +9,7 @@ body {
   box-shadow: none;
   overflow-y: hidden;
 }
+
+#overlay {
+  z-index: 2;
+}

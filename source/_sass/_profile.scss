@@ -125,11 +125,14 @@
     }
   }
 
-  .keyword {
-    font-size: 1.2rem;
-    font-style: italic;
-    font-weight: 600;
-    text-transform: uppercase;
+  .keywords {
+    margin-bottom: 2rem;
+    &__keyword {
+      font-size: 1.2rem;
+      font-style: italic;
+      font-weight: 600;
+      text-transform: uppercase;
+    }
   }
 
   .citations {
@@ -182,11 +185,16 @@
       }
     }
 
-    .project__type {
+    .project__type--exemplar {
       background-color: $teal;
       color: white;
+      display: inline-block;
+      font-size: 1.2rem;
+      font-weight: 600;
       font-size: .9rem;
+      margin: 1rem 1rem 1rem auto;
       padding: 5px 15px;
+      text-transform: uppercase;
       &:hover {
         background-color: $teal;
       }
