@@ -24,15 +24,21 @@
           }
         }
         &--process {
-          background-color: $teal;
+          // background-color: $teal;
+          background: linear-gradient(rgba($teal, 0.85), rgba($teal, 0.85)),
+            url('../images/patent-line-transpo.png') no-repeat right;
+          background-size: 90%;
           &:hover {
-            background-color: darken($teal, 10);
+            // background-color: darken($teal, 10);
           }
         }
         &--certify {
-          background-color: $purple;
+          // background-color: $purple;
+          background: linear-gradient(rgba($purple, 0.85), rgba($purple, 0.85)),
+            url('../images/patent-line-transpo.png') no-repeat right;
+          background-size: 90%;
           &:hover {
-            background-color: darken($purple, 10);
+            // background-color: darken($purple, 10);
           }
         }
       }

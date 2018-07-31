@@ -1,7 +1,10 @@
 #basics {
   .page-section {
     &--panel {
-      padding-left: 10px;
+      padding-left: 2rem;
+      @include breakpoint($small-only) {
+        padding-left: 0;
+      }
       h2 {
         font-size: 1.6rem;
         font-weight: 700;
@@ -26,6 +29,9 @@
           max-width: 100%;
         }
       }
+    }
+    &--panel:last-child {
+      margin-bottom: 3rem;
     }
   }
 }
