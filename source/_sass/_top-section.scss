@@ -25,7 +25,7 @@
   &--documentation,
   &--directory {
     background-color: white;
-    background-image: url('/images/patent-line-transpo.png');
+    background-image: url('../images/patent-line-transpo.png');
     background-repeat: no-repeat;
     background-position: right;
     background-size: 50%;
@@ -78,9 +78,10 @@
       &--blue {
         background-color: $blue;
         color: #fff;
+        padding: .8rem 2rem;
         font-size: 1rem;
         @include breakpoint($medium-only) {
-          font-size: 0.8rem;
+          font-size: 0.9rem;
         }
         &:hover {
           background-color: darken($blue, 10);
@@ -110,7 +111,7 @@
       position: initial;
     }
     background: linear-gradient(rgba($teal, 0.85), rgba($teal, 0.85)),
-      url('/images/patent-line-transpo.png') no-repeat right;
+      url('../images/patent-line-transpo.png') no-repeat right;
 
     background-size: 50%;
     @include breakpoint($medium-only) {
@@ -134,7 +135,7 @@
 
   &--directory {
     background: linear-gradient(rgba($yellow, 0.85), rgba($yellow, 0.85)),
-      url('/images/patent-line-transpo.png') no-repeat right;
+      url('../images/patent-line-transpo.png') no-repeat right;
     background-size: 50%;
     h1 {
       font-size: 2.6rem;

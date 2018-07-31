@@ -148,7 +148,7 @@ page_template: list
           <tbody class="list">
             {% for project in projects %}
               <tr class="project">
-                <td class="name"><a href="{{ project.oshwa_uid | prepend: '/profile/' | append: '.html' | relative_url }}">{{ project.project_name }}</a></td>
+                <td class="name"><a href="{{ project.oshwa_uid | slugify | prepend: '/profile/' | append: '.html' | relative_url }}">{{ project.project_name }}</a></td>
                 <td class="uid">{{ project.oshwa_uid }}</td>
                 <td class="version">{{ project.project_version }}</td>
                 <td class="type" type="all {{ project.primary_type | slugify }} {{ project.primary_type }} {% for type in project.additional_type %} {{ type | slugify }} {{type}} {% endfor %}">{{ project.primary_type }}</td>
