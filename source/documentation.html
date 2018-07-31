@@ -33,7 +33,6 @@ permalink: /process/documentation.html
     </nav>
   </section>
 
-
   <section class="page-section page-section--process js-active-section slide-panel__wrapper--compact" data-nav-order="1" id="about">
     <div class="row">
       {% include checklist-button.html content=module.checklist %}
@@ -55,22 +54,15 @@ permalink: /process/documentation.html
         <h2>Spectrum</h2>
       </div>
     </div>
+
     <div class="row">
       <div class="column large-12">
      {{ module.spectrum_description | markdownify}}
       </div>
     </div>
-    <div class="row">
-      <div class="column large-12 spectrum-container">
-        {% for schematic in module.spectrum_items %}
-          <h4>{{schematic.title}}</h4>
-          <div class="spectrum-image">
-            <img src="{{schematic.image.url}}" alt="{{schematic.image.title}}"/>
-          </div>
-          {{schematic.description | markdownify }}
-        {% endfor %}
-      </div>
-    </div>
+
+    {% include spectrum.html %}
+    
   </section>
 
   <section class="page-section page-section--process page-section--modals slide-panel__wrapper--compact" data-nav-order="3" id="licensing">
@@ -147,6 +139,5 @@ permalink: /process/documentation.html
       </div>
     </div>
   </section>
-
 
 </main>

@@ -15,6 +15,7 @@ import ListFilter from './list_filter';
 import AddIcon from './add_icon';
 import SearchSubmit from './search_submit';
 import TagFilter from './tag_filter';
+import Spectrum from './spectrum';
 
 // Footer.init();
 Accordion.init();
@@ -33,3 +34,4 @@ ListFilter.init();
 AddIcon.init();
 SearchSubmit.init();
 TagFilter.init();
+Spectrum.init();
