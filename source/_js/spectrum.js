@@ -1,9 +1,8 @@
 const Spectrum = {
-  clickedCircle: undefined,
   schematicDescription: document.querySelectorAll('.schematic-description'),
-  createCircles: () => {
+  targetCircles: () => {
     $('.circle').on('click', e => {
-      Spectrum.clickedCircle = $(e.currentTarget).attr('circle-attr');
+      const clickedCircle = $(e.currentTarget).attr('circle-attr');
 
       if ($(e.currentTarget).hasClass('active')) {
         $(e.currentTarget).removeClass('active');
@@ -12,20 +11,26 @@ const Spectrum = {
         $(e.currentTarget).siblings().removeClass('active');
       }
 
-      Spectrum.showData();
+      Spectrum.showData(clickedCircle);
     });
   },
-  showData: () => {
+  showData: circleAttr => {
     Spectrum.schematicDescription.forEach(item => {
-      if (item.classList.contains(Spectrum.clickedCircle)) {
+      if (item.classList.contains(circleAttr)) {
         item.classList.toggle('display');
       } else {
         item.classList.remove('display');
       }
     });
   },
+  activateFirstCircle: () => {
+    const firstCircle = $('.circle').first();
+    firstCircle.first().addClass('active');
+    Spectrum.showData(firstCircle.attr('circle-attr'));
+  },
   init() {
-    this.createCircles();
+    this.targetCircles();
+    this.activateFirstCircle();
   }
 };
 
