@@ -80,7 +80,38 @@ page_template: exemplar
         {{ page.branding_information | markdownify }}
       </div>
     </div>
-
   </section>
+
+  <div class="row">
+    <div class="column large-12 spectrum-container">
+      <div class="spectrum-container">
+        <div class="row expanded">
+          <div class="column">
+            <p class="label">Less<br>Protectable</p>
+          </div>
+          <div class="column" style="text-align: right">
+            <p class="label">More<br>Protectable</p>
+          </div>
+        </div>
+        <div id="spectrum-line">
+          <div class="line">
+            {% for schematic in page.spectrum_items %}
+              <div class="circle" id="circle{{ schematic.position }}" circle-attr="{{ schematic.position }}"></div>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+
+      {% for schematic in page.spectrum_items %}
+        <div class="schematic-description {{ schematic.position }}">
+          <h4>{{schematic.title}}</h4>
+          <div class="spectrum-image">
+            <img src="{{schematic.image.url}}" alt="{{schematic.image.title}}"/>
+          </div>
+          {{schematic.description | markdownify }}
+        </div>
+      {% endfor %}
+    </div>
+  </div>
 
 </main>
