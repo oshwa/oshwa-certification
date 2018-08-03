@@ -27,7 +27,7 @@ const ListFilter = {
   createList: () => {
     ListFilter.projectList = new List('project_data', ListFilter.options);
 
-    if (window.location.href.includes('list')) {
+    if (document.location.href.indexOf('list') > -1) {
       ListFilter.projectList.sort('name', { order: 'asc' });
     }
   },

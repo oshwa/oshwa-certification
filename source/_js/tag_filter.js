@@ -1,10 +1,10 @@
 const TagFilter = {
-  url: new URL(window.location.origin),
-  listUrl: 'list.html',
+  listUrl: '/list.html',
   filterByTag: () => {
     $('.project__type').on('click', e => {
       const query = e.target.getAttribute('type-tag');
-      const searchListUrl = `${TagFilter.url}${TagFilter.listUrl}?type=${query}`;
+      const url = document.location.origin;
+      const searchListUrl = `${url}${TagFilter.listUrl}?type=${query}`;
 
       window.location.href = searchListUrl;
     });
