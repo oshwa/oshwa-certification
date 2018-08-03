@@ -15,6 +15,7 @@ const Spectrum = {
     });
   },
   showData: circleAttr => {
+    Spectrum.schematicDescription = [].slice.call(Spectrum.schematicDescription);
     Spectrum.schematicDescription.forEach(item => {
       if (item.classList.contains(circleAttr)) {
         item.classList.toggle('display');
