@@ -1,25 +1,40 @@
-#documentation {
+#documentation, #software {
   .checklist {
     position: absolute;
     right: 0;
     top: 0;
     color: $teal;
     font-size: 3rem;
-
     cursor: pointer;
-
     .material-icons {
       font-size: 3rem;
     }
   }
   .top-section {
-    h1 {
-      padding: 0;
-      white-space: nowrap;
-      &:before {
-        content: 'library_books';
-        @extend .u-material-icons;
-        padding-right: 1rem;
+    &--documentation {
+      h1 {
+        padding: 0;
+        white-space: nowrap;
+        &:before {
+          content: 'library_books';
+          @extend .u-material-icons;
+          padding-right: 1rem;
+        }
+      }
+    }
+    &--software {
+      h1 {
+        padding: 0;
+        white-space: nowrap;
+        &:before {
+          content: 'code';
+          @extend .u-material-icons;
+          padding-right: 1rem;
+          font-size: 2.5rem;
+          vertical-align: middle;
+          font-weight: 800;
+          margin-top: -5px;
+        }
       }
     }
   }
