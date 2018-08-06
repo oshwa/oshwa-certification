@@ -1,15 +1,19 @@
-#documentation, #software {
+#documentation,
+#software,
+#hardware {
   .page-section {
     .modals-wrapper {
-      background-color: transparentize($blue, 0.99);
+      background-color: transparentize($blue, 0.97);
       padding-bottom: 2rem;
       width: 100%;
     }
     .modals-container {
       h3 {
         color: $gray;
-        font-size: 1.2rem;
+        font-size: 1.5rem;
         text-transform: none;
+        margin-top: 3rem;
+        margin-bottom: 0;
       }
     }
     .modal-container {
@@ -22,37 +26,37 @@
       text-transform: uppercase;
       &__title {
         color: $teal;
-        font-size: 0.8rem;
+        font-size: 0.9rem;
         letter-spacing: 0;
         padding: 0;
       }
       &__tags {
-        padding: 0.5rem 0;
+        padding: 0.7rem 0;
         .tag {
           background-color: $teal;
           color: $white;
-          font-size: 0.6rem;
-          padding: 0.3rem;
+          font-size: 0.7rem;
+          padding: 0.5rem 0.7rem;
         }
       }
       &__meta {
         .license-header {
           color: $teal;
           display: block;
-          font-size: 0.6rem;
+          font-size: 0.7rem;
           padding: 0.3rem 0;
         }
         .license-name {
           color: $gray;
           display: block;
-          font-size: 0.6rem;
+          font-size: 0.7rem;
         }
       }
       .learn-why {
         bottom: 0;
         font-weight: 300;
         font-style: italic;
-        font-size: 0.7rem;
+        font-size: 0.8rem;
         position: absolute;
       }
     }

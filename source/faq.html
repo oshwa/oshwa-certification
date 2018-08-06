@@ -7,8 +7,9 @@ page_template: faq
 permalink: /basics/faq.html
 ---
 
-<main role="main" id="{{page.page_template}}"> <!-- main content starts here -->
+{% assign faq = site.data.contentful.faqPage.faqPage %}
 
+<main role="main" id="{{page.page_template}}"> <!-- main content starts here -->
 
   <section class="top-section top-section--{{page.page_template}}">
     <div class="img-overlay"></div>
@@ -23,86 +24,18 @@ permalink: /basics/faq.html
     <div class="row">
       <div class="column">
         <dl class="accordion">
-          <div class="accordion__item js-open-accordion">
-            <dt>
-              <p>Lorem ipsum dolor sit amet, consectetur.</p>
-            </dt>
-            <dd>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus rem, ducimus quae distinctio nihil vero eaque asperiores vel blanditiis, nobis explicabo saepe cumque possimus aut deleniti a. Porro, quia, nam.</p>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus rem, ducimus quae distinctio nihil vero eaque asperiores vel blanditiis, nobis explicabo saepe cumque possimus aut deleniti a. Porro, quia, nam.</p>
-            </dd>
-          </div>
-          <div class="accordion__item js-open-accordion">
-            <dt>
-              <p>Lorem ipsum dolor sit amet.</p>
-            </dt>
-            <dd>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus rem, ducimus quae distinctio nihil vero eaque asperiores vel blanditiis, nobis explicabo saepe cumque possimus aut deleniti a. Porro, quia, nam.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus rem, ducimus quae distinctio nihil vero eaque asperiores vel blanditiis, nobis explicabo saepe cumque possimus aut deleniti a. Porro, quia, nam.</p>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus rem, ducimus quae distinctio nihil vero eaque asperiores vel blanditiis, nobis explicabo saepe cumque possimus aut deleniti a. Porro, quia, nam.</p>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus rem, ducimus quae distinctio nihil vero eaque asperiores vel blanditiis, nobis explicabo saepe cumque possimus aut deleniti a. Porro, quia, nam.</p>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus rem, ducimus quae distinctio nihil vero eaque asperiores vel blanditiis, nobis explicabo saepe cumque possimus aut deleniti a. Porro, quia, nam.</p>
-            </dd>
-          </div>
-          <div class="accordion__item js-open-accordion">
-            <dt>
-              <p>Lorem ipsum dolor sit amet, consectetur.</p>
-            </dt>
-            <dd>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus rem, ducimus quae distinctio nihil vero eaque asperiores vel blanditiis, nobis explicabo saepe cumque possimus aut deleniti a. Porro, quia, nam.</p>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus rem, ducimus quae distinctio nihil vero eaque asperiores vel blanditiis, nobis explicabo saepe cumque possimus aut deleniti a. Porro, quia, nam.</p>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus rem, ducimus quae distinctio nihil vero eaque asperiores vel blanditiis, nobis explicabo saepe cumque possimus aut deleniti a. Porro, quia, nam.</p>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus rem, ducimus quae distinctio nihil vero eaque asperiores vel blanditiis, nobis explicabo saepe cumque possimus aut deleniti a. Porro, quia, nam.</p>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus rem, ducimus quae distinctio nihil vero eaque asperiores vel blanditiis, nobis explicabo saepe cumque possimus aut deleniti a. Porro, quia, nam.</p>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus rem, ducimus quae distinctio nihil vero eaque asperiores vel blanditiis, nobis explicabo saepe cumque possimus aut deleniti a. Porro, quia, nam.</p>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus rem, ducimus quae distinctio nihil vero eaque asperiores vel blanditiis, nobis explicabo saepe cumque possimus aut deleniti a. Porro, quia, nam.</p>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus rem, ducimus quae distinctio nihil vero eaque asperiores vel blanditiis, nobis explicabo saepe cumque possimus aut deleniti a. Porro, quia, nam.</p>
-            </dd>
-          </div>
-          <div class="accordion__item js-open-accordion">
-            <dt>
-              <p>Lorem ipsum dolor sit amet, consectetur.</p>
-            </dt>
-            <dd>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus rem, ducimus quae distinctio nihil vero eaque asperiores vel blanditiis, nobis explicabo saepe cumque possimus aut deleniti a. Porro, quia, nam.</p>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus rem, ducimus quae distinctio nihil vero eaque asperiores vel blanditiis, nobis explicabo saepe cumque possimus aut deleniti a. Porro, quia, nam.</p>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus rem, ducimus quae distinctio nihil vero eaque asperiores vel blanditiis, nobis explicabo saepe cumque possimus aut deleniti a. Porro, quia, nam.</p>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus rem, ducimus quae distinctio nihil vero eaque asperiores vel blanditiis, nobis explicabo saepe cumque possimus aut deleniti a. Porro, quia, nam.</p>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus rem, ducimus quae distinctio nihil vero eaque asperiores vel blanditiis, nobis explicabo saepe cumque possimus aut deleniti a. Porro, quia, nam.</p>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus rem, ducimus quae distinctio nihil vero eaque asperiores vel blanditiis, nobis explicabo saepe cumque possimus aut deleniti a. Porro, quia, nam.</p>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus rem, ducimus quae distinctio nihil vero eaque asperiores vel blanditiis, nobis explicabo saepe cumque possimus aut deleniti a. Porro, quia, nam.</p>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus rem, ducimus quae distinctio nihil vero eaque asperiores vel blanditiis, nobis explicabo saepe cumque possimus aut deleniti a. Porro, quia, nam.</p>
-            </dd>
-          </div>
-          <div class="accordion__item js-open-accordion">
-            <dt>
-              <p>Lorem ipsum dolor sit amet, consectetur.</p>
-            </dt>
-            <dd>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus rem, ducimus quae distinctio nihil vero eaque asperiores vel blanditiis, nobis explicabo saepe cumque possimus aut deleniti a. Porro, quia, nam.</p>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus rem, ducimus quae distinctio nihil vero eaque asperiores vel blanditiis, nobis explicabo saepe cumque possimus aut deleniti a. Porro, quia, nam.</p>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus rem, ducimus quae distinctio nihil vero eaque asperiores vel blanditiis, nobis explicabo saepe cumque possimus aut deleniti a. Porro, quia, nam.</p>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus rem, ducimus quae distinctio nihil vero eaque asperiores vel blanditiis, nobis explicabo saepe cumque possimus aut deleniti a. Porro, quia, nam.</p>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus rem, ducimus quae distinctio nihil vero eaque asperiores vel blanditiis, nobis explicabo saepe cumque possimus aut deleniti a. Porro, quia, nam.</p>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus rem, ducimus quae distinctio nihil vero eaque asperiores vel blanditiis, nobis explicabo saepe cumque possimus aut deleniti a. Porro, quia, nam.</p>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus rem, ducimus quae distinctio nihil vero eaque asperiores vel blanditiis, nobis explicabo saepe cumque possimus aut deleniti a. Porro, quia, nam.</p>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus rem, ducimus quae distinctio nihil vero eaque asperiores vel blanditiis, nobis explicabo saepe cumque possimus aut deleniti a. Porro, quia, nam.</p>
-            </dd>
-          </div>
-          <div class="accordion__item js-open-accordion">
-            <dt>
-              <p>Lorem ipsum dolor sit amet, consectetur.</p>
-            </dt>
-            <dd>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus rem, ducimus quae distinctio nihil vero eaque asperiores vel blanditiis, nobis explicabo saepe cumque possimus aut deleniti a. Porro, quia, nam.</p>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus rem, ducimus quae distinctio nihil vero eaque asperiores vel blanditiis, nobis explicabo saepe cumque possimus aut deleniti a. Porro, quia, nam.</p>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus rem, ducimus quae distinctio nihil vero eaque asperiores vel blanditiis, nobis explicabo saepe cumque possimus aut deleniti a. Porro, quia, nam.</p>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus rem, ducimus quae distinctio nihil vero eaque asperiores vel blanditiis, nobis explicabo saepe cumque possimus aut deleniti a. Porro, quia, nam.</p>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus rem, ducimus quae distinctio nihil vero eaque asperiores vel blanditiis, nobis explicabo saepe cumque possimus aut deleniti a. Porro, quia, nam.</p>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus rem, ducimus quae distinctio nihil vero eaque asperiores vel blanditiis, nobis explicabo saepe cumque possimus aut deleniti a. Porro, quia, nam.</p>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus rem, ducimus quae distinctio nihil vero eaque asperiores vel blanditiis, nobis explicabo saepe cumque possimus aut deleniti a. Porro, quia, nam.</p>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus rem, ducimus quae distinctio nihil vero eaque asperiores vel blanditiis, nobis explicabo saepe cumque possimus aut deleniti a. Porro, quia, nam.</p>
-            </dd>
-          </div>
+          {% for questions in faq %}
+            {% for question in questions.faq_ordered %}
+            <div class="accordion__item js-open-accordion">
+              <dt>
+                {{ question.question | markdownify }}
+              </dt>
+              <dd>
+                {{ question.answer | markdownify }}
+              </dd>
+            </div>
+            {% endfor %}
+          {% endfor %}
         </dl>
       </div>
     </div>

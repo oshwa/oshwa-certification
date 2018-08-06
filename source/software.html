@@ -27,7 +27,7 @@ permalink: /process/software.html
   <section class="page-section--nav">
     <nav class="internal-menu">
       <a class="internal-menu__item js-active-item" data-order="1" data-target="#about">About</a>
-      <a class="internal-menu__item" data-order="2" data-target="#spectrum" >Spectrum</a>
+      <!-- <a class="internal-menu__item" data-order="2" data-target="#spectrum" >Spectrum</a> -->
       <a class="internal-menu__item" data-order="3" data-target="#licensing">Licensing</a>
       <a class="internal-menu__item" data-order="4" data-target="#commercialization" >Commercializaton</a>
     </nav>
@@ -57,7 +57,7 @@ permalink: /process/software.html
 
     <div class="row">
       <div class="column large-12">
-     {{ module.spectrum_description | markdownify}}
+        {{ module.spectrum_description | markdownify }}
       </div>
     </div>
 
@@ -75,13 +75,13 @@ permalink: /process/software.html
     <div class="row">
       <div class="column large-12">
         {{ module.licensing_description | markdownify }}
-        {%include slide-panel.html%}
+        {% include slide-panel.html %}
       </div>
     </div>
 
     <div class="row">
       <div class="column small-12 large-12">
-      <h4>Recommended Creative Commons Licenses for Software</h4>
+      <h4>Recommended Licenses for Software</h4>
       </div>
       <div class="column small-12 large-12">
         <ul class="license-list">
@@ -108,7 +108,7 @@ permalink: /process/software.html
 
               <span class="modal-container__title">{{example.project_owner}} {{example.project_name}}</span>
               <div class="modal-container__tags">
-                {% for tag in example.software_license.license_type %}
+                {% for tag in example.project_types %}
                   <span class="tag">{{tag}}</span>
                 {% endfor %}
               </div>
@@ -117,7 +117,7 @@ permalink: /process/software.html
                 <span class="license-name">{{example.software_license.license_name}}</span>
               </div>
               <span class="learn-why">Learn why</span>
-              {% include examples_software_modal.html example=example license_type="software"%}
+              {% include examples_documentation_modal.html example=example license_type="software"%}
             </div>
           {% endfor %}
           </div>
