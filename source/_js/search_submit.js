@@ -1,5 +1,5 @@
 const SearchSubmit = {
-  listUrl: '/list.html',
+  listUrl: '/oshwa/list.html',
   searchString: $('#searchfield'),
   submitSearch: () => {
     $('.js-search-submit').on('click', () => {
