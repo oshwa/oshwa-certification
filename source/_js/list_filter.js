@@ -134,7 +134,7 @@ const ListFilter = {
       $('input[type="checkbox"]:checked').prop('checked', false);
 
       if (window.location.search !== '') {
-        window.location.href = window.location.origin + '/list.html';
+        window.location.href = window.location.origin + '/oshwa/list.html';
       }
 
       ListFilter.displayResults();
