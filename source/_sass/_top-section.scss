@@ -23,6 +23,9 @@
   &--faq,
   &--process,
   &--documentation,
+  &--software,
+  &--hardware,
+  &--branding,
   &--directory {
     background-color: white;
     background-image: url('../images/patent-line-transpo.png');
@@ -104,15 +107,18 @@
       font-size: 2rem;
     }
   }
+
   &--process,
-  &--documentation {
+  &--documentation,
+  &--software,
+  &--hardware,
+  &--branding {
     .img-overlay {
       background-color: $teal;
       position: initial;
     }
     background: linear-gradient(rgba($teal, 0.85), rgba($teal, 0.85)),
       url('../images/patent-line-transpo.png') no-repeat right;
-
     background-size: 50%;
     @include breakpoint($medium-only) {
       background-size: 70%;
@@ -276,5 +282,13 @@
       }
     }
   }
+  &--documentation,
+  &--software,
+  &--hardware,
+  &--branding {
+    h1 {
+      margin-bottom: 1.2rem;
+    }
+ }
 
 }

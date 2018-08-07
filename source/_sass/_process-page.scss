@@ -1,25 +1,67 @@
-#documentation {
+#documentation,
+#software,
+#hardware,
+#branding {
   .checklist {
     position: absolute;
     right: 0;
     top: 0;
     color: $teal;
     font-size: 3rem;
-
     cursor: pointer;
-
     .material-icons {
       font-size: 3rem;
     }
   }
   .top-section {
-    h1 {
-      padding: 0;
-      white-space: nowrap;
-      &:before {
-        content: 'library_books';
-        @extend .u-material-icons;
-        padding-right: 1rem;
+    &--documentation {
+      h1 {
+        padding: 0;
+        white-space: nowrap;
+        &:before {
+          content: 'library_books';
+          @extend .u-material-icons;
+          padding-right: 1rem;
+        }
+      }
+    }
+    &--software {
+      h1 {
+        padding: 0;
+        white-space: nowrap;
+        &:before {
+          content: 'code';
+          @extend .u-material-icons;
+          padding-right: 1rem;
+          font-size: 2.5rem;
+          vertical-align: middle;
+          font-weight: 800;
+          margin-top: -5px;
+        }
+      }
+    }
+    &--hardware {
+      h1 {
+        padding: 0;
+        white-space: nowrap;
+        &:before {
+          content: 'developer_board';
+          @extend .u-material-icons;
+          padding-right: 1rem;
+          font-size: 2.5rem;
+          vertical-align: middle;
+          margin-top: -5px;
+        }
+      }
+    }
+    &--branding {
+      h1 {
+        padding: 0;
+        white-space: nowrap;
+        svg {
+          height: 2rem;
+          padding-right: 1rem;
+        }
       }
     }
   }
@@ -37,7 +79,6 @@
     }
     ul,
     ol {
-      list-style: none;
       font-size: 0.9rem;
       li {
         padding: 0.5rem;
@@ -88,13 +129,19 @@
   }
   .license-list {
     text-align: center;
+    margin-bottom: 2rem;
     li {
       font-size: 1.6rem;
       font-weight: 700;
       color: $teal;
+      list-style: none;
+      margin-bottom: .6rem;
       a {
         text-decoration: none;
         cursor: pointer;
+        &:hover {
+          color: darken($teal, 10);
+        }
       }
     }
   }

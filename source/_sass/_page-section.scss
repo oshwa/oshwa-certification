@@ -37,7 +37,10 @@
 }
 
 #process,
-#documentation {
+#documentation,
+#software,
+#hardware,
+#branding {
   .certification-panel {
     background-color: $light-blue;
     h3 {

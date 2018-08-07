@@ -1,13 +1,13 @@
 ---
 layout: default
-title: Documentation
+title: Hardware
 description:
 seo_image_path: #'/images/media/filename.jpg'
-page_template: documentation
-permalink: /process/documentation.html
+page_template: hardware
+permalink: /process/hardware.html
 ---
 
-{% assign content = site.data.contentful.learningModule.learningModule | where: 'module_title','Documentation' %}
+{% assign content = site.data.contentful.learningModule.learningModule | where: 'module_title','Hardware' %}
 {% assign module = content[0]%}
 
 {%assign temp_licenses = site.data.temp.licenses%}
@@ -57,7 +57,7 @@ permalink: /process/documentation.html
 
     <div class="row">
       <div class="column large-12">
-     {{ module.spectrum_description | markdownify}}
+        {{ module.spectrum_description | markdownify }}
       </div>
     </div>
 
@@ -75,13 +75,13 @@ permalink: /process/documentation.html
     <div class="row">
       <div class="column large-12">
         {{ module.licensing_description | markdownify }}
-        {%include slide-panel.html%}
+        {% include slide-panel.html %}
       </div>
     </div>
 
     <div class="row">
       <div class="column small-12 large-12">
-      <h4>Recommended Licenses for Documentation</h4>
+      <h4>Recommended Licenses for Hardware</h4>
       </div>
       <div class="column small-12 large-12">
         <ul class="license-list">
@@ -99,7 +99,7 @@ permalink: /process/documentation.html
     <div class="modals-wrapper">
       <div class="row">
         <div class="column small-12 large-12 modals-container">
-          <h3>Examples of Documentation Licensing</h3>
+          <h3>Examples of Hardware Licensing</h3>
         </div>
         <div class="column large-12">
           <div class="row">
@@ -114,10 +114,10 @@ permalink: /process/documentation.html
               </div>
               <div class="modal-container__meta">
                 <span class="license-header">License</span>
-                <span class="license-name">{{example.documentation_license.license_name}}</span>
+                <span class="license-name">{{example.hardware_license.license_name}}</span>
               </div>
               <span class="learn-why">Learn why</span>
-              {% include examples_documentation_modal.html example=example license_type="documentation"%}
+              {% include examples_documentation_modal.html example=example license_type="hardware"%}
             </div>
           {% endfor %}
           </div>

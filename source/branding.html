@@ -1,17 +1,19 @@
 ---
 layout: default
-title: Documentation
+title: Branding
 description:
 seo_image_path: #'/images/media/filename.jpg'
-page_template: documentation
-permalink: /process/documentation.html
+page_template: branding
+permalink: /process/branding.html
 ---
 
-{% assign content = site.data.contentful.learningModule.learningModule | where: 'module_title','Documentation' %}
+{% assign content = site.data.contentful.learningModule.learningModule | where: 'module_title','Branding' %}
 {% assign module = content[0]%}
 
 {%assign temp_licenses = site.data.temp.licenses%}
-{%assign temp_licensing_examples = site.data.temp.licensing_examples%}
+{% comment %}
+  {%assign temp_product-design_examples = site.data.temp.[productdesign]_examples%}
+{% endcomment %}
 
 <main role="main" id="{{page.page_template}}"> <!-- main content starts here -->
 
@@ -19,7 +21,7 @@ permalink: /process/documentation.html
     <div class="img-overlay"></div>
     <div class="row">
       <div class="column large-5 medium-5 small-12 intro">
-        <h1>{{module.module_title}}</h1>
+        <h1><svg class="branding-icon" viewBox="0 0 36.93 44.5" xmlns="http://www.w3.org/2000/svg"><g fill="white"><path d="m2.42 24.74h14.03v19.76h-14.03z"/><path d="m20.44 24.74h14.03v19.76h-14.03z"/><path d="m0 13.18h16.49v9.32h-16.49z"/><path d="m20.44 13.18h16.49v9.32h-16.49z"/><path d="m25.19 11.7 6.49-5.16-5.69-.09-.09-5.69-7.44 9.32-7.97-10.08-.09 5.51-5.52.09 7.71 6.1z"/></g></svg>{{module.module_title}}</h1>
       </div>
     </div>
   </section>
@@ -28,8 +30,8 @@ permalink: /process/documentation.html
     <nav class="internal-menu">
       <a class="internal-menu__item js-active-item" data-order="1" data-target="#about">About</a>
       <a class="internal-menu__item" data-order="2" data-target="#spectrum" >Spectrum</a>
-      <a class="internal-menu__item" data-order="3" data-target="#licensing">Licensing</a>
-      <a class="internal-menu__item" data-order="4" data-target="#commercialization" >Commercializaton</a>
+      <a class="internal-menu__item" data-order="3" data-target="#product-design">Product Design</a>
+      <a class="internal-menu__item" data-order="4" data-target="#registration" >Registration</a>
     </nav>
   </section>
 
@@ -65,41 +67,24 @@ permalink: /process/documentation.html
 
   </section>
 
-  <section class="page-section page-section--process page-section--modals slide-panel__wrapper--compact" data-nav-order="3" id="licensing">
+  <section class="page-section page-section--process page-section--modals slide-panel__wrapper--compact" data-nav-order="3" id="product-design">
     <div class="row">
       {% include checklist-button.html content=module.checklist %}
       <div class="column large-12">
-        <h2>Licensing</h2>
+        <h2>Product Design</h2>
       </div>
     </div>
     <div class="row">
       <div class="column large-12">
-        {{ module.licensing_description | markdownify }}
+        {{ module.product-design_description | markdownify }}
         {%include slide-panel.html%}
-      </div>
-    </div>
-
-    <div class="row">
-      <div class="column small-12 large-12">
-      <h4>Recommended Licenses for Documentation</h4>
-      </div>
-      <div class="column small-12 large-12">
-        <ul class="license-list">
-
-          {% for license in module.recommended_licenses %}
-            <li><a class="slide-panel__open-trigger" data-term="{{license.license_name | slugify}}">{{ license.license_name }}</a></li>
-          {% endfor %}
-        </ul%>
-        {% for license in module.recommended_licenses %}
-          {% include slide-panel.html data=license type="definition"%}
-        {% endfor %}
       </div>
     </div>
 
     <div class="modals-wrapper">
       <div class="row">
         <div class="column small-12 large-12 modals-container">
-          <h3>Examples of Documentation Licensing</h3>
+          <h3>Branding Information Examples</h3>
         </div>
         <div class="column large-12">
           <div class="row">
@@ -114,10 +99,10 @@ permalink: /process/documentation.html
               </div>
               <div class="modal-container__meta">
                 <span class="license-header">License</span>
-                <span class="license-name">{{example.documentation_license.license_name}}</span>
+                <span class="license-name">{{example.branding_license.license_name}}</span>
               </div>
               <span class="learn-why">Learn why</span>
-              {% include examples_documentation_modal.html example=example license_type="documentation"%}
+              {% include examples_branding_modal.html example=example license_type="branding"%}
             </div>
           {% endfor %}
           </div>
@@ -126,16 +111,16 @@ permalink: /process/documentation.html
     </div>
   </section>
 
-  <section class="page-section page-section--process slide-panel__wrapper--compact" data-nav-order="4" id="commercialization">
+  <section class="page-section page-section--process slide-panel__wrapper--compact" data-nav-order="4" id="registration">
     <div class="row">
       {% include checklist-button.html content=module.checklist %}
       <div class="column large-12">
-        <h2>Commercialization</h2>
+        <h2>Registration</h2>
       </div>
     </div>
     <div class="row">
       <div class="column large-12">
-        {{module.commercialization_description | markdownify }}
+        {{module.registration_description | markdownify }}
       </div>
     </div>
   </section>

@@ -1,5 +1,5 @@
 const TagFilter = {
-  listUrl: '/list.html',
+  listUrl: '/oshwa/list.html',
   filterByTag: () => {
     $('.project__type').on('click', e => {
       const query = e.target.getAttribute('type-tag');
