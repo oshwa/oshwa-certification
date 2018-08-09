@@ -83,14 +83,14 @@ page_template: exemplar
   </section>
 
   <div class="row">
-    <div class="column large-12 spectrum-container">
+    <div class="column large-12">
       <div class="spectrum-container">
         <div class="row expanded">
           <div class="column">
-            <p class="label">Less<br>Protectable</p>
+            <p class="label label--exemplar">Less<br>Protectable</p>
           </div>
           <div class="column" style="text-align: right">
-            <p class="label">More<br>Protectable</p>
+            <p class="label label--exemplar">More<br>Protectable</p>
           </div>
         </div>
         <div id="spectrum-line">
@@ -103,7 +103,7 @@ page_template: exemplar
       </div>
 
       {% for schematic in page.spectrum_items %}
-        <div class="schematic-description {{ schematic.position }}">
+        <div class="schematic-description" position-attr="{{ schematic.position }}">
           <h4>{{schematic.title}}</h4>
           <div class="spectrum-image">
             <img src="{{schematic.image.url}}" alt="{{schematic.image.title}}"/>

@@ -1,5 +1,5 @@
 <div class="row">
-  <div class="column large-12 spectrum-container">
+  <div class="column large-12">
     <div class="spectrum-container">
       <div class="row expanded">
         <div class="column">
@@ -19,7 +19,7 @@
     </div>
 
     {% for schematic in module.spectrum_items %}
-      <div class="schematic-description {{ schematic.position }}">
+      <div class="schematic-description" position-attr="{{ schematic.position }}">
         <h4>{{schematic.title}}</h4>
         <div class="spectrum-image">
           <img src="{{schematic.image.url}}" alt="{{schematic.image.title}}"/>
