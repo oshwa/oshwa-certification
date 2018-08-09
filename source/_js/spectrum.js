@@ -1,6 +1,8 @@
 const Spectrum = {
-  schematicDescription: document.querySelectorAll('.schematic-description'),
+  schematicDescription: undefined,
   targetCircles: () => {
+    Spectrum.schematicDescription = $('.schematic-description');
+
     $('.circle').on('click', e => {
       const clickedCircle = $(e.currentTarget).attr('circle-attr');
 
@@ -17,7 +19,7 @@ const Spectrum = {
   showData: circleAttr => {
     Spectrum.schematicDescription = [].slice.call(Spectrum.schematicDescription);
     Spectrum.schematicDescription.forEach(item => {
-      if (item.classList.contains(circleAttr)) {
+      if (item.getAttribute('position-attr') === circleAttr) {
         item.classList.toggle('display');
       } else {
         item.classList.remove('display');
