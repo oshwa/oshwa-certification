@@ -93,7 +93,9 @@ page_template: profile
         <div class="column large-12">
           <h5>Citations</h5>
           <div class="citations">
-            {{ page.citations | markdownify }}
+            {% for citation in page.citations %}
+              <a href="{{ citation.url }}">{{ citation.title }}</a>
+            {% endfor %}
           </div>
         </div>
       </div>
