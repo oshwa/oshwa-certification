@@ -2,12 +2,6 @@
   color: $gray;
   text-left: center;
   padding: 2rem 0;
-  .spectrum-image {
-    text-align: center;
-    img {
-      max-width: 65%;
-    }
-  }
   .label {
     font-size: 1.2rem;
     font-weight: 800;
@@ -19,6 +13,12 @@
     &--exemplar {
       font-size: 1rem;
     }
+  }
+}
+.spectrum-image {
+  text-align: center;
+  img {
+    max-width: 80%;
   }
 }
 #spectrum-line {
@@ -112,6 +112,18 @@
 
 .schematic-description {
   display: none;
+  h5 {
+    color: $gray;
+    font-size: 1rem;
+    font-weight: 700;
+  }
+}
+
+.exemplar-spectrum-title {
+  color: $gray;
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-transform: none;
 }
 
 .display {

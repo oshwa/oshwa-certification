@@ -6,31 +6,29 @@
     "modal__close material-icons js-close-modal">close</i>
   </div>
   <div class="modal__content">
-
+    <h3>{{ example.project_name }}</h3>
     {% if license_type=="documentation" %}
       <p class="license-header">Documentation License:</p>
       <p class="license-name">{{ example.documentation_license.license_name }}</p>
       <p class="license-why">Why this license?</p>
       <p>{{ example.documentation_license_explanation | markdownify }}</p>
-
     {% else if license_type == "hardware"%}
       <p class="license-header">Hardware License:</p>
-      <p class="license-name">{{ example.hardware_license }}</p>
+      <p class="license-name">{{ example.hardware_license.license_name }}</p>
       <p class="license-why">Why this license?</p>
       <p>{{ example.hardware_license_explanation | markdownify }}</p>
     {% else if license_type == "software"%}
       <p class="license-header">Software License:</p>
-      <p class="license-name">{{ example.software_license }}</p>
+      <p class="license-name">{{ example.software_license.license_name }}</p>
       <p class="license-why">Why this license?</p>
       <p>{{ example.software_license_explanation | markdownify }}</p>
     {% else if license_type == "branding"%}
       <p class="license-header">Branding Information:</p>
       <p>{{ example.branding_information | markdownify }}</p>
-
     {% endif %}
 
     <div class="button-container">
-      <a href="" class="learn-more">Learn more about this project's licensing</a>
+      <a href="{{ example.project_uid | prepend: '/exemplar/'| append: '.html' | relative_url }}" class="learn-more">Learn more about this project's licensing</a>
     </div>
   </div>
 </div>

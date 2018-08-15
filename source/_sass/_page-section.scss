@@ -57,9 +57,12 @@
   .page-section {
     color: $gray;
     h2 {
-      font-size: 1.6rem;
+      font-size: 1.9rem;
       font-weight: 700;
       color: $teal;
+      @include breakpoint($small-only) {
+        font-size: 1.5rem;
+      }
     }
     h3 {
       font-size: 1rem;
@@ -70,12 +73,15 @@
       font-size: 0.9rem;
     }
     &--panel {
-      padding-left: 10px;
+      @include breakpoint($large) {
+        padding: 2rem;
+      }
       .button-container {
         text-align: center;
       }
       .button {
-        padding: 0.9rem 2rem;
+        padding: 0.6rem 2.2rem;
+        margin: 1.2rem auto;
         &--teal {
           background-color: $teal;
           color: #fff;
@@ -108,8 +114,10 @@
             font-size: 0.8rem;
           }
           &__description {
-            font-size: 0.7rem;
+            font-size: 0.8rem;
             font-weight: 500;
+            position: relative;
+            top: -5px;
           }
           &__icon {
             padding-right: 1rem;
@@ -124,6 +132,12 @@
             }
           }
         }
+      }
+      .first-row {
+        margin-bottom: 2rem;
+      }
+      .second-row {
+        margin: 2rem auto;
       }
     }
   }
