@@ -114,10 +114,10 @@ permalink: /process/software.html
               </div>
               <div class="modal-container__meta">
                 <span class="license-header">License</span>
-                <span class="license-name">{{example.software_license.license_name}}</span>
+                <span class="license-name">{{ example.software_license.license_name }}</span>
               </div>
               <span class="learn-why">Learn why</span>
-              {% include examples_documentation_modal.html example=example license_type="software"%}
+              {% include examples_modal.html example=example license_type="software" %}
             </div>
           {% endfor %}
           </div>

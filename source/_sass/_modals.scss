@@ -22,7 +22,7 @@
       font-weight: 700;
       line-height: 1;
       margin: 1rem 0;
-      min-height: 10rem;
+      min-height: 11rem;
       position: relative;
       text-transform: uppercase;
       &__title {
@@ -32,15 +32,18 @@
         padding: 0;
       }
       &__tags {
-        padding: 0.7rem 0;
+        padding: 0.5rem 0;
         .tag {
           background-color: $teal;
           color: $white;
+          display: inline-block;
           font-size: 0.7rem;
           padding: 0.5rem 0.7rem;
+          margin-top: 5px;
         }
       }
       &__meta {
+        margin-bottom: 1rem;
         .license-header {
           color: $teal;
           display: block;
@@ -91,9 +94,10 @@
         h3 {
           color: $white;
           margin: 0.5rem 0;
+          font-size: 1.5rem;
         }
         p {
-          font-size: 0.8rem;
+          font-size: 0.9rem;
           font-weight: 300;
           margin-top: 0;
           text-transform: none;
@@ -101,17 +105,17 @@
         .license-header,
         .license-name {
           color: $white;
-          font-size: 0.7rem;
+          font-size: 1rem;
           font-weight: 700;
           margin: 1px;
           text-transform: uppercase;
         }
-
         .license-why {
           color: $white;
-          font-size: 0.7rem;
+          font-size: 1rem;
           font-weight: 700;
-          padding-top: 1rem;
+          padding-top: 2rem;
+          margin: 0;
           text-transform: uppercase;
         }
         .button-container {
@@ -119,10 +123,13 @@
           text-align: right;
         }
         .learn-more {
-          font-size: 0.7rem;
+          font-size: 1rem;
           font-weight: 700;
           text-transform: uppercase;
           text-decoration: none;
+          &:hover {
+            border-bottom: 1px solid white;
+          }
         }
       }
     }
