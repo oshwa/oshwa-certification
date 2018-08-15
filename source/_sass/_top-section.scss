@@ -188,10 +188,11 @@
       padding-right: 0;
     }
     h1 {
-      font-size: 1.6rem;
+      font-size: 2rem;
       font-weight: 800;
       text-align: left;
       text-transform: uppercase;
+      margin: 1rem auto;
       padding-top: 1rem;
       padding-bottom: 1rem;
       @include breakpoint($medium-only) {
