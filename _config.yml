@@ -126,10 +126,10 @@ contentful:
           content_type: faqPage
 
 page_gen:
-  # - data: 'contentful.project.project'
-  #   template: 'profile_template'
-  #   name: 'oshwa_uid'
-  #   dir: 'profile'
+  - data: 'contentful.project.project'
+    template: 'profile_template'
+    name: 'oshwa_uid'
+    dir: 'profile'
   - data: 'contentful.exemplarProject.exemplarProject'
     template: 'exemplar_template'
     name: 'project_uid'

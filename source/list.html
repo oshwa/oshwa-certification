@@ -81,20 +81,24 @@ page_template: list
         <div class="row align-center">
           <div class="column small-12 medium-8 large-4">
             <span class="dropdown-title">Documentation License</span>
-            <div class="select" id="">
+            <div class="select">
               <select class="dropdown" id="documentation" data-filter="documentation">
                 <option id="all" selected>
                   Select one
                 </option>
                 {% for license in documentation_license %}
-                  <option id="{{license | slugify}}">{{license}}</option>
+                  {% if license == "CC BY" %}
+                    <option id="{{license | slugify}}-ccby">{{license}}</option>
+                  {% else %}
+                    <option id="{{license | slugify}}">{{license}}</option>
+                  {% endif %}
                 {% endfor %}
               </select>
             </div>
           </div>
           <div class="column small-12 medium-8 large-4">
             <span class="dropdown-title">Hardware License</span>
-            <div class="select" id="">
+            <div class="select">
               <select class="dropdown" id="hardware" data-filter="hardware">
                 <option id="all" selected>
                   Select one
@@ -107,7 +111,7 @@ page_template: list
           </div>
           <div class="column small-12 medium-8 large-4">
             <span class="dropdown-title">Software License</span>
-            <div class="select" id="">
+            <div class="select">
               <select class="dropdown" id="software" data-filter="software">
                 <option id="all" selected>
                   Select one
@@ -156,7 +160,7 @@ page_template: list
                 <!-- Hidden fields -->
                 <td class="hardware hidden" hardware="all {{project.hardware_license | slugify}} {{project.hardware_license}}">{{project.hardware_license}}</td>
                 <td class="software hidden" software="all {{project.software_license | slugify}} {{project.software_license}}">{{project.software_license}}</td>
-                <td class="documentation hidden" documentation="all {{project.documentation_license | slugify}} {{project.documentation_license}}">{{project.documentation_license}}</td>
+                <td class="documentation hidden" documentation="all {% if project.documentation_license == "CC BY" %} {{project.documentation_license | slugify}}-ccby {% else %} {{project.documentation_license | slugify}} {% endif %} {{project.documentation_license}}">{{project.documentation_license}}</td>
                 <td class="keywords hidden">{% for word in project.project_keywords %}{{ word }} {% endfor %}</td>
               </tr>
             {% endfor %}

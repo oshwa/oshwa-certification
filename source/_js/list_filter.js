@@ -129,17 +129,19 @@ const ListFilter = {
       ListFilter.projectList.filter();
       ListFilter.projectList.sort('name', { order: 'asc' });
 
-      $('.search__input').val('');
-      $('.dropdown').prop('selectedIndex', 0);
-      $('input[type="checkbox"]:checked').prop('checked', false);
-
       if (window.location.search !== '') {
         window.location.href = window.location.origin + '/oshwa/list.html';
       }
 
+      ListFilter.clearFormInputs();
       ListFilter.displayResults();
       ListFilter.displayResultQueries();
     });
+  },
+  clearFormInputs: () => {
+    $('.search__input').val('');
+    $('.dropdown').prop('selectedIndex', 0);
+    $('input[type="checkbox"]:checked').prop('checked', false);
   },
   displayResults: () => {
     const projectCount = $('.project').length;
@@ -179,6 +181,7 @@ const ListFilter = {
     this.filterByCheckboxes();
     this.filterByUrlParams();
     this.clearAllFilters();
+    this.clearFormInputs();
     this.displayResults();
   }
 };
