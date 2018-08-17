@@ -8,13 +8,13 @@ page_template: list
 
 {% assign projects = site.data.contentful.project.project %}
 
-<!-- Assign documentation License from data -->
-{% assign documentation_license = "" | split: "" %}
+<!-- Assign countries from data -->
+{% assign countries = "" | split: "" %}
 {% for project in projects %}
-  {% assign documentation_license = documentation_license | push: project.documentation_license | join: ", " %}
-  {% assign documentation_license = documentation_license | split: ", " | uniq %}
+  {% assign countries = countries | push: project.country | join: ", " %}
+  {% assign countries = countries | split: ", " | uniq %}
 {% endfor %}
-{% assign documentation_license = documentation_license | sort %}
+{% assign countries = countries | sort %}
 
 <!-- Assign software License from data -->
 {% assign software_license = "" | split: "" %}
@@ -41,131 +41,108 @@ page_template: list
 {% assign project_types = project_types | sort %}
 
 <main role="main" id={{page.page_template}}> <!-- main content starts here -->
-  <section class="top-section top-section--{{page.page_template}}">
-    <div class="row expanded align-left">
-      <div class="column large-10">
-        <h1>Certified Open Source Hardware Projects</h1>
-      </div>
-    </div>
-    <div class="row expanded align-center">
-      <div class="column large-12 small-12 search-form">
-        <form action="" class="search search--fixed js-target-search">
-          <input class="search__input fuzzy-search" id="searchfield" placeholder="Enter a project name or keyword (e.g. microcontroller)" type="text">
-          <input class="search-submit js-search-submit js-trigger-search search__trigger" type=
-          "submit" value="search">
-        </form>
-      </div>
-      <div class="open-filters">
-        <h2>filters</h2>
-        <i class="material-icons expand">
-          expand_more
-        </i>
-      </div>
 
-      <div class="column large-12 small-12 filter-container">
-        <span>Project Categories</span>
-        <div class="checkbox-container">
-          <form class="checkbox-form">
-            <div class="row">
-              {% for type in project_types %}
-                <div class="column large-3 small-6 medium-3">
-                  <div class="checkbox">
-                    <input class="form-type" name="type" value="{{type | slugify}}" type="checkbox" data-value="{{type | slugify}}" id="{{type}}">
-                    <label class="project-type" for="{{type}}">{{type}}</label>
-                  </div>
-                </div>
-              {% endfor %}
-            </div>
+  <section class="page-section">
+    <div class="row expanded">
+      <div class="column large-3 filter-container">
+
+        <div class="header">Search and Filters</div>
+        <div class="search-form">
+          <form action="" class="search search--fixed js-target-search">
+            <input class="search__input fuzzy-search" id="searchfield" placeholder="" type="text">
+            <input class="search-submit js-search-submit js-trigger-search search__trigger" type=
+            "submit" value="search">
           </form>
         </div>
-        <div class="row align-center">
-          <div class="column small-12 medium-8 large-4">
-            <span class="dropdown-title">Documentation License</span>
-            <div class="select">
-              <select class="dropdown" id="documentation" data-filter="documentation">
-                <option id="all" selected>
-                  Select one
-                </option>
-                {% for license in documentation_license %}
-                  {% if license == "CC BY" %}
-                    <option id="{{license | slugify}}-ccby">{{license}}</option>
-                  {% else %}
-                    <option id="{{license | slugify}}">{{license}}</option>
-                  {% endif %}
-                {% endfor %}
-              </select>
-            </div>
-          </div>
-          <div class="column small-12 medium-8 large-4">
-            <span class="dropdown-title">Hardware License</span>
-            <div class="select">
-              <select class="dropdown" id="hardware" data-filter="hardware">
-                <option id="all" selected>
-                  Select one
-                </option>
-                {% for license in hardware_license %}
-                  <option id="{{license | slugify}}">{{license}}</option>
-                {% endfor %}
-              </select>
-            </div>
-          </div>
-          <div class="column small-12 medium-8 large-4">
-            <span class="dropdown-title">Software License</span>
-            <div class="select">
-              <select class="dropdown" id="software" data-filter="software">
-                <option id="all" selected>
-                  Select one
-                </option>
-                {% for license in software_license %}
-                  <option id="{{license | slugify}}">{{license}}</option>
-                {% endfor %}
-              </select>
-            </div>
-          </div>
-          <div class="column large-12">
-            <a href="#" class="button clear_filters">Clear Filters</a>
-          </div>
+
+        <div class="select">
+          <select class="country-dropdown" id="location" data-filter="location">
+            <option id="all" selected>
+              Country
+            </option>
+            {% for country in countries %}
+              <option id="{{country | slugify}}">{{country}}</option>
+            {% endfor %}
+          </select>
+        </div>
+
+        <a href="#" class="button clear_filters">Clear Filters</a>
+
+        <div class="header">Project Types</div>
+        <div class="checkbox-container">
+          <form class="checkbox-form">
+            {% for type in project_types %}
+              <div class="checkbox">
+                <input class="form-type" name="type" value="{{type | slugify}}" type="checkbox" data-value="{{type | slugify}}" id="{{type}}">
+                <label class="project-type" for="{{type}}">{{type}}</label>
+              </div>
+            {% endfor %}
+          </form>
+        </div>
+
+        <div class="header">Licenses</div>
+        <span class="dropdown-title">Hardware License</span>
+        <div class="select">
+          <select class="dropdown" id="hardware" data-filter="hardware">
+            <option id="all" selected>
+              Select one
+            </option>
+            {% for license in hardware_license %}
+              <option id="{{license | slugify}}">{{license}}</option>
+            {% endfor %}
+          </select>
+        </div>
+
+        <span class="dropdown-title">Software License</span>
+        <div class="select">
+          <select class="dropdown" id="software" data-filter="software">
+            <option id="all" selected>
+              Select one
+            </option>
+            {% for license in software_license %}
+              <option id="{{license | slugify}}">{{license}}</option>
+            {% endfor %}
+          </select>
         </div>
       </div>
-    </div>
-  </section>
-
-  <section class="page-section projects" id="project_data">
-    <div class="row expanded align-center">
-      <div class="column large-12 small-12 medium-12">
-        <div class="search-results-count">
-          <p class="results-count"></p>
-        </div>
-        <div class="search-results">
-          <p class="results-message"></p>
-        </div>
-        <table>
-          <thead>
-            <tr>
-              <th>Project name <i data-sort="name" class="material-icons sort desc">expand_more</i></th>
-              <th>UID <i data-sort="uid" class="material-icons sort desc">expand_more</i></th>
-              <th>Version <i data-sort="version" class="material-icons sort desc">expand_more</i></th>
-              <th>Project type <i data-sort="type" class="material-icons sort desc">expand_more</i></th>
-              <th>Certification date <i data-sort="date" class="material-icons sort desc">expand_more</i></th>
-            </tr>
-          </thead>
-          <tbody class="list">
-            {% for project in projects %}
-              <tr class="project">
-                <td class="name"><a href="{{ project.oshwa_uid | slugify | prepend: '/profile/' | append: '.html' | relative_url }}">{{ project.project_name }}</a></td>
-                <td class="uid">{{ project.oshwa_uid }}</td>
-                <td class="version">{{ project.project_version }}</td>
-                <td class="type" type="all {{ project.primary_type | slugify }} {{ project.primary_type }} {% for type in project.additional_type %} {{ type | slugify }} {{type}} {% endfor %}">{{ project.primary_type }}</td>
-                <td class="date">{{ project.sys.created_at | date: "%B %d, %Y" }}</td>
-                <!-- Hidden fields -->
-                <td class="hardware hidden" hardware="all {{project.hardware_license | slugify}} {{project.hardware_license}}">{{project.hardware_license}}</td>
-                <td class="software hidden" software="all {{project.software_license | slugify}} {{project.software_license}}">{{project.software_license}}</td>
-                <td class="documentation hidden" documentation="all {% if project.documentation_license == "CC BY" %} {{project.documentation_license | slugify}}-ccby {% else %} {{project.documentation_license | slugify}} {% endif %} {{project.documentation_license}}">{{project.documentation_license}}</td>
-                <td class="keywords hidden">{% for word in project.project_keywords %}{{ word }} {% endfor %}</td>
+      <div class="column large-9 list-column">
+        <div class="projects">
+          <h1>Certified Open Source Hardware Projects</h1>
+          <div class="search-results-count">
+            <p class="results-count"></p>
+          </div>
+          <div class="search-results">
+            <p class="results-message"></p>
+          </div>
+          <table id="project_data">
+            <thead>
+              <tr>
+                <th style="width:35%;">Project name <i data-sort="name" class="material-icons sort desc">expand_more</i></th>
+                <th>UID <i data-sort="uid" class="material-icons sort desc">expand_more</i></th>
+                <th>Project type <i data-sort="type" class="material-icons sort desc">expand_more</i></th>
+                <th>Certification date <i data-sort="date" class="material-icons sort desc">expand_more</i></th>
               </tr>
-            {% endfor %}
-          </tbody>
-        </table>
+            </thead>
+            <tbody class="list">
+              {% for project in projects %}
+                <tr class="project">
+                  <td class="name" style="width:35%;"><a href="{{ project.oshwa_uid | slugify | prepend: '/profile/' | append: '.html' | relative_url }}">{{ project.project_name }}</a></td>
+                  <td class="uid">{{ project.oshwa_uid }}</td>
+                  <td class="type" type="all {{ project.primary_type | slugify }} {{ project.primary_type }} {% for type in project.additional_type %} {{ type | slugify }} {{type}} {% endfor %}">{{ project.primary_type }}</td>
+                  <td class="date">{% if project.certification_date %}{{project.certification_date | date: "%B %d, %Y"}}{% else %}{{ project.sys.created_at | date: "%B %d, %Y" }}{% endif %}</td>
+                  <!-- Hidden fields -->
+                  <!-- <td class="version">{{ project.project_version }}</td> -->
+                  <td class="location hidden" location="{{ project.country | slugify }}">{{ project.country }}</td>
+                  <td class="hardware hidden" hardware="all {{project.hardware_license | slugify}} {{project.hardware_license}}">{{project.hardware_license}}</td>
+                  <td class="software hidden" software="all {{project.software_license | slugify}} {{project.software_license}}">{{project.software_license}}</td>
+                  <td class="documentation hidden" documentation="all {{project.documentation_license | slugify}} {{project.documentation_license}}">{{project.documentation_license}}</td>
+                  <td class="keywords hidden">{% for word in project.project_keywords %}{{ word }} {% endfor %}</td>
+                </tr>
+              {% endfor %}
+              </tbody>
+            </table>
+          </div>
+        </div>
       </div>
     </div>
   </section>
