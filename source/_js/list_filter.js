@@ -9,7 +9,8 @@ const ListFilter = {
       { name: 'type', attr: 'type' },
       { name: 'hardware', attr: 'hardware' },
       { name: 'documentation', attr: 'documentation' },
-      { name: 'software', attr: 'software' }
+      { name: 'software', attr: 'software' },
+      { name: 'location', attr: 'location' }
     ],
     fuzzySearch: {
       searchClass: 'fuzzy-search',
@@ -24,6 +25,7 @@ const ListFilter = {
   allFilters: $('.dropdown'),
   searchQueries: { documentation: 'all', software: 'all', hardware: 'all' },
   typeCheckedValues: [],
+  location: '',
   createList: () => {
     ListFilter.projectList = new List('project_data', ListFilter.options);
 
@@ -39,9 +41,11 @@ const ListFilter = {
         item.values().documentation !== null &&
         item.values().software !== null &&
         item.values().type !== null &&
+        item.values().location !== null &&
         item.values().hardware.indexOf(ListFilter.searchQueries.hardware) !== -1 &&
         item.values().documentation.indexOf(ListFilter.searchQueries.documentation) !== -1 &&
         item.values().software.indexOf(ListFilter.searchQueries.software) !== -1 &&
+        item.values().location.indexOf(ListFilter.location) !== -1 &&
         ListFilter.matchesAllItems(item.values().type, ListFilter.typeCheckedValues)
       ) {
         return true;
@@ -69,6 +73,12 @@ const ListFilter = {
       });
       ListFilter.filterList();
     });
+  },
+  filterByLocation: () => {
+    $('.country-dropdown').on('change', e => {
+      ListFilter.location = $(e.currentTarget).children(':selected').attr('id');
+      ListFilter.filterList();
+    })
   },
   filterByCheckboxes: () => {
     $('.filter-container').on('change', $('input[type="checkbox"]:checked'), () => {
@@ -125,6 +135,7 @@ const ListFilter = {
     $('.clear_filters').on('click', e => {
       e.preventDefault();
       ListFilter.searchString = '';
+      ListFilter.location = '';
       ListFilter.projectList.search();
       ListFilter.projectList.filter();
       ListFilter.projectList.sort('name', { order: 'asc' });
@@ -141,6 +152,7 @@ const ListFilter = {
   clearFormInputs: () => {
     $('.search__input').val('');
     $('.dropdown').prop('selectedIndex', 0);
+    $('.country-dropdown').prop('selectedIndex', 0);
     $('input[type="checkbox"]:checked').prop('checked', false);
   },
   displayResults: () => {
@@ -178,6 +190,7 @@ const ListFilter = {
     this.createList();
     this.filterBySearch();
     this.filterByDropdowns();
+    this.filterByLocation();
     this.filterByCheckboxes();
     this.filterByUrlParams();
     this.clearAllFilters();

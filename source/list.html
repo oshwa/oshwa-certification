@@ -132,6 +132,7 @@ page_template: list
                   <td class="date">{% if project.certification_date %}{{project.certification_date | date: "%B %d, %Y"}}{% else %}{{ project.sys.created_at | date: "%B %d, %Y" }}{% endif %}</td>
                   <!-- Hidden fields -->
                   <!-- <td class="version">{{ project.project_version }}</td> -->
+                  <td class="location hidden" location="{{ project.country | slugify }}">{{ project.country }}</td>
                   <td class="hardware hidden" hardware="all {{project.hardware_license | slugify}} {{project.hardware_license}}">{{project.hardware_license}}</td>
                   <td class="software hidden" software="all {{project.software_license | slugify}} {{project.software_license}}">{{project.software_license}}</td>
                   <td class="documentation hidden" documentation="all {{project.documentation_license | slugify}} {{project.documentation_license}}">{{project.documentation_license}}</td>
