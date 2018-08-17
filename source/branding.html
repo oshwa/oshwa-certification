@@ -7,16 +7,10 @@ page_template: branding
 permalink: /process/branding.html
 ---
 
-{% assign content = site.data.contentful.learningModule.learningModule | where: 'module_title','Branding' %}
-{% assign module = content[0]%}
+{% assign content = site.data.contentful.brandingModule.brandingModule %}
+{% assign module = content[0] %}
 
-{%assign temp_licenses = site.data.temp.licenses%}
-{% comment %}
-  {%assign temp_product-design_examples = site.data.temp.[productdesign]_examples%}
-{% endcomment %}
-
-<main role="main" id="{{page.page_template}}"> <!-- main content starts here -->
-
+<main role="main" id="{{page.page_template}}">
   <section class="top-section top-section--{{page.page_template}}">
     <div class="img-overlay"></div>
     <div class="row">
@@ -76,8 +70,8 @@ permalink: /process/branding.html
     </div>
     <div class="row">
       <div class="column large-12">
-        {{ module.product-design_description | markdownify }}
-        {%include slide-panel.html%}
+        {{ module.productdesign_description | markdownify }}
+        {% include slide-panel.html %}
       </div>
     </div>
 
@@ -102,7 +96,7 @@ permalink: /process/branding.html
                 <span class="license-name">{{example.branding_license.license_name}}</span>
               </div>
               <span class="learn-why">Learn why</span>
-              {% include examples_branding_modal.html example=example license_type="branding"%}
+              {% include examples_modal.html example=example license_type="branding"%}
             </div>
           {% endfor %}
           </div>
