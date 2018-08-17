@@ -6,7 +6,7 @@
     "modal__close material-icons js-close-modal">close</i>
   </div>
   <div class="modal__content">
-    <h3>{{ example.project_name }}</h3>
+    <h3>{{ example.project_owner }} {{ example.project_name }}</h3>
     {% case license_type %}
     {% when "documentation" %}
       <p class="license-header">Documentation License:</p>
