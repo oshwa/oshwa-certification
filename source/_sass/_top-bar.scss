@@ -4,6 +4,20 @@
   z-index: 3;
 
   &__button {
+    &--right {
+      background-color: $yellow;
+      color: $gray;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      position: absolute;
+      &:hover {
+        background-color: darken($yellow, 10);
+      }
+      @include breakpoint($large) {
+        display: none;
+      }
+    }
     &--basics,
     &--faq {
       color: $blue;

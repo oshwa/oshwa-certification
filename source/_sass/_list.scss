@@ -4,15 +4,27 @@
     margin-top: -50px;
     padding: 0;
   }
+
   .filter-container {
     background-color: $yellow;
     padding: 8.7rem 2rem;
+    @include breakpoint($medium-only) {
+      display: none;
+    }
+    @include breakpoint($small-only) {
+      display: none;
+      padding-top: 6rem;
+    }
 
     .clear_filters {
-      width: 100%;
+      font-weight: 600;
       margin: 0;
       margin: 0rem 0 2rem 0;
-      padding: .5rem 2rem;
+      padding: .5rem .7rem .5rem 1rem;
+      width: 100%;
+      i {
+        font-weight: 700;
+      }
     }
 
     .header {
@@ -111,9 +123,16 @@
       text-transform: uppercase;
       font-weight: 700;
       padding-left: 2rem;
+      @include breakpoint($small-only) {
+        font-size: 1.8rem;
+        padding: .5rem;
+      }
     }
     .search-results-count {
       padding-left: 2rem;
+      @include breakpoint($small-only) {
+        padding: .5rem;
+      }
       p {
         font-size: 1.1rem;
         font-weight: 700;
@@ -123,6 +142,9 @@
     }
     .search-results {
       padding-left: 2rem;
+      @include breakpoint($small-only) {
+        padding-left: .5rem;
+      }
       p {
         color: lighten($gray, 15);
         font-style: italic;
@@ -138,7 +160,13 @@
           padding-left: 2rem;
           padding-right: 2rem;
           padding-bottom: 1rem;
+          @include breakpoint($small-only) {
+            padding-left: .5rem;
+          }
           i {
+            color: lighten($gray, 15);
+            font-size: 1.2rem;
+            font-weight: 700;
             margin-top: -2px;
             vertical-align: middle;
             &:hover {
@@ -164,6 +192,9 @@
             font-weight: 400;
             padding: 1rem 0 1rem 2rem;
             text-transform: uppercase;
+            @include breakpoint($small-only) {
+              padding-left: .5rem;
+            }
           }
         }
         .project {
@@ -175,4 +206,8 @@
       }
     }
   }
+}
+
+.active {
+  display: block!important;
 }

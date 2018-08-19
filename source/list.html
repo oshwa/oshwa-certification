@@ -4,6 +4,7 @@ title: Open Source Hardware Association
 description:
 seo_image_path: #'/images/media/filename.jpg'
 page_template: list
+filter_nav: true
 ---
 
 {% assign projects = site.data.contentful.project.project %}
@@ -66,7 +67,7 @@ page_template: list
           </select>
         </div>
 
-        <a href="#" class="button clear_filters">Clear Filters</a>
+        <a href="#" class="button clear_filters">Clear Filters<i class="material-icons">close</i></a>
 
         <div class="header">Project Types</div>
         <div class="checkbox-container">
@@ -105,7 +106,7 @@ page_template: list
           </select>
         </div>
       </div>
-      <div class="column large-9 list-column">
+      <div class="column large-9 small-12 list-column">
         <div class="projects">
           <h1>Certified Open Source Hardware Projects</h1>
           <div class="search-results-count">
