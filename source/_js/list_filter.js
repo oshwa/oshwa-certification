@@ -4,8 +4,8 @@ const ListFilter = {
       'name',
       'uid',
       'version',
-      'date',
       'keywords',
+      { name: 'date', attr: 'date' },
       { name: 'type', attr: 'type' },
       { name: 'hardware', attr: 'hardware' },
       { name: 'documentation', attr: 'documentation' },
@@ -25,7 +25,7 @@ const ListFilter = {
   allFilters: $('.dropdown'),
   searchQueries: { documentation: 'all', software: 'all', hardware: 'all' },
   typeCheckedValues: [],
-  location: '',
+  location: 'all',
   createList: () => {
     ListFilter.projectList = new List('project_data', ListFilter.options);
 
