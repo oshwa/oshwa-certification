@@ -1,0 +1,79 @@
+.divider {
+  background-color: $teal;
+  .row {
+    position: relative;
+    height: 2.5rem;
+    @include breakpoint($small-only) {
+      height: 2rem;
+    }
+    &--certify {
+      @include breakpoint($small-only) {
+        height: 4rem;
+      }
+    }
+  }
+  .content {
+    display: inline-flex;
+    text-align: right;
+    h1 {
+      color: darken($teal, 25);
+      font-size: .8rem;
+      font-weight: 700;
+      margin: 0;
+      text-align: right;
+      @include breakpoint($small-only) {
+        font-size: .7rem;
+      }
+    }
+    &--right {
+      position: absolute;
+      right: 10rem;
+      top: 0rem;
+      @include breakpoint($medium-only) {
+        right: 0rem;
+      }
+      @include breakpoint($small-only) {
+        right: 1rem;
+      }
+      &--certify {
+        @include breakpoint($small-only) {
+          top: 2rem;
+        }
+      }
+    }
+    &--left {
+      padding-left: 10rem;
+      position: absolute;
+      @include breakpoint($medium-only) {
+        left: -10rem;
+      }
+      @include breakpoint($small-only) {
+        left: -9rem;
+      }
+       h1 {
+        text-align: left;
+      }
+    }
+  }
+
+  a {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin: 0;
+    text-decoration: none;
+    text-transform: uppercase;
+    @include breakpoint($small-only) {
+      font-size: .95rem;
+    }
+  }
+
+  .material-icons {
+    font-size: 2.8rem;
+    vertical-align: middle;
+    margin-top: -2px;
+    @include breakpoint($small-only) {
+      font-size: 1.8rem;
+      margin-top: 0;
+    }
+  }
+}
