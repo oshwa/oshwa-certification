@@ -12,7 +12,7 @@ page_template: profile
     <div class="row align-left">
       <div class="column large-12">
         <h1>{{ page.project_name }}</h1>
-        <h2>{{ page.responsible_party }}</h2>
+        <h2>{{ page.responsible_party }} {% if page.public_contact %}<a href="mailto:{{ page.public_contact }}"><i class="material-icons">mail</i></a>{% endif %}</h2>
       </div>
     </div>
     <div class="row">
@@ -20,13 +20,23 @@ page_template: profile
         <h3>OSHWA UID</h3>
         <span class="id">{{ page.oshwa_uid }}</span>
         <a href="{{ page.project_website }}" class="button" target="_blank">Project Website</a>
+        <h3 class="info-title">Certification Date</h3>
+        <p class="info-data">
+          {% if page.certification_date %}
+            {{page.certification_date | date: "%B %d, %Y"}}
+          {% else %}
+            {{ page.sys.created_at | date: "%B %d, %Y" }}
+          {% endif %}
+        </p>
+        <h3 class="info-title">Country</h3>
+        <p class="info-data">{{ page.country }}</p>
       </div>
       <div class="column small-12 large-6">
         {{ page.project_description | markdownify }}
       </div>
       <div class="column small-12 large-2">
         <h3>Version</h3>
-        <span class="version">V{{ page.project_version }}</span>
+        <span class="version">{{ page.project_version }}</span>
 
         {% if page.previous_versions %}
           <h3 class="previous-title">Previous Versions</h3>
