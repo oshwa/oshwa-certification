@@ -9,7 +9,6 @@ page_template: process
 
 <main role="main" id="{{page.page_template}}"> <!-- main content starts here -->
 
-
   <section class="top-section top-section--{{page.page_template}}">
     <div class="img-overlay"></div>
     <div class="row">
@@ -32,49 +31,49 @@ page_template: process
       </div>
       <div class="column large-5 medium-6 small-12">
         <h3>Certification Elements</h3>
-        <p>These common elements are found in open source hardware projects:</p>
+        <p>These four elements are found in open source hardware projects. Click on any of the elements to skip directly to its learning module.</p>
         <ul class="certification-elements">
-          <a href="{{ '/process/documentation.html' | relative_url }}">
-          <li class="certification-element">
+          <a href="{{'/process/hardware.html' | relative_url }}">
+            <li class="certification-element">
               <span class="certification-element__icon">
-              <i class="material-icons">library_books</i>
+                <i class="material-icons">developer_board</i>
               </span>
               <div>
-              <span class="certification-element__title">Product Documentation</span>
-              <span class="certification-element__description">(including design files)</span>
+                <span class="certification-element__title">Hardware</span>
+                <span class="certification-element__description">(including design files)</span>
               </div>
-          </li>
-          </a>
-          <a href="{{'/process/hardware.html' | relative_url }}">
-          <li class="certification-element">
-            <span class="certification-element__icon">
-              <i class="material-icons">developer_board</i>
-            </span>
-            <div>
-              <span class="certification-element__title">Hardware</span>
-              <span class="certification-element__description">(including design files)</span>
-            </div>
-          </li>
+            </li>
           </a>
           <a href="{{'/process/software.html' | relative_url }}">
-          <li class="certification-element">
-            <span class="certification-element__icon">
-              <i class="material-icons">code</i>
-            </span>
-            <div>
-              <span class="certification-element__title">Software</span>
-              <span class="certification-element__description">(including design files)</span>
-            </div>
-          </li>
+            <li class="certification-element">
+              <span class="certification-element__icon">
+                <i class="material-icons">code</i>
+              </span>
+              <div>
+                <span class="certification-element__title">Software</span>
+                <span class="certification-element__description">(including design files)</span>
+              </div>
+            </li>
+          </a>
+          <a href="{{ '/process/documentation.html' | relative_url }}">
+            <li class="certification-element">
+                <span class="certification-element__icon">
+                <i class="material-icons">library_books</i>
+                </span>
+                <div>
+                <span class="certification-element__title">Documentation</span>
+                <span class="certification-element__description">(including design files)</span>
+                </div>
+            </li>
           </a>
           <a href="{{'/process/branding.html' | relative_url }}">
-          <li class="certification-element">
-            <span class="certification-element__icon"><img src="{{'/images/branding-icon.svg' | relative_url}}" /></span>
-            <div>
-              <span class="certification-element__title">Branding</span>
-              <span class="certification-element__description">(including product names, logos, and designs)</span>
-            </div>
-          </li>
+            <li class="certification-element">
+              <span class="certification-element__icon"><img src="{{'/images/branding-icon.svg' | relative_url}}" /></span>
+              <div>
+                <span class="certification-element__title">Branding</span>
+                <span class="certification-element__description">(including product names, logos, and designs)</span>
+              </div>
+            </li>
           </a>
         </ul>
       </div>
@@ -86,7 +85,7 @@ page_template: process
       <div class="column large-6 medium-6 small-12">
         {{ content.description | markdownify }}
         <div class="button-container">
-          <a class="button button--teal" href="#">Get Started</a>
+          <a class="button button--teal" href="{{ '/process/hardware.html' | relative_url }}">Get Started</a>
         </div>
       </div>
       <div class="column large-5 medium-6 small-12">
@@ -97,7 +96,5 @@ page_template: process
       </div>
     </div>
   </section>
-
-
 
 </main>
