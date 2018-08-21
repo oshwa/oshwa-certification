@@ -2,9 +2,16 @@
   <span class="top-bar__button top-bar__button--{{include.page_template}} js-trigger-menu">menu</span>
   <nav class="main-menu js-target-menu main-menu--left">
     <a href="{{'/'.html' | relative_url}}">Home</a>
-    <a href="{{'/process.html' | relative_url}}">Process</a>
-    <a href="{{'/directory.html' | relative_url}}">Directory</a>
-    <a href="{{'/list.html' | relative_url}}">List</a>
+    <a href="{{'/basics.html' | relative_url}}">Basics</a>
+    <a href="{{'/basics/faq.html' | relative_url}}">FAQ</a>
+    <a class="process--header-link" href="{{'/process.html' | relative_url}}">Certification Process</a>
+    <a class="process--link" href="{{'/process/hardware.html' | relative_url}}">Hardware</a>
+    <a class="process--link" href="{{'/process/software.html' | relative_url}}">Software</a>
+    <a class="process--link" href="{{'/process/documentation.html' | relative_url}}">Documentation</a>
+    <a class="process--link process--link--last" href="{{'/process/branding.html' | relative_url}}">Branding</a>
+    <!-- <a href="{{'/directory.html' | relative_url}}">Directory</a> -->
+    <a href="https://oshwa-certify.herokuapp.com/">Certify a Project</a>
+    <a href="{{'/list.html' | relative_url}}">Project Listing</a>
   </nav>
 
   {%if page.filter_nav %}
