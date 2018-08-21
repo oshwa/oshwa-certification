@@ -5,6 +5,7 @@
       font-size: 1.8rem;
       font-weight: 800;
       padding-left: 4rem;
+      text-shadow: 2px 2px $yellow;
       width: 100%;
       @include breakpoint($small-only) {
         font-size: 1.5rem;
@@ -17,22 +18,23 @@
         border: solid $gray 2px;
         margin: 2rem;
         text-decoration: none;
+        position: relative;
         &:hover {
-          // background-color: lighten($gray, 60);
           background-color: $yellow;
+          cursor: pointer;
         }
         .container {
           text-align: center;
-          .material-icons {
-            color: black;
-            font-size: 4.2rem;
-            padding-top: 2rem;
-            text-shadow: 2px 2px $yellow;
+          .container-overlay {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
           }
           h3 {
             font-size: 1rem;
             font-weight: 600;
-            text-shadow: 2px 2px $yellow;
             padding-bottom: 1.5rem;
             padding-top: 2rem;
           }
@@ -52,6 +54,7 @@
       input {
         background-color: lighten($gray, 65);
         border-bottom: lighten($gray, 30) solid 1px;
+        width: 100%;
         &::-webkit-input-placeholder { /* Chrome/Opera/Safari */
           color: lighten($gray, 10);
           font-style: italic;
@@ -92,21 +95,6 @@
   }
 }
 
-.container--battery {
-  position: relative;
-}
-.battery {
-}
-
-.battery-shadow {
-  position: absolute;
-  left: 34%;
-  z-index: -1;
-  top: 2px;
-  @include breakpoint($medium-only) {
-    left: 34%;
-  }
-  @include breakpoint($small-only) {
-    left: 34%;
-  }
+.science {
+  margin-left: 15px;
 }

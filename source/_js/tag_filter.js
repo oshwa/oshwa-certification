@@ -9,8 +9,18 @@ const TagFilter = {
       window.location.href = searchListUrl;
     });
   },
+  filterByCategory: () => {
+    $('.container-overlay').on('click', e => {
+      const query = e.target.parentElement.getAttribute('type');
+      const url = document.location.origin;
+      const searchListUrl = `${url}${TagFilter.listUrl}?type=${query}`;
+
+      window.location.href = searchListUrl;
+    });
+  },
   init() {
     this.filterByTag();
+    this.filterByCategory();
   }
 };
 
