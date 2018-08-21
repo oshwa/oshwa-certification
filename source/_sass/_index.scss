@@ -1,7 +1,13 @@
 #index {
   .page-section {
+    .blocks-row {
+      position: relative;
+    }
     &--blocks {
       padding-top: 0;
+      .column {
+        padding: 0;
+      }
       .link {
         color: white;
         display: block;
@@ -33,6 +39,14 @@
           }
         }
         &--certify {
+          position: absolute;
+          right: 0;
+          bottom: 0;
+          left: 50%;
+          top: 0;
+          @include breakpoint($small-only) {
+            position: static;
+          }
           // background-color: $purple;
           background: linear-gradient(rgba($purple, 0.85), rgba($purple, 0.85)),
             url('../images/patent-line-transpo.png') no-repeat right;
@@ -57,8 +71,8 @@
         text-shadow: 2px 2px $yellow;
       }
       .button-container {
-        padding-bottom: 150px;
-        padding-top: 40px;
+        padding-bottom: 4rem;
+        padding-top: 2rem;
         text-align: center;
         .button {
           background-color: $gray;
@@ -67,6 +81,9 @@
           padding: 10px 25px;
           &:hover {
             background-color: darken($gray, 10);
+          }
+          @include breakpoint($small-only) {
+            font-size: .9rem;
           }
         }
       }

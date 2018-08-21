@@ -13,3 +13,7 @@ body {
 #overlay {
   z-index: 2;
 }
+
+.js-body-modal-active {
+  overflow: visible;
+}

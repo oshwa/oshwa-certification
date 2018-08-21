@@ -197,14 +197,27 @@
             }
           }
         }
+
         .project {
           font-family: 'Montserrat', sans-serif;
           .hidden {
             display: none;
           }
+          .uid {
+            @include breakpoint($small-only) {
+              display: none;
+            }
+          }
+
         }
       }
     }
+  }
+}
+
+.uid-header {
+  @include breakpoint($small-only) {
+    display: none;
   }
 }
 
