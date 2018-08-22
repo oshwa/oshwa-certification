@@ -25,6 +25,9 @@
     p {
       font-size: 1.4rem;
       font-weight: 100;
+      @include breakpoint($small-only) {
+        font-size: 1.2rem;
+      }
     }
   }
 
