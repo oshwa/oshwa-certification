@@ -1,19 +1,42 @@
 <header class="top-bar top-bar--{{include.page_template}}">
   <span class="top-bar__button top-bar__button--{{include.page_template}} js-trigger-menu">menu</span>
-  <nav class="main-menu js-target-menu main-menu--left">
-    <a href="{{'/'.html' | relative_url}}">Home</a>
-    <a href="{{'/basics.html' | relative_url}}">Basics</a>
-    <a href="{{'/basics/faq.html' | relative_url}}">FAQ</a>
-    <a class="process--header-link" href="{{'/process.html' | relative_url}}">Certification Process</a>
-    <a class="process--link" href="{{'/process/hardware.html' | relative_url}}">Hardware</a>
-    <a class="process--link" href="{{'/process/software.html' | relative_url}}">Software</a>
-    <a class="process--link" href="{{'/process/documentation.html' | relative_url}}">Documentation</a>
-    <a class="process--link process--link--last" href="{{'/process/branding.html' | relative_url}}">Branding</a>
-    <a href="https://oshwa-certify.herokuapp.com/">Certify a Project</a>
-    <a href="{{'/directory.html' | relative_url}}">Project Directory</a>
+  <nav class="menu js-target-menu">
+    <div class="row expanded">
+      <i class="menu__icon material-icons close-menu">close</i>
+      <a href="{{'/' | relative_url}}"> <i class="menu__icon menu__icon--home material-icons">home</i></a>
+      <div class="column large-3 small-12">
+        <a class="menu__title-link" href="https://oshwa-certify.herokuapp.com/"><h1>Certify a project</h1></a>
+        <div class="menu__link-container">
+          <a href="https://oshwa-certify.herokuapp.com/">Get Started</a>
+        </div>
+      </div>
+      <div class="column large-3 small-12">
+        <a class="menu__title-link" href="{{'/process.html' | relative_url}}"><h1>The Certification Process</h1></a>
+        <div class="menu__link-container">
+          <a href="{{'/process.html' | relative_url}}">Introduction</a>
+          <a href="{{'/process/hardware.html' | relative_url}}">Hardware</a>
+          <a href="{{'/process/software.html' | relative_url}}">Software</a>
+          <a href="{{'/process/documentation.html' | relative_url}}">Documentation</a>
+          <a href="{{'/process/branding.html' | relative_url}}">Branding</a>
+        </div>
+      </div>
+      <div class="column large-3 small-12">
+        <a class="menu__title-link" href="{{'/directory.html' | relative_url}}"><h1>Projects</h1></a>
+        <div class="menu__link-container">
+          <a href="{{'/list.html' | relative_url}}">Project Listing</a>
+        </div>
+      </div>
+      <div class="column large-3 small-12">
+        <a class="menu__title-link" href="{{'/basics.html' | relative_url}}"><h1>Open Source Hardware Basics</h1></a>
+        <div class="menu__link-container">
+          <a href="{{'/basics/faq.html' | relative_url}}">Frequently Asked Questions</a>
+          <a href="https://www.oshwa.org/">About OSHWA</a>
+        </div>
+      </div>
+    </div>
   </nav>
 
-  {%if page.filter_nav %}
+  {% if page.filter_nav %}
     <span class="top-bar--float__button top-bar__button--right top-bar__button toggle-filters js-trigger-menu">tune</span>
   {% endif %}
 </header>
