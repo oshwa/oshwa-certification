@@ -5,6 +5,7 @@ const ListFilter = {
       'uid',
       'version',
       'keywords',
+      'responsible-party',
       { name: 'date', attr: 'date' },
       { name: 'type', attr: 'type' },
       { name: 'hardware', attr: 'hardware' },
