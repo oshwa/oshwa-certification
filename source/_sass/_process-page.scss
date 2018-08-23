@@ -9,8 +9,17 @@
     color: $teal;
     font-size: 3rem;
     cursor: pointer;
+    text-decoration: none;
     .material-icons {
       font-size: 3rem;
+    }
+    span {
+      font-size: 1.2rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      vertical-align: top;
+      position: relative;
+      top: .9rem;
     }
   }
   .top-section {
