@@ -33,12 +33,10 @@ describe('CompactPanel', () => {
   const panelOneContainer = panelOne.querySelector('.slide-panel__container');
   const panelTwoContainer = panelTwo.querySelector('.slide-panel__container');
 
-  xit('should initialize with the proper classes', () => {
+  it('should initialize with the proper classes', () => {
     assert.equal(panelOne.classList.contains('is-visible'), false);
     assert.equal(panelTwo.classList.contains('is-visible'), false);
   });
-
   xit('should initialize with the proper styles', () => {});
-
   xit('should open the correct panel', () => {});
 });

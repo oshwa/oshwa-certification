@@ -1,7 +1,10 @@
 const CompactPanel = {
-  slideTarget: $('.slide-panel__container'),
-  slideContainer: $('.slide-panel'),
+  slideTarget: undefined,
+  slideContainer: undefined,
   setupSlideAnimation: () => {
+    CompactPanel.slideTarget = $('.slide-panel__container');
+    CompactPanel.slideContainer = $('.slide-panel');
+
     CompactPanel.slideTarget.animate({ right: '-100%' }, 'slow').fadeOut(5);
     CompactPanel.slideContainer.removeClass('is-visible');
   },
