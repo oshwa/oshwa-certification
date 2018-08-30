@@ -23,7 +23,7 @@ const ListFilter = {
   },
   projectList: undefined,
   searchString: '',
-  allFilters: $('.dropdown'),
+  allFilters: undefined,
   searchQueries: { documentation: 'all', software: 'all', hardware: 'all' },
   typeCheckedValues: [],
   location: 'all',
@@ -63,6 +63,8 @@ const ListFilter = {
     });
   },
   filterByDropdowns: () => {
+    ListFilter.allFilters = $('.dropdown');
+
     ListFilter.allFilters.on('change', e => {
       ListFilter.allFilters.each(selection => {
         $(selection).each(() => {

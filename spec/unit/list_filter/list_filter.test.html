@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
-  <head></head>
+  <head>
+  </head>
   <body>
     <div class="column large-12 small-12 search-form">
       <form action="" class="search search--fixed js-target-search">
@@ -9,10 +10,21 @@
         "submit" value="search">
       </form>
     </div>
-
-    <tbody class="list">
-        <tr class="project">
+    <table id="project_data">
+      <thead>
+        <tr>
+          <th style="width:35%;">Project name <i data-sort="name" class="material-icons sort desc">expand_more</i></th>
+          <th class="uid-header">UID <i data-sort="uid" class="material-icons sort desc">expand_more</i></th>
+          <th>Project type <i data-sort="type" class="material-icons sort desc">expand_more</i></th>
+          <th>Certification date <i data-sort="date" class="material-icons sort desc">expand_more</i></th>
         </tr>
-    </tbody>
+      </thead>
+      <tbody class="list">
+          <tr class="project">
+          </tr>
+      </tbody>
+    </table>
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/list.js/1.5.0/list.min.js"></script>
   </body>
 </html>
