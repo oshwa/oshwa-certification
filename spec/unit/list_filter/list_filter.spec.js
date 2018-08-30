@@ -11,20 +11,19 @@
 // describe('ListFilter', function() {
 //   let body = document.body;
 //   let searchBar;
-//   let value;
 //
 //   beforeEach(function() {
+//     // require('jsdom-global')();
 //     global.$ = require('jquery')(window);
 //     body.innerHTML = templateHTML;
 //     ListFilter.init();
 //     searchBar = document.querySelector('#searchfield');
-//     value = searchBar.val();
-//     // searchBar.submit();
 //   });
 //   afterEach(function() {
 //     body.innerHTML = '';
 //   });
 //   it('should filter list by search value', function() {
+//     // searchBar.submit();
 //   });
 //   // it('should filter list by checkboxes', function() {
 //   // });

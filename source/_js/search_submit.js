@@ -1,13 +1,20 @@
 const SearchSubmit = {
   listUrl: '/oshwa/list.html',
-  searchString: $('#searchfield'),
+  searchString: undefined,
+  searchListUrl: undefined,
   submitSearch: () => {
+    SearchSubmit.searchString = $('#searchfield');
+
     $('.js-search-submit').on('click', () => {
       const query = SearchSubmit.searchString.val();
       const url = document.location.origin;
-      const searchListUrl = `${url}${SearchSubmit.listUrl}?q=${query}`;
+      SearchSubmit.searchListUrl = `${url}${SearchSubmit.listUrl}?q=${query}`;
 
-      window.location.href = searchListUrl;
+      if (window.location.href !== 'about:blank') {
+        window.location.href = SearchSubmit.searchListUrl;
+      } else {
+        return SearchSubmit.searchListUrl;
+      }
     });
   },
   init() {
