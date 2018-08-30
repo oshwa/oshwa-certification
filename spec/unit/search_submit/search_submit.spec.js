@@ -10,26 +10,24 @@ let SearchSubmit = require('../../../source/_js/search_submit.js');
 
 describe('SearchSubmit', function() {
   const body = document.body;
-  let form;
+  let formSubmitButton;
   let searchQueryValue = 'thisIsASearchQuery';
-  let eventOnClick;
+  let searchURL;
 
   beforeEach(function() {
     require('jsdom-global')();
     global.$ = require('jquery')(window);
     body.innerHTML = templateHTML;
     SearchSubmit.init();
-    form = document.querySelector('form');
+    formSubmitButton = document.querySelector('.js-search-submit');
     document.querySelector('input').value = searchQueryValue;
-
-    // form.submit();
-    // console.log(eventOnClick)
   });
   afterEach(function() {
     body.innerHTML = '';
   });
-  xit('redirects to the right path', function() {
-    // form.addEventListener('click', eventOnClick = SearchSubmit.searchListUrl);
-    // assert.equal(.to.equal('null/oshwa/list.html?q=thisIsASearchQuery'));
+  it('redirects to to the correct path using submitted search query', function() {
+    formSubmitButton.click();
+    searchURL = SearchSubmit.searchListUrl;
+    assert.equal(searchURL, 'null/oshwa/list.html?q=thisIsASearchQuery');
   });
 });

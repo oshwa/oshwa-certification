@@ -12,8 +12,6 @@ const SearchSubmit = {
 
       if (window.location.href !== 'about:blank') {
         window.location.href = SearchSubmit.searchListUrl;
-      } else {
-        return SearchSubmit.searchListUrl;
       }
     });
   },
