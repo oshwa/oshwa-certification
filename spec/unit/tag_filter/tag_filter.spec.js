@@ -36,7 +36,7 @@ describe('TagFilter', function() {
     profileTagURL = TagFilter.searchListUrl;
     assert.equal(profileTagURL, 'null/oshwa/list.html?type=example-type-1');
   });
-  it('should have correct type-tag attribute in url for directory filters', function() {
+  it('should have correct tag attribute in url for directory filters', function() {
     firstContainer.click();
     directoryURL = TagFilter.searchListUrl;
     assert.equal(directoryURL, 'null/oshwa/list.html?type=first-type');
