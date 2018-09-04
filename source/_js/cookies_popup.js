@@ -14,6 +14,7 @@ const CookiesPopup = {
       if ( clickedValue === 'agree') {
         CookiesPopup.cookies.set('user_cookie_agreement', 'agree', {expires: 365});
       } else if (clickedValue === 'disagree') {
+        window['ga-disable-UA-119081851-1'] = true;
         CookiesPopup.cookies.set('user_cookie_agreement', 'disagree', {expires: 365});
         CookiesPopup.clearCookies();
       }
