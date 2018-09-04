@@ -12,3 +12,54 @@ body {
 .js-body-modal-active {
   overflow: visible;
 }
+
+.cookies-popup {
+  background-color: rgba(0,0,0,.9);
+  color: white;
+  padding: 1rem 1.5rem;
+  position: fixed;
+  bottom: -100px;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  display: none;
+
+  .large-8 {
+    padding-right: 0;
+  }
+
+  .large-4 {
+    padding-left: 0;
+  }
+
+  .links-container {
+    margin-top: .5rem;
+    text-align: right;
+    @include breakpoint($medium-only) {
+      text-align: center;
+    }
+    @include breakpoint($small-only) {
+      text-align: center;
+    }
+    .button {
+      background-color: none;
+      border: white 2px solid;
+      font-size: .8rem;
+      font-weight: 500;
+      padding: .5rem 1rem;
+      &:hover {
+        @extend .u-transition;
+        color: black;
+        background-color: white;
+      }
+    }
+    .more-info {
+      font-size: .8rem;
+      font-weight: 500;
+    }
+  }
+}
+
+.hidden {
+  display: none!important;
+}
