@@ -16,6 +16,7 @@ import AddIcon from './add_icon';
 import SearchSubmit from './search_submit';
 import TagFilter from './tag_filter';
 import Spectrum from './spectrum';
+import CookiesPopup from './cookies_popup';
 
 // Footer.init();
 Accordion.init();
@@ -35,3 +36,4 @@ AddIcon.init();
 SearchSubmit.init();
 TagFilter.init();
 Spectrum.init();
+CookiesPopup.init();

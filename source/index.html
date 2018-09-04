@@ -46,7 +46,21 @@ page_template: index
         <a href="{{ '/list.html' | relative_url }}" class="button">See All OSHWA Certified Open Source Hardware Projects</a>
       </div>
     </div>
-
   </section>
+
+  <div class="cookies-popup">
+    <div class="row expanded">
+      <div class="column large-8 medium-12 small-12">
+        <p>We use cookies to improve your experience on our website. By clicking agree, you accept the use of cookies.</p>
+      </div>
+      <div class="column large-4 medium-12 small-12">
+        <div class="links-container">
+          <a class="button popup-button" cookie-value="agree" href="#">Agree</a>
+          <a class="button popup-button" cookie-value="disagree" href="#">Disagree</a>
+          <a class="more-info" href="{{ '/privacy-policy.html' | relative_url }}">More Info</a>
+        </div>
+      </div>
+    </div>
+  </div>
 
 </main>
