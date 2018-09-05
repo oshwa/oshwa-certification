@@ -14,7 +14,7 @@ const CookiesPopup = {
       if ( clickedValue === 'agree') {
         CookiesPopup.cookies.set('user_cookie_agreement', 'agree', {expires: 365});
       } else if (clickedValue === 'disagree') {
-        window['ga-disable-UA-119081851-1'] = true;
+        // window['ga-disable-UA-119081851-1'] = true;
         CookiesPopup.cookies.set('user_cookie_agreement', 'disagree', {expires: 365});
         CookiesPopup.clearCookies();
       }
@@ -22,12 +22,7 @@ const CookiesPopup = {
     })
   },
   clearCookies: () => {
-    // const cookies = document.cookie.split(';');
-    // cookies.forEach(c => {
-    //   document.cookie = c.replace(/^ +/, "").replace(/=.*/, "=;expires=" + new Date().toUTCString() + ";path=/");
-    // });
     const allCookies = CookiesPopup.cookies.all();
-
     for (let cookie in allCookies) {
       if (allCookies.hasOwnProperty(cookie) && cookie != 'user_cookie_agreement') {
         CookiesPopup.cookies.erase(cookie);
