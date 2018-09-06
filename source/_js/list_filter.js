@@ -81,13 +81,14 @@ const ListFilter = {
     $('.country-dropdown').on('change', e => {
       ListFilter.location = $(e.currentTarget).children(':selected').attr('id');
       ListFilter.filterList();
-    })
+    });
   },
   filterByCheckboxes: () => {
     $('.filter-container').on('change', $('input[type="checkbox"]:checked'), () => {
-      ListFilter.typeCheckedValues = $('input[type="checkbox"]:checked').map(function() {
-        return this.value;
-      }).get();
+      ListFilter.typeCheckedValues = $('input[type="checkbox"]:checked')
+        .map(function() {
+          return this.value;
+        }).get();
 
       if (ListFilter.typeCheckedValues.length === 0) {
         ListFilter.typeCheckedValues = ['all'];
