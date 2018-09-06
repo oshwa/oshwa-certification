@@ -35,7 +35,7 @@ const CompactPanel = {
       e.preventDefault();
       CompactPanel.slideTarget.animate({ right: '-100%' }, 'slow').fadeOut(5);
       CompactPanel.slideContainer.removeClass('is-visible');
-    })
+    });
   },
   init() {
     this.setupSlideAnimation();
