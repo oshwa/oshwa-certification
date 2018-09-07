@@ -140,6 +140,7 @@ const ListFilter = {
       e.preventDefault();
       ListFilter.searchString = '';
       ListFilter.location = '';
+      ListFilter.searchQueries = { documentation: 'all', software: 'all', hardware: 'all' };
       ListFilter.projectList.search();
       ListFilter.projectList.filter();
       ListFilter.projectList.sort('name', { order: 'asc' });
