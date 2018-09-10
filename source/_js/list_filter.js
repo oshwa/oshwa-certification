@@ -24,7 +24,7 @@ const ListFilter = {
   projectList: undefined,
   searchString: '',
   allFilters: undefined,
-  searchQueries: { documentation: 'all', software: 'all', hardware: 'all' },
+  searchQueries: { software: 'all', hardware: 'all' },
   typeCheckedValues: [],
   location: 'all',
   createList: () => {
@@ -39,12 +39,10 @@ const ListFilter = {
     ListFilter.projectList.filter(item => {
       if (
         item.values().hardware !== null &&
-        item.values().documentation !== null &&
         item.values().software !== null &&
         item.values().type !== null &&
         item.values().location !== null &&
         item.values().hardware.indexOf(ListFilter.searchQueries.hardware) !== -1 &&
-        item.values().documentation.indexOf(ListFilter.searchQueries.documentation) !== -1 &&
         item.values().software.indexOf(ListFilter.searchQueries.software) !== -1 &&
         item.values().location.indexOf(ListFilter.location) !== -1 &&
         ListFilter.matchesAllItems(item.values().type, ListFilter.typeCheckedValues)
@@ -140,7 +138,7 @@ const ListFilter = {
       e.preventDefault();
       ListFilter.searchString = '';
       ListFilter.location = '';
-      ListFilter.searchQueries = { documentation: 'all', software: 'all', hardware: 'all' };
+      ListFilter.searchQueries = { software: 'all', hardware: 'all' };
       ListFilter.projectList.search();
       ListFilter.projectList.filter();
       ListFilter.projectList.sort('name', { order: 'asc' });
