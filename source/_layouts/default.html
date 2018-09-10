@@ -18,18 +18,8 @@
       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
       m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
       })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-      const agreementCookie = document.cookie.indexOf('user_cookie_agreement');
-      const agreement = document.cookie.indexOf('user_cookie_agreement=disagree');
-
-      if (agreement > -1 || agreementCookie <= -1) {
-        window['ga-disable-UA-XXXXXXX-X'] = true;
-        console.log("disabled GA")
-      } else {
-        ga('create', 'UA-XXXXXXX-X', 'auto');
-        ga('send', 'pageview');
-        console.log("enabled GA")
-      }
+      ga('create', 'UA-XXXXXXX-X', 'auto');
+      ga('send', 'pageview');
     </script> -->
 
     <script src="https://use.typekit.net/mvc3cdb.js"></script>

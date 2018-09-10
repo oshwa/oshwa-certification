@@ -11,7 +11,6 @@ let CookiesPopup = require('../../../source/_js/cookies_popup.js');
 describe('CookiesPopup', function() {
   const body = document.body;
   let popupContainer;
-  let buttons;
   let agreeButton;
   let cookies;
 
@@ -22,8 +21,7 @@ describe('CookiesPopup', function() {
     CookiesPopup.init();
     cookies = require('browser-cookies');
     popupContainer = document.querySelector('.cookies-popup');
-    buttons = document.querySelectorAll('.popup-button');
-    agreeButton = buttons[0];
+    agreeButton = document.querySelector('.popup-button');
     agreeButton.click();
   });
   afterEach(function() {
