@@ -18,7 +18,7 @@ page_template: exemplar
       <div class="column small-12 large-4">
         <h3>OSHWA UID</h3>
         <span class="id">{{ page.project_uid }}</span>
-        <a href="{{ page.project_website }}" class="button" target="_blank">Project Website</a>
+        <a class="button" href="{{ page.project_uid | slugify | prepend: '/profile/' | append: '.html' | relative_url }}">Project Profile</a>
       </div>
       <div class="column small-12 large-8">
         {{ page.project_description | markdownify }}
@@ -106,10 +106,10 @@ page_template: exemplar
       {% for schematic in page.spectrum_items %}
         <div class="schematic-description" position-attr="{{ schematic.position }}">
           <h5>{{schematic.title}}</h5>
+          {{schematic.description | markdownify }}
           <div class="spectrum-image" style="text-align:center">
             <img src="{{schematic.image.url}}" alt="{{schematic.image.title}}"/>
           </div>
-          {{schematic.description | markdownify }}
         </div>
       {% endfor %}
     </div>

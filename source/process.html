@@ -28,6 +28,10 @@ page_template: process
     <div class="row expanded align-justify first-row">
       <div class="column large-6 medium-6 small-12">
         {{ content.summary | markdownify }}
+        {{ content.description | markdownify }}
+        <div class="button-container">
+          <a class="button button--teal" href="{{ '/process/hardware.html' | relative_url }}">Get Started</a>
+        </div>
       </div>
       <div class="column large-5 medium-6 small-12">
         <h3>Certification Elements</h3>
@@ -40,7 +44,7 @@ page_template: process
               </span>
               <div>
                 <span class="certification-element__title">Hardware</span>
-                <span class="certification-element__description">(including design files)</span>
+                <span class="certification-element__description">(functional elements of the product)</span>
               </div>
             </li>
           </a>
@@ -51,7 +55,7 @@ page_template: process
               </span>
               <div>
                 <span class="certification-element__title">Software</span>
-                <span class="certification-element__description">(including design files)</span>
+                <span class="certification-element__description">(code, firmware, or software involved in the product's functionality)</span>
               </div>
             </li>
           </a>
@@ -62,7 +66,7 @@ page_template: process
                 </span>
                 <div>
                 <span class="certification-element__title">Documentation</span>
-                <span class="certification-element__description">(including design files)</span>
+                <span class="certification-element__description">(including design files, schematics, and instructions)</span>
                 </div>
             </li>
           </a>
@@ -71,30 +75,18 @@ page_template: process
               <span class="certification-element__icon"><img src="{{'/images/branding-icon.svg' | relative_url}}" /></span>
               <div>
                 <span class="certification-element__title">Branding</span>
-                <span class="certification-element__description">(including product names, logos, and designs)</span>
+                <span class="certification-element__description">brand names, product names, logos, and product design)</span>
               </div>
             </li>
           </a>
         </ul>
-      </div>
-    </div>
-  </section>
-
-  <section class="page-section page-section--panel certification-panel">
-    <div class="row expanded align-justify second-row">
-      <div class="column large-6 medium-6 small-12">
-        {{ content.description | markdownify }}
-        <div class="button-container">
-          <a class="button button--teal" href="{{ '/process/hardware.html' | relative_url }}">Get Started</a>
-        </div>
-      </div>
-      <div class="column large-5 medium-6 small-12">
         <h3>OSHWA Open Source Hardware Certification Logo</h3>
-        <div class="logo-container">
-          <img src="{{'/images/oshw-grey.png' | relative_url}}" />
+        <div class="certification-panel">
+          <div class="logo-container">
+            <img src="{{'/images/oshwa-logo.png' | relative_url}}" />
+          </div>
         </div>
       </div>
     </div>
   </section>
-
 </main>

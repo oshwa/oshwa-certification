@@ -201,8 +201,8 @@
     }
 
     .project__type--exemplar {
-      background-color: $teal;
-      color: white;
+      background-color: transparentize($teal, .7);
+      color: $gray;
       display: inline-block;
       font-size: 1.2rem;
       font-weight: 600;
@@ -214,7 +214,7 @@
         margin: 0rem 1rem .5rem auto;
       }
       &:hover {
-        background-color: $teal;
+        // background-color: $teal;
       }
     }
 
