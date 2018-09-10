@@ -3,6 +3,103 @@ body {
 }
 
 .footer {
+  &__nav {
+    font-size: .85rem;
+    font-weight: 600;
+    @include breakpoint($large) {
+      padding-left: 3rem;
+    }
+    @include breakpoint($medium-only) {
+      padding: 2rem;
+    }
+    @include breakpoint($small-only) {
+      padding-top: 3rem;
+      text-align: center;
+    }
+    a {
+      display: block;
+      padding-bottom: .2rem;
+      &:hover {
+        color: white;
+      }
+    }
+  }
+
+  &__description {
+    p {
+      font-size: .95rem;
+      margin: 0;
+      @include breakpoint($medium-only) {
+        font-size: .9rem;
+        margin-bottom: 2rem;
+      }
+      @include breakpoint($small-only) {
+        margin-bottom: 0;
+      }
+    }
+    @include breakpoint($medium-only) {
+      padding-top: 2rem;
+    }
+    @include breakpoint($small-only) {
+      padding-top: 0;
+      padding-bottom: 2rem;
+    }
+  }
+  &__partners {
+    text-align: center;
+    margin: 0 auto;
+    @include breakpoint($large) {
+      width: 45%;
+      margin-bottom: 3rem;
+    }
+    @include breakpoint($medium-only) {
+      width: 60%;
+      padding-top: 2rem;
+      margin-bottom: 2rem;
+    }
+    @include breakpoint($small-only) {
+      width: 50%;
+      margin-bottom: 2rem;
+    }
+    a {
+      img {
+        margin-bottom: 1rem;
+        opacity: .85;
+        border: dashed;
+        border-color: transparent;
+        &:hover {
+          opacity: 1;
+        }
+      }
+    }
+  }
+}
+
+.copyright {
+  background-color: $gray;
+  .large-1 {
+    @include breakpoint($large) {
+      text-align: left;
+      padding-right: 0;
+      margin-left: 1.8rem;
+    }
+  }
+  img {
+    width: 6.5rem;
+  }
+  p {
+    font-size: .8rem;
+    @include breakpoint($medium-only) {
+      margin-bottom: 0;
+    }
+    a {
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
 }
 
 #overlay {

@@ -42,15 +42,15 @@
 #hardware,
 #branding {
   .certification-panel {
-    background-color: $light-blue;
     h3 {
       color: $gray !important;
     }
     .logo-container {
       text-align: center;
-      padding-top: 2rem;
+      padding-top: 1rem;
+      padding-bottom: 2rem;
       img {
-        width: 10rem;
+        width: 11rem;
       }
     }
   }
@@ -88,7 +88,8 @@
           font-size: 1rem;
           font-weight: 800;
           @include breakpoint($medium-only) {
-            font-size: 0.8rem;
+            font-size: 0.9rem;
+            margin: 2rem auto;
           }
           &:hover {
             background-color: darken($teal, 10);
@@ -103,6 +104,7 @@
         }
         list-style: none;
         padding: 0;
+        padding-bottom: 1.5rem;
         .certification-element {
           display: -webkit-box;
           display: -ms-flexbox;

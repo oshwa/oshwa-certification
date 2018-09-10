@@ -21,10 +21,10 @@
     {% for schematic in module.spectrum_items %}
       <div class="schematic-description" position-attr="{{ schematic.position }}">
         <h4>{{schematic.title}}</h4>
+        {{schematic.description | markdownify }}
         <div class="spectrum-image">
           <img src="{{schematic.image.url}}" alt="{{schematic.image.title}}"/>
         </div>
-        {{schematic.description | markdownify }}
       </div>
     {% endfor %}
   </div>
