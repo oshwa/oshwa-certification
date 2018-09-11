@@ -7,14 +7,6 @@
   }
   margin-top: -50px;
   position: relative;
-  .img-overlay {
-    background-color: transparentize(white, 0.2);
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-  }
   .intro {
     z-index: 2;
   }
@@ -29,12 +21,13 @@
   &--branding,
   &--directory {
     background-color: white;
-    background-image: url('../images/patent-line-transpo.png');
+    background-image: url('../images/patent-line.png');
     background-repeat: no-repeat;
-    background-position: right;
-    background-size: 50%;
+    background-position: 90% -40%;
+    background-size: 40%;
     @include breakpoint($medium-only) {
-      background-size: 70%;
+      background-size: 52%;
+      background-position: 90% 60%;
     }
     @include breakpoint($small-only) {
       background-image: none;
@@ -70,6 +63,14 @@
     background-color: #fff;
     color: $gray;
     text-align: left;
+    background-position: 90% 0%;
+    @include breakpoint($medium-only) {
+      background-size: 55%;
+      background-position: 100% 60%;
+    }
+    @include breakpoint($small-only) {
+      background-image: none;
+    }
     h1 {
       padding-left: 10px;
       color: $blue;
@@ -101,6 +102,13 @@
     background-color: #fff;
     color: $gray;
     text-align: left;
+    background-position: 90% 0%;
+    @include breakpoint($medium-only) {
+      background-size: 50%;
+    }
+    @include breakpoint($small-only) {
+      background-image: none;
+    }
     h1 {
       padding-left: 10px;
       color: $blue;
@@ -115,21 +123,18 @@
   &--software,
   &--hardware,
   &--branding {
-    .img-overlay {
-      background-color: $teal;
-      position: initial;
-    }
-    background: linear-gradient(rgba($teal, 0.85), rgba($teal, 0.85)),
-      url('../images/patent-line-transpo.png') no-repeat right;
-    background-size: 50%;
+    background-color: $teal;
+    background-position: 90% 0%;
+    background-image: url('../images/patent-line.png');
+    background-size: 40%;
     @include breakpoint($medium-only) {
-      background-size: 70%;
+      background-size: 55%;
+      background-position: 100% 60%;
     }
     @include breakpoint($small-only) {
       background-image: none;
     }
     padding: 8rem 0 4rem 0;
-    background-color: $teal;
     color: #fff;
     text-align: left;
     h1 {
@@ -145,9 +150,17 @@
   }
 
   &--directory {
-    background: linear-gradient(rgba($yellow, 0.85), rgba($yellow, 0.85)),
-      url('../images/patent-line-transpo.png') no-repeat right;
-    background-size: 50%;
+    background-color: $yellow;
+    background-image: url('../images/patent-line.png');
+    background-size: 40%;
+    background-position: 90% 0%;
+    @include breakpoint($medium-only) {
+      background-size: 55%;
+      background-position: 100% 60%;
+    }
+    @include breakpoint($small-only) {
+      background-image: none;
+    }
     h1 {
       font-size: 2.6rem;
       font-weight: 800;

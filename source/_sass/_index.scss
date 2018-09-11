@@ -30,13 +30,9 @@
           }
         }
         &--process {
-          // background-color: $teal;
-          background: linear-gradient(rgba($teal, 0.85), rgba($teal, 0.85)),
-            url('../images/patent-line-transpo.png') no-repeat right;
-          background-size: 90%;
-          &:hover {
-            // background-color: darken($teal, 10);
-          }
+          background-color: $teal;
+          background-image: url('../images/patent-line-left.png');
+          background-position: 100%;
         }
         &--certify {
           position: absolute;
@@ -47,13 +43,9 @@
           @include breakpoint($small-only) {
             position: static;
           }
-          // background-color: $purple;
-          background: linear-gradient(rgba($purple, 0.85), rgba($purple, 0.85)),
-            url('../images/patent-line-transpo.png') no-repeat right;
-          background-size: 90%;
-          &:hover {
-            // background-color: darken($purple, 10);
-          }
+          background-color: $purple;
+          background-image: url('../images/patent-line-right.png');
+          background-position: 100%;
         }
       }
     }
