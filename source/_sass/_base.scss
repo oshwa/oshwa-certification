@@ -3,6 +3,12 @@ body {
 }
 
 .footer {
+  @include breakpoint($large) {
+    padding-top: 3.5rem;
+  }
+  @include breakpoint($medium-only) {
+    padding-top: 1rem;
+  }
   &__nav {
     font-size: .85rem;
     font-weight: 600;
