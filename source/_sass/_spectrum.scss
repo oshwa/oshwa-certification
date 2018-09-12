@@ -119,10 +119,14 @@
 
 .schematic-description {
   display: none;
-  h5 {
+  h4 {
     color: $gray;
     font-size: 1rem;
     font-weight: 700;
+    margin: 1rem auto;
+  }
+  p {
+    margin-bottom: 1.5rem;
   }
 }
 
