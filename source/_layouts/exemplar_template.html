@@ -80,39 +80,41 @@ page_template: exemplar
         {{ page.branding_information | markdownify }}
       </div>
     </div>
+
+    <div class="row">
+      <div class="column large-12">
+        <h4 class="exemplar-spectrum-title">Protectability Spectrum of Project Components</h4>
+        <div class="spectrum-container">
+          <div class="row expanded">
+            <div class="column">
+              <p class="label label--exemplar">Less<br>Protectable</p>
+            </div>
+            <div class="column" style="text-align: right">
+              <p class="label label--exemplar">More<br>Protectable</p>
+            </div>
+          </div>
+          <div id="spectrum-line">
+            <div class="line">
+              {% for schematic in page.spectrum_items %}
+                <div class="circle" id="circle{{ schematic.position }}" circle-attr="{{ schematic.position }}"></div>
+              {% endfor %}
+            </div>
+          </div>
+        </div>
+
+        {% for schematic in page.spectrum_items %}
+          <div class="schematic-description" position-attr="{{ schematic.position }}">
+            <h4>{{schematic.title}}</h4>
+            {{schematic.description | markdownify }}
+            <div class="spectrum-image" style="text-align:center">
+              <img src="{{schematic.image.url}}" alt="{{schematic.image.title}}"/>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
   </section>
 
-  <div class="row">
-    <div class="column large-12">
-      <h4 class="exemplar-spectrum-title">Protectability Spectrum of Project Components</h4>
-      <div class="spectrum-container">
-        <div class="row expanded">
-          <div class="column">
-            <p class="label label--exemplar">Less<br>Protectable</p>
-          </div>
-          <div class="column" style="text-align: right">
-            <p class="label label--exemplar">More<br>Protectable</p>
-          </div>
-        </div>
-        <div id="spectrum-line">
-          <div class="line">
-            {% for schematic in page.spectrum_items %}
-              <div class="circle" id="circle{{ schematic.position }}" circle-attr="{{ schematic.position }}"></div>
-            {% endfor %}
-          </div>
-        </div>
-      </div>
 
-      {% for schematic in page.spectrum_items %}
-        <div class="schematic-description" position-attr="{{ schematic.position }}">
-          <h5>{{schematic.title}}</h5>
-          {{schematic.description | markdownify }}
-          <div class="spectrum-image" style="text-align:center">
-            <img src="{{schematic.image.url}}" alt="{{schematic.image.title}}"/>
-          </div>
-        </div>
-      {% endfor %}
-    </div>
-  </div>
 
 </main>
