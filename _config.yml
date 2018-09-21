@@ -145,7 +145,7 @@ page_gen:
   - data: 'contentful.project.project'
     template: 'profile_template'
     name: 'oshwa_uid'
-    dir: 'profile'
+    dir: ''
   - data: 'contentful.exemplarProject.exemplarProject'
     template: 'exemplar_template'
     name: 'project_uid'
