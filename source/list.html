@@ -127,7 +127,7 @@ filter_nav: true
             <tbody class="list">
               {% for project in projects %}
                 <tr class="project">
-                  <td style="width:35%;"><a class="name" href="{{ project.oshwa_uid | slugify | prepend: '/profile/' | append: '.html' | relative_url }}">{{ project.project_name }}</td>
+                  <td style="width:35%;"><a class="name" href="{{ project.oshwa_uid | slugify | append: '.html' | relative_url }}">{{ project.project_name }}</td>
                   <td class="uid">{{ project.oshwa_uid }}</td>
                   <td class="type" type="all {{ project.primary_type | slugify }} {{ project.primary_type }} {% for type in project.additional_type %} {{ type | slugify }} {{type}} {% endfor %}">{{ project.primary_type }}</td>
                   <td class="date" date="{% if project.certification_date %}{{project.certification_date }}{% else %}{{ project.sys.created_at }}{% endif %} {% if project.certification_date %}{{project.certification_date | date: "%B %d, %Y" }}{% else %}{{ project.sys.created_at | date: "%B %d, %Y" }}{% endif %}">{% if project.certification_date %}{{project.certification_date | date: "%B %d, %Y"}}{% else %}{{ project.sys.created_at | date: "%B %d, %Y" }}{% endif %}</td>
