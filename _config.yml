@@ -140,6 +140,15 @@ contentful:
         all_entries: true
         cda_query:
           content_type: privacyPolicy
+    - aboutPage: # Jekyll _data folder identifier - Required
+        space: ENV_OSHWA_CONTENTFUL_SPACE_ID         # Required
+        access_token: ENV_OSHWA_CONTENTFUL_DELIVERY_TOKEN
+        base_path: ./source         # Optional - Defaults to Current directory
+        destination: /contentful # Optional - Defaults to _data/contentful/spaces
+        all_entries: true
+        cda_query:
+          content_type: aboutPage
+
 
 page_gen:
   - data: 'contentful.project.project'
