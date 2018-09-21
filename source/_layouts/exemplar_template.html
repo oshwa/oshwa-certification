@@ -41,19 +41,6 @@ page_template: exemplar
 
     <div class="row large-row">
       <div class="column large-4 small-12">
-        <h6>Documentation</h6>
-        <span class="licenses">{{ page.documentation_license.license_name }}</span>
-        {% if page.documentation_url %}
-          <a href="{{ page.documentation_url }}" class="documentation-link" target="_blank">View Documentation</a>
-        {% endif %}
-      </div>
-      <div class="column large-8">
-        {{ page.documentation_license_explanation | markdownify }}
-      </div>
-    </div>
-
-    <div class="row large-row">
-      <div class="column large-4 small-12">
         <h6>Hardware</h6>
         <span class="licenses">{{ page.hardware_license.license_name }}</span>
       </div>
@@ -69,6 +56,19 @@ page_template: exemplar
       </div>
       <div class="column large-8">
         {{ page.software_license_explanation | markdownify }}
+      </div>
+    </div>
+
+    <div class="row large-row">
+      <div class="column large-4 small-12">
+        <h6>Documentation</h6>
+        <span class="licenses">{{ page.documentation_license.license_name }}</span>
+        {% if page.documentation_url %}
+          <a href="{{ page.documentation_url }}" class="documentation-link" target="_blank">View Documentation</a>
+        {% endif %}
+      </div>
+      <div class="column large-8">
+        {{ page.documentation_license_explanation | markdownify }}
       </div>
     </div>
 
