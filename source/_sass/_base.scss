@@ -10,7 +10,7 @@ body {
     padding-top: 1rem;
   }
   &__nav {
-    font-size: .85rem;
+    font-size: 0.85rem;
     font-weight: 600;
     @include breakpoint($large) {
       padding-left: 3rem;
@@ -24,7 +24,7 @@ body {
     }
     a {
       display: block;
-      padding-bottom: .2rem;
+      padding-bottom: 0.2rem;
       &:hover {
         color: white;
       }
@@ -33,10 +33,10 @@ body {
 
   &__description {
     p {
-      font-size: .95rem;
+      font-size: 0.95rem;
       margin: 0;
       @include breakpoint($medium-only) {
-        font-size: .9rem;
+        font-size: 0.9rem;
         margin-bottom: 2rem;
       }
       @include breakpoint($small-only) {
@@ -70,7 +70,7 @@ body {
     a {
       img {
         margin-bottom: 1rem;
-        opacity: .85;
+        opacity: 0.85;
         border: dashed;
         border-color: transparent;
         &:hover {
@@ -94,7 +94,7 @@ body {
     width: 6.5rem;
   }
   p {
-    font-size: .8rem;
+    font-size: 0.8rem;
     @include breakpoint($medium-only) {
       margin-bottom: 0;
     }
@@ -117,7 +117,7 @@ body {
 }
 
 .cookies-popup {
-  background-color: rgba(0,0,0,.9);
+  background-color: rgba(0, 0, 0, 0.9);
   color: white;
   padding: 1rem 1.5rem;
   position: fixed;
@@ -136,7 +136,7 @@ body {
   }
 
   .links-container {
-    margin-top: .5rem;
+    margin-top: 0.5rem;
     text-align: right;
     @include breakpoint($medium-only) {
       text-align: center;
@@ -147,9 +147,9 @@ body {
     .button {
       background-color: none;
       border: white 2px solid;
-      font-size: .8rem;
+      font-size: 0.8rem;
       font-weight: 500;
-      padding: .5rem 1rem;
+      padding: 0.5rem 1rem;
       &:hover {
         @extend .u-transition;
         color: black;
@@ -157,13 +157,13 @@ body {
       }
     }
     .more-info {
-      font-size: .8rem;
+      font-size: 0.8rem;
       font-weight: 500;
-      padding-left: .5rem;
+      padding-left: 0.5rem;
     }
   }
 }
 
 .hidden {
-  display: none!important;
+  display: none !important;
 }
