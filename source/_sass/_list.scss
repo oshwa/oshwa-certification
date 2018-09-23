@@ -104,11 +104,20 @@
       text-transform: uppercase;
       margin-bottom: 0.5rem;
     }
-
+    select {
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      -o-appearance: none;
+      appearance: none;
+    }
+    select::-ms-expand {
+      display: none;
+    }
     .select {
       background-color: transparentize(white, 0.8);
       border-bottom: 1px solid $gray;
       font-style: italic;
+      position: relative;
       &:before {
         @extend .u-material-icons;
         content: 'arrow_drop_down_circle';
