@@ -17,8 +17,14 @@ const Scroll = {
       return true;
     });
   },
+  hideScrollonPath(path) {
+    if (window.location.pathname === path) {
+      $('body').css('overflow', 'hidden');
+    }
+  },
   init() {
     this.smoothScrolling();
+    this.hideScrollonPath('/list.html');
   }
 };
 
