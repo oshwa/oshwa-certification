@@ -10,6 +10,7 @@
   .intro {
     z-index: 2;
   }
+  &-certification,
   &--index,
   &--basics,
   &--faq,
@@ -83,7 +84,7 @@
       &--blue {
         background-color: $blue;
         color: #fff;
-        padding: .8rem 2rem;
+        padding: 0.8rem 2rem;
         font-size: 1rem;
         @include breakpoint($medium-only) {
           font-size: 0.9rem;
@@ -96,6 +97,7 @@
       }
     }
   }
+
   &--faq,
   &--privacy-policy {
     padding: 8rem 0;
@@ -118,6 +120,7 @@
     }
   }
 
+  &--certification,
   &--process,
   &--documentation,
   &--software,
@@ -144,11 +147,32 @@
       font-weight: 700;
       font-size: 2.2rem;
       @include breakpoint($small-only) {
-        font-size: 2rem!important;
+        font-size: 2rem !important;
       }
     }
   }
 
+  &--certification {
+    padding: 8rem 0;
+    background-color: $purple;
+    background-repeat: no-repeat;
+    color: $gray;
+    text-align: left;
+    background-position: 90% 0%;
+    @include breakpoint($medium-only) {
+      background-size: 50%;
+    }
+    @include breakpoint($small-only) {
+      background-image: none;
+    }
+    h1 {
+      padding-left: 10px;
+      color: #fff;
+      text-transform: uppercase;
+      font-weight: 700;
+      font-size: 2rem;
+    }
+  }
   &--directory {
     background-color: $yellow;
     background-image: url('../images/patent-line.png');
@@ -184,7 +208,7 @@
         background-color: darken($gray, 10);
       }
       @include breakpoint($medium-only) {
-        font-size: .9rem;
+        font-size: 0.9rem;
         padding: 10px 45px;
       }
       @include breakpoint($small-only) {
