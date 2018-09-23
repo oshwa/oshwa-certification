@@ -86,9 +86,7 @@ permalink: /process/branding.html
             <div class="columns large-3 medium-6 small-12 modal-container js-open-modal">
               <span class="modal-container__title">{{example.project_owner}} {{example.project_name}}</span>
               <div class="modal-container__tags">
-                {% for tag in example.project_types %}
-                  <span class="tag">{{tag}}</span>
-                {% endfor %}
+                <span class="tag">{{example.project_types | join: ', '}}</span>
               </div>
               <span class="learn-why">Branding Information</span>
               {% include examples_modal.html example=example license_type="branding"%}
