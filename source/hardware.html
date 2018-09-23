@@ -107,9 +107,7 @@ permalink: /process/hardware.html
 
               <span class="modal-container__title">{{example.project_owner}} {{example.project_name}}</span>
               <div class="modal-container__tags">
-                {% for tag in example.project_types %}
-                  <span class="tag">{{tag}}</span>
-                {% endfor %}
+                <span class="tag">{{example.project_types | join: ', '}}</span>
               </div>
               <div class="modal-container__meta">
                 <span class="license-header">License</span>
