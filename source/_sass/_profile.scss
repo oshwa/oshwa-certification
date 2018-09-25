@@ -67,10 +67,10 @@
     font-weight: 500;
     margin: 0;
     @include breakpoint($medium-only) {
-      margin: 2rem auto;
+      margin: 1rem auto;
     }
     @include breakpoint($small-only) {
-      margin: 2rem auto;
+      margin: 1rem auto;
     }
   }
   h4 {
@@ -202,20 +202,22 @@
     }
 
     .project__type--exemplar {
-      background-color: transparentize($teal, .7);
       color: $gray;
       display: inline-block;
-      font-size: 1.2rem;
+      font-size: 1.1rem!important;
+      font-style: italic;
       font-weight: 600;
       font-size: .9rem;
-      margin: 1rem 1rem 1rem auto;
-      padding: 5px 15px;
+      margin: 0 1rem 0.5rem auto;
+      padding: 0;
       text-transform: uppercase;
       @include breakpoint($small-only) {
-        margin: 0rem 1rem .5rem auto;
+        margin: 0;
+        margin-top: 1.5rem;
       }
-      &:hover {
-        // background-color: $teal;
+      @include breakpoint($medium-only) {
+        margin: 0;
+        margin-top: 1.5rem 0;
       }
     }
 
