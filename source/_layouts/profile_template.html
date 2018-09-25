@@ -41,7 +41,7 @@ page_template: profile
         {% if page.previous_versions %}
           <h3 class="previous-title">Previous Versions</h3>
           {% for version in page.previous_versions %}
-            <div class="previous-versions"><a href="#">{{ version.oshwa_uid }}</a></div>
+            <div class="previous-versions"><a href="{{ version.oshwa_uid | slugify | append: '.html' |  relative_url }}">{{ version.oshwa_uid }}</a></div>
           {% endfor %}
         {% endif %}
       </div>
