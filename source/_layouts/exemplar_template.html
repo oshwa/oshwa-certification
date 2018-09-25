@@ -21,13 +21,13 @@ page_template: exemplar
         <a class="button" href="{{ page.project_uid | slugify | prepend: '/profile/' | append: '.html' | relative_url }}">Project Profile</a>
       </div>
       <div class="column small-12 large-8">
-        {{ page.project_description | markdownify }}
-
         {% for type in page.project_types %}
           <div class="project__type--exemplar">
             {{ type }}
           </div>
         {% endfor %}
+
+        {{ page.project_description | markdownify }}
       </div>
     </div>
 
