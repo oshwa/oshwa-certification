@@ -18,7 +18,7 @@ describe('Nav', function() {
     global.$ = require('jquery')(window);
     body.innerHTML = templateHTML;
     Nav.init();
-    navButton = document.querySelector('.js-trigger-menu');
+    navButton = document.querySelector('.menu-button');
     nav = document.querySelector('nav');
     overlay = document.querySelector('#overlay');
     navButton.click();

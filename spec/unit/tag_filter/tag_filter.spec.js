@@ -34,11 +34,11 @@ describe('TagFilter', function() {
   it('should have correct type-tag attribute in url for profile tag filters', function() {
     firstTag.click();
     profileTagURL = TagFilter.searchListUrl;
-    assert.equal(profileTagURL, 'null/oshwa/list.html?type=example-type-1');
+    assert.equal(profileTagURL, 'null/list.html?type=example-type-1');
   });
   it('should have correct tag attribute in url for directory filters', function() {
     firstContainer.click();
     directoryURL = TagFilter.searchListUrl;
-    assert.equal(directoryURL, 'null/oshwa/list.html?type=first-type');
+    assert.equal(directoryURL, 'null/list.html?type=first-type');
   });
 });
