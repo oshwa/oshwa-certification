@@ -39,6 +39,13 @@
     box-sizing: border-box;
     p {
       padding: 0 1rem;
+      a {
+        border-bottom: 1px solid $gray;
+        text-decoration: none;
+        &:hover {
+          border-bottom: 2px solid $gray;
+        }
+      }
     }
 
     p:last-child {

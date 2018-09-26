@@ -80,7 +80,9 @@ page_template: profile
           <div type-tag="{{ page.primary_type | slugify }}" class="project__type">{{ page.primary_type }}</div>
           {% if page.additional_type %}
             {% for type in page.additional_type %}
-              <div type-tag="{{ type | slugify }}" class="project__type">{{ type }}</div>
+              {% if type != page.primary_type %}
+                <div type-tag="{{ type | slugify }}" class="project__type">{{ type }}</div>
+              {% endif %}
             {% endfor %}
           {% endif %}
         </div>

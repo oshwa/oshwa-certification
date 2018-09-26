@@ -71,6 +71,13 @@
     }
     p {
       font-size: 0.9rem;
+      a {
+        border-bottom: 1px solid $gray;
+        text-decoration: none;
+        &:hover {
+          border-bottom: 2px solid $gray;
+        }
+      }
     }
     &--panel {
       @include breakpoint($large) {
@@ -164,5 +171,12 @@
   }
   p {
     font-size: 0.9rem;
+    a {
+      border-bottom: 1px solid $gray;
+      text-decoration: none;
+      &:hover {
+        border-bottom: 2px solid $gray;
+      }
+    }
   }
 }
