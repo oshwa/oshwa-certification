@@ -28,6 +28,6 @@ describe('SearchSubmit', function() {
   it('redirects to to the correct path using submitted search query', function() {
     formSubmitButton.click();
     searchURL = SearchSubmit.searchListUrl;
-    assert.equal(searchURL, 'null/oshwa/list.html?q=thisIsASearchQuery');
+    assert.equal(searchURL, 'null/list.html?q=thisIsASearchQuery');
   });
 });
