@@ -1,1 +1,1 @@
-Sitemap: http://oshwa.github.io/oshwa-certification/sitemap.xml
+Sitemap: https://certification.oshwa.org/sitemap.xml
