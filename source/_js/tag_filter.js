@@ -1,5 +1,5 @@
 const TagFilter = {
-  listUrl: '/oshwa-certification/list.html',
+  listUrl: '/list.html',
   searchListUrl: undefined,
   filterByTag: () => {
     $('.project__type').on('click', e => {
