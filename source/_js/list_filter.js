@@ -144,7 +144,7 @@ const ListFilter = {
       ListFilter.projectList.sort('name', { order: 'asc' });
 
       if (window.location.search !== '') {
-        window.location.href = window.location.origin + '/oshwa/list.html';
+        window.location.href = window.location.origin + '/list.html';
       }
 
       ListFilter.clearFormInputs();
