@@ -1,5 +1,5 @@
 const SearchSubmit = {
-  listUrl: '/oshwa/list.html',
+  listUrl: '/oshwa-certification/list.html',
   searchString: undefined,
   searchListUrl: undefined,
   submitSearch: () => {
