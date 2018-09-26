@@ -1,4 +1,4 @@
-# Open Source Hardware Association
+# Open Source Hardware Association Certification
 
 ### Prerequisites
 - [jekyll](https://jekyllrb.com/)
