@@ -27,6 +27,7 @@ const ListFilter = {
   searchQueries: { software: 'all', hardware: 'all' },
   typeCheckedValues: [],
   location: 'all',
+  activeTag: undefined,
   createList: () => {
     ListFilter.projectList = new List('project_data', ListFilter.options);
 
@@ -81,18 +82,21 @@ const ListFilter = {
       ListFilter.filterList();
     });
   },
+  mapCheckBoxes: () => {
+    ListFilter.typeCheckedValues = $('input[type="checkbox"]:checked')
+      .map(function() {
+        return this.value;
+      }).get();
+
+    if (ListFilter.typeCheckedValues.length === 0) {
+      ListFilter.typeCheckedValues = ['all'];
+    }
+
+    ListFilter.filterList();
+  },
   filterByCheckboxes: () => {
-    $('.filter-container').on('change', $('input[type="checkbox"]:checked'), () => {
-      ListFilter.typeCheckedValues = $('input[type="checkbox"]:checked')
-        .map(function() {
-          return this.value;
-        }).get();
-
-      if (ListFilter.typeCheckedValues.length === 0) {
-        ListFilter.typeCheckedValues = ['all'];
-      }
-
-      ListFilter.filterList();
+    $('.filter-container').on('change', () => {
+      ListFilter.mapCheckBoxes();
     });
   },
   matchesAllItems: (arr1, arr2) => {
@@ -121,14 +125,8 @@ const ListFilter = {
         break;
       case '?type':
         $(`input[type=checkbox][value=${searchParam}]`).prop('checked', true);
-        ListFilter.typeCheckedValues.push(searchParam);
-        ListFilter.displayResultQueries();
-
-        ListFilter.projectList.filter(item => {
-          if (item.values().type !== null && item.values().type.indexOf(searchParam) !== -1) {
-            return true;
-          }
-        });
+        ListFilter.activeTag = searchParam;
+        ListFilter.mapCheckBoxes();
         break;
       default:
     }
@@ -169,7 +167,7 @@ const ListFilter = {
       activeSearchParams.push(ListFilter.searchString);
     }
 
-    $('input[name="type"]:checked').map((val, item) => activeSearchParams.push(item.id));
+    $('input[type="checkbox"]:checked').each((val, item) => activeSearchParams.push(item.id));
 
     $('.dropdown').map((val, item) => {
       if (item.value !== 'Select one') {
@@ -189,6 +187,9 @@ const ListFilter = {
       $('.results-message').hide();
     }
   },
+  checkBox() {
+    $(`input[type=checkbox][value=${ListFilter.activeTag}]`).prop('checked', true);
+  },
   init() {
     this.createList();
     this.filterBySearch();
@@ -199,6 +200,7 @@ const ListFilter = {
     this.clearAllFilters();
     this.clearFormInputs();
     this.displayResults();
+    this.checkBox();
   }
 };
 
