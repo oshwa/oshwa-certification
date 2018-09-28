@@ -54,10 +54,3 @@ jobs:
       - checkout:
           path: ~/oshwa-certification
       - run: echo "done"
-      
-workflows:
-  version: 2
-  build_and_test:
-    jobs:
-      - build
-      - test
