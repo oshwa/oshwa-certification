@@ -25,7 +25,7 @@ seo_image_path: '/images/oshwa-og.jpg'
 
 # Build settings
 markdown: kramdown
-gems:
+plugins:
   - jekyll-feed
 
 exclude:
