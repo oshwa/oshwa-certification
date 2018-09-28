@@ -14,8 +14,8 @@ jobs:
       # specify the version you desire here
        - image: circleci/ruby:2.4.1-node-browsers
     steps:
-      - checkout:
-          path: ~/oshwa-certification
+      - checkout
+      - run: npm install
       - run: echo "done"
 workflows:
   version: 2
