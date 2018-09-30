@@ -21,6 +21,7 @@ jobs:
       - image: circleci/ruby:2.4.1-node-browsers
     steps:
       - checkout
+      - run: npm install
       - run: npm run deploy
 workflows:
   version: 2
