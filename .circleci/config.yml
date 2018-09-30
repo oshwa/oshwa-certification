@@ -9,6 +9,7 @@ jobs:
       - run: bundle install
       - run: npm install
       - run: bash automated_build.sh
+      - run: npm run deploy
   test:
     docker:
        - image: circleci/ruby:2.4.1-node-browsers
@@ -16,24 +17,11 @@ jobs:
       - checkout
       - run: npm install
       - run: echo "done"
-  deploy:
-    docker:
-      - image: circleci/ruby:2.4.1-node-browsers
-    steps:
-      - checkout
-      - run: npm install
-      - run: npm run deploy
 workflows:
   version: 2
   build_and_test:
     jobs:
       - build:
-          filters:
-            branches:
-              only: master
-      - deploy:
-          requires:
-            - build
           filters:
             branches:
               only: master
