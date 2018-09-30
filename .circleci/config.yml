@@ -17,6 +17,8 @@ jobs:
       - run: npm install
       - run: echo "done"
   deploy:
+    docker:
+      - image: circleci/ruby:2.4.1-node-browsers
     steps:
       - checkout
       - run: npm run deploy
