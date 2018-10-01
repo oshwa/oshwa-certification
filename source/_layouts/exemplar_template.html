@@ -18,7 +18,7 @@ page_template: exemplar
       <div class="column small-12 large-4">
         <h3>OSHWA UID</h3>
         <span class="id">{{ page.project_uid }}</span>
-        <a class="button" href="{{ page.project_website }}">Project Profile</a>
+        <a class="button" href="{{ page.project_uid | slugify | append: '.html' | relative_url }}">Project Profile</a>
       </div>
       <div class="column small-12 large-8">
         {% for type in page.project_types %}

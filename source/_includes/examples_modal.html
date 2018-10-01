@@ -20,7 +20,11 @@
       <p>{{ example.hardware_license_explanation | markdownify }}</p>
     {% when "software" %}
       <p class="license-header">Software License:</p>
-      <p class="license-name">{{ example.software_license.license_name }}</p>
+        {% if example.software_license.license_name %}
+          <p class="license-name">{{ example.software_license.license_name }}</p>
+        {% else %}
+          <p class="license-name">No Software</p>
+        {% endif %}
       <p class="license-why">Why this license?</p>
       <p>{{ example.software_license_explanation | markdownify }}</p>
     {% when "branding" %}
