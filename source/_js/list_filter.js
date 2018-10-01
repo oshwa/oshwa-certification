@@ -176,6 +176,12 @@ const ListFilter = {
       return activeSearchParams;
     });
 
+    $('.country-dropdown').map((val, item) => {
+      if (item.value !== 'Country') {
+        activeSearchParams.push(item.value);
+      }
+    })
+
     if (activeSearchParams.length > 0) {
       $('.results-message').show();
       if ($('.project').length === 0) {
