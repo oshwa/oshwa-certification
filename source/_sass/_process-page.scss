@@ -19,7 +19,7 @@
       text-transform: uppercase;
       vertical-align: top;
       position: relative;
-      top: .9rem;
+      top: 0.9rem;
     }
   }
   .top-section {
@@ -135,7 +135,7 @@
       font-weight: 700;
       color: $teal;
       list-style: none;
-      margin-bottom: .6rem;
+      margin-bottom: 0.6rem;
       a {
         text-decoration: none;
         cursor: pointer;
@@ -145,6 +145,14 @@
       }
     }
   }
+}
+
+// fix internal menu to top of page
+.page-section--nav.fixed {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 4;
 }
 
 // js behavior

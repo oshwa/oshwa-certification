@@ -14,14 +14,30 @@ const InternalNav = {
     const pageTarget = target || '1';
     const $viewTarget = $(`[data-nav-order='${pageTarget}']`);
     $viewTarget.addClass('js-active-section');
+    // put top of section in view
+    if ($('.page-section--nav.fixed').length) {
+      const $sectionTop = $viewTarget.offset().top;
+      $(window).scrollTop($sectionTop + 5);
+    }
   },
   handleNavClick(clickTarget) {
     $('.js-active-section').removeClass('js-active-section');
     InternalNav.getView(clickTarget);
   },
+  fixedInternalNav: () => {
+    const $window = $(window);
+    const $fixedNav = $('.page-section--nav');
+    const elTop = $fixedNav.offset().top;
+    if ($fixedNav) {
+      $window.scroll(() => {
+        $fixedNav.toggleClass('fixed', $window.scrollTop() > elTop);
+      });
+    }
+  },
   init() {
     this.handleInternalMenu();
     this.getView();
+    this.fixedInternalNav();
   }
 };
 
