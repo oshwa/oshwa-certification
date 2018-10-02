@@ -112,7 +112,7 @@
           margin: auto;
           cursor: pointer;
           @include breakpoint($medium-only) {
-            padding: 0 1rem;
+            padding: 0 0.5rem;
           }
           @include breakpoint($small-only) {
             display: block;
@@ -146,17 +146,27 @@
     }
   }
 }
-
+.internal-menu__items-wrapper {
+  height: 2rem;
+  display: inline-block;
+}
 // Dropdown
 .learning-module__select-wrapper {
+  height: 2.7rem;
   display: inline-block;
   @include breakpoint($small-only) {
     display: none !important;
   }
+  @include breakpoint($medium-only) {
+    margin-left: 0.5rem;
+  }
   cursor: default;
 }
 .internal-menu__item--dropdown {
-  padding: 0 1rem 0 0 !important;
+  padding: 0 1rem 0 3rem !important;
+  @include breakpoint($medium-only) {
+    padding: 0 1rem 0 0 !important;
+  }
   cursor: default !important;
   @include breakpoint($small-only) {
     display: none !important;
@@ -169,16 +179,22 @@
   font-weight: 700;
   text-transform: none;
 }
+#branding {
+  .learning-module__select {
+    @include breakpoint($medium-only) {
+      min-width: 20rem;
+    }
+  }
+}
 .learning-module__select {
   color: rgba(#4d4d4d, 0.7);
   @include breakpoint($small-only) {
     display: none;
   }
   @include breakpoint($medium-only) {
-    min-width: 11rem;
+    min-width: 12rem;
   }
-
-  min-width: 16rem;
+  min-width: 20rem;
   margin-bottom: 0;
   display: inline-block;
   font-style: normal;
