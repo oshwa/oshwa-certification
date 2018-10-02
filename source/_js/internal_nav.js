@@ -17,7 +17,7 @@ const InternalNav = {
     // put top of section in view
     if ($('.page-section--nav.fixed').length) {
       const $sectionTop = $viewTarget.offset().top;
-      $(window).scrollTop($sectionTop + 5);
+      $(window).scrollTop(Math.floor($sectionTop));
     }
   },
   handleNavClick(clickTarget) {
