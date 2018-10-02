@@ -34,10 +34,57 @@ const InternalNav = {
       });
     }
   },
+  redirectLearningModules: path => {
+    const softwarePath = 'process/software.html';
+    const hardwarePath = 'process/hardware.html';
+    const documentationPath = 'process/documentation.html';
+    const brandingPath = 'process/branding.html';
+    const projectsPath = 'list.html';
+    const certifyPath = 'https://application.oshwa.org/apply';
+
+    switch (path) {
+      case 'software-process':
+        window.location.pathname = softwarePath;
+        break;
+      case 'hardware-process':
+        window.location.pathname = hardwarePath;
+        break;
+      case 'documentation-process':
+        window.location.pathname = documentationPath;
+        break;
+      case 'branding-process':
+        window.location.pathname = brandingPath;
+        break;
+      case 'certified-projects':
+        window.location.pathname = projectsPath;
+        break;
+      case 'certify-a-project':
+        window.location.href = certifyPath;
+        break;
+      default:
+        break;
+    }
+  },
+  resetDropdownsOnBack: () => {
+    if ($('.learning-module__dropdown')) {
+      $('.learning-module__dropdown').prop('selectedIndex', 0);
+    }
+  },
+  handleLearningModuleSelect: () => {
+    // need to reset dropdown on back
+    $('.learning-module__dropdown').on('change', e => {
+      const learningModuleSelection = $('.learning-module__dropdown')
+        .children(':selected')
+        .attr('value');
+      InternalNav.redirectLearningModules(learningModuleSelection);
+    });
+  },
   init() {
     this.handleInternalMenu();
     this.getView();
     this.fixedInternalNav();
+    this.handleLearningModuleSelect();
+    this.resetDropdownsOnBack();
   }
 };
 
