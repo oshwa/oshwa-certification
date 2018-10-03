@@ -68,7 +68,9 @@ const ListFilter = {
       ListFilter.allFilters.each(selection => {
         $(selection).each(() => {
           const filterSelection = e.currentTarget.id;
-          const selectedOption = $(e.currentTarget).children(':selected').attr('id');
+          const selectedOption = $(e.currentTarget)
+            .children(':selected')
+            .attr('id');
 
           ListFilter.searchQueries[filterSelection] = selectedOption;
         });
@@ -78,7 +80,9 @@ const ListFilter = {
   },
   filterByLocation: () => {
     $('.country-dropdown').on('change', e => {
-      ListFilter.location = $(e.currentTarget).children(':selected').attr('id');
+      ListFilter.location = $(e.currentTarget)
+        .children(':selected')
+        .attr('id');
       ListFilter.filterList();
     });
   },
@@ -86,7 +90,8 @@ const ListFilter = {
     ListFilter.typeCheckedValues = $('input[type="checkbox"]:checked')
       .map(function() {
         return this.value;
-      }).get();
+      })
+      .get();
 
     if (ListFilter.typeCheckedValues.length === 0) {
       ListFilter.typeCheckedValues = ['all'];
@@ -158,7 +163,9 @@ const ListFilter = {
   },
   displayResults: () => {
     const projectCount = $('.project').length;
-    $('.results-count').html(`<p>Displaying ${projectCount} Projects</p>`);
+    const projectsLabel = projectCount === 1 ? `Project` : `Projects`;
+    $('.results-count').html(`<p>Displaying ${projectCount} ${projectsLabel}</p>`);
+    $('.mobile-results-message').html(`<p>See ${projectCount} ${projectsLabel}</p>`);
   },
   displayResultQueries: () => {
     const activeSearchParams = [];
@@ -180,7 +187,7 @@ const ListFilter = {
       if (item.value !== 'Country') {
         activeSearchParams.push(item.value);
       }
-    })
+    });
 
     if (activeSearchParams.length > 0) {
       $('.results-message').show();

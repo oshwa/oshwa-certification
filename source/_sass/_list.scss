@@ -232,6 +232,45 @@
   }
 }
 
+.mobile-results-message {
+  font-style: italic;
+  text-align: center;
+  display: block;
+
+  @include breakpoint($large) {
+    font-style: italic;
+    text-align: center;
+    display: none;
+  }
+}
+
+.toggle-filters.expanded {
+  right: 180px;
+}
+.filters {
+  text-align: left;
+  color: $gray;
+  font-size: 1.1rem;
+  font-weight: 500;
+  padding-top: 12px;
+  display: none;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  position: absolute;
+  p {
+    padding: 0 2rem;
+    margin: 0;
+  }
+}
+.filters.activated {
+  display: inline-block;
+  width: 180px;
+  @include breakpoint($large) {
+    display: none;
+  }
+}
+
 .uid-header {
   @include breakpoint($small-only) {
     display: none;

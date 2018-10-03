@@ -3,6 +3,7 @@ const MobileFilters = {
     $('.toggle-filters').click(() => {
       $('.filter-container').toggleClass('active');
       $('.toggle-filters').toggleClass('expanded');
+      $('.filters').toggleClass('activated');
 
       if ($('.toggle-filters').hasClass('expanded')) {
         $('.toggle-filters').html('close');
