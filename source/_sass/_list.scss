@@ -10,7 +10,7 @@
     overflow-y: scroll;
     padding: 0 3rem 1rem;
     background-color: $yellow;
-    padding: 8.7rem 2rem;
+    padding: 8.7rem 1.5rem;
     @include breakpoint($medium-only) {
       display: none;
     }
@@ -27,6 +27,7 @@
       width: 100%;
       i {
         font-weight: 700;
+        margin-left: 0;
       }
     }
 

@@ -22,31 +22,36 @@ const ListFilter = {
     }
   },
   projectList: undefined,
-  searchString: '',
+
   allFilters: undefined,
-  searchQueries: { software: 'all', hardware: 'all' },
+  searchQueries: undefined,
   typeCheckedValues: [],
   location: 'all',
   activeTag: undefined,
   createList: () => {
     ListFilter.projectList = new List('project_data', ListFilter.options);
-
     if (document.location.href.indexOf('list') > -1) {
       ListFilter.projectList.sort('name', { order: 'asc' });
     }
+    ListFilter.setSearchQueryDefaults();
   },
-  filterList: () => {
-    ListFilter.projectList.search(ListFilter.searchString);
+  filterList: searchQueries => {
+    const { hardware, software, location, searchParams } = searchQueries;
+    let { projectTypes } = searchQueries;
+    if (typeof projectTypes === 'string') {
+      projectTypes = projectTypes.split(',');
+    }
+    ListFilter.projectList.search(searchParams);
     ListFilter.projectList.filter(item => {
       if (
         item.values().hardware !== null &&
         item.values().software !== null &&
         item.values().type !== null &&
         item.values().location !== null &&
-        item.values().hardware.indexOf(ListFilter.searchQueries.hardware) !== -1 &&
-        item.values().software.indexOf(ListFilter.searchQueries.software) !== -1 &&
-        item.values().location.indexOf(ListFilter.location) !== -1 &&
-        ListFilter.matchesAllItems(item.values().type, ListFilter.typeCheckedValues)
+        item.values().hardware.indexOf(hardware) !== -1 &&
+        item.values().software.indexOf(software) !== -1 &&
+        item.values().location.indexOf(location) !== -1 &&
+        ListFilter.matchesAllItems(item.values().type, projectTypes)
       ) {
         return true;
       }
@@ -57,13 +62,12 @@ const ListFilter = {
   },
   filterBySearch: () => {
     $('#searchfield').on('keyup', e => {
-      ListFilter.searchString = $(e.currentTarget).val();
-      ListFilter.filterList();
+      ListFilter.searchQueries.searchParams = $(e.currentTarget).val();
+      ListFilter.filterList(ListFilter.searchQueries);
     });
   },
   filterByDropdowns: () => {
     ListFilter.allFilters = $('.dropdown');
-
     ListFilter.allFilters.on('change', e => {
       ListFilter.allFilters.each(selection => {
         $(selection).each(() => {
@@ -71,11 +75,10 @@ const ListFilter = {
           const selectedOption = $(e.currentTarget)
             .children(':selected')
             .attr('id');
-
           ListFilter.searchQueries[filterSelection] = selectedOption;
         });
       });
-      ListFilter.filterList();
+      ListFilter.filterList(ListFilter.searchQueries);
     });
   },
   filterByLocation: () => {
@@ -83,7 +86,8 @@ const ListFilter = {
       ListFilter.location = $(e.currentTarget)
         .children(':selected')
         .attr('id');
-      ListFilter.filterList();
+      ListFilter.searchQueries.location = ListFilter.location;
+      ListFilter.filterList(ListFilter.searchQueries);
     });
   },
   mapCheckBoxes: () => {
@@ -96,8 +100,8 @@ const ListFilter = {
     if (ListFilter.typeCheckedValues.length === 0) {
       ListFilter.typeCheckedValues = ['all'];
     }
-
-    ListFilter.filterList();
+    ListFilter.searchQueries.projectTypes = ListFilter.typeCheckedValues;
+    ListFilter.filterList(ListFilter.searchQueries);
   },
   filterByCheckboxes: () => {
     $('.filter-container').on('change', () => {
@@ -121,16 +125,16 @@ const ListFilter = {
   filterByUrlParams: () => {
     const searchQuery = window.location.search.split('=')[0];
     const searchParam = window.location.search.split('=')[1];
-
     switch (searchQuery) {
       case '?q':
-        ListFilter.searchString = decodeURI(searchParam);
-        ListFilter.projectList.search(ListFilter.searchString);
-        ListFilter.displayResultQueries();
+        ListFilter.addQueryToSearch(decodeURI(searchParam));
+        ListFilter.matchSearchQueriesToUI();
+        ListFilter.filterList(ListFilter.searchQueries);
         break;
       case '?type':
         $(`input[type=checkbox][value=${searchParam}]`).prop('checked', true);
         ListFilter.activeTag = searchParam;
+        ListFilter.matchSearchQueriesToUI();
         ListFilter.mapCheckBoxes();
         break;
       default:
@@ -139,17 +143,14 @@ const ListFilter = {
   clearAllFilters: () => {
     $('.clear_filters').on('click', e => {
       e.preventDefault();
-      ListFilter.searchString = '';
       ListFilter.location = '';
-      ListFilter.searchQueries = { software: 'all', hardware: 'all' };
+      ListFilter.setSearchQueryDefaults();
       ListFilter.projectList.search();
       ListFilter.projectList.filter();
       ListFilter.projectList.sort('name', { order: 'asc' });
-
       if (window.location.search !== '') {
         window.location.href = window.location.origin + '/list.html';
       }
-
       ListFilter.clearFormInputs();
       ListFilter.displayResults();
       ListFilter.displayResultQueries();
@@ -169,9 +170,9 @@ const ListFilter = {
   },
   displayResultQueries: () => {
     const activeSearchParams = [];
-
-    if (ListFilter.searchString !== '') {
-      activeSearchParams.push(ListFilter.searchString);
+    const { searchParams } = ListFilter.searchQueries;
+    if (searchParams !== '') {
+      activeSearchParams.push(searchParams);
     }
 
     $('input[type="checkbox"]:checked').each((val, item) => activeSearchParams.push(item.id));
@@ -183,7 +184,7 @@ const ListFilter = {
       return activeSearchParams;
     });
 
-    $('.country-dropdown').map((val, item) => {
+    $('.country-dropdown').each((val, item) => {
       if (item.value !== 'Country') {
         activeSearchParams.push(item.value);
       }
@@ -200,8 +201,45 @@ const ListFilter = {
       $('.results-message').hide();
     }
   },
-  checkBox() {
-    $(`input[type=checkbox][value=${ListFilter.activeTag}]`).prop('checked', true);
+  matchSearchQueriesToUI: () => {
+    // grabs searchQueries values from the UI
+    ListFilter.searchQueries.searchParams = $('#searchfield').val();
+    ListFilter.searchQueries.location = $('.country-dropdown')
+      .children(':selected')
+      .attr('id');
+    // default project types value
+    const projectTypes = ['all'];
+    ListFilter.typeCheckedValues = $('input[type="checkbox"]:checked').each((val, type) => {
+      projectTypes.push(type.value);
+    });
+    ListFilter.searchQueries.projectTypes = projectTypes;
+    ListFilter.searchQueries.hardware = $('#hardware')
+      .children(':selected')
+      .attr('id');
+    ListFilter.searchQueries.software = $('#software')
+      .children(':selected')
+      .attr('id');
+  },
+  handleSearchBehavior: () => {
+    const hasUrlParam = window.location.search;
+    if (hasUrlParam) {
+      ListFilter.filterByUrlParams();
+    } else {
+      ListFilter.matchSearchQueriesToUI();
+      ListFilter.filterList(ListFilter.searchQueries);
+    }
+  },
+  addQueryToSearch: term => {
+    $('#searchfield').val(term);
+  },
+  setSearchQueryDefaults: () => {
+    ListFilter.searchQueries = {
+      software: 'all',
+      hardware: 'all',
+      projectTypes: ['all'],
+      location: 'all',
+      searchParams: ''
+    };
   },
   init() {
     this.createList();
@@ -209,11 +247,9 @@ const ListFilter = {
     this.filterByDropdowns();
     this.filterByLocation();
     this.filterByCheckboxes();
-    this.filterByUrlParams();
     this.clearAllFilters();
-    this.clearFormInputs();
     this.displayResults();
-    this.checkBox();
+    this.handleSearchBehavior();
   }
 };
 
