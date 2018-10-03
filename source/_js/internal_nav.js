@@ -26,9 +26,9 @@ const InternalNav = {
   },
   fixedInternalNav: () => {
     const $window = $(window);
-    const $fixedNav = $('.page-section--nav');
-    const elTop = $fixedNav.offset().top;
-    if ($fixedNav) {
+    if ($('.page-section__process-nav').length > 0) {
+      const $fixedNav = $('.page-section__process-nav');
+      const elTop = $fixedNav.offset().top;
       $window.scroll(() => {
         $fixedNav.toggleClass('fixed', $window.scrollTop() > elTop);
       });
