@@ -5,14 +5,14 @@
 
   &__button {
     &--right {
-      background-color: $yellow;
+      background-color: $teal;
       color: $gray;
       right: 0;
       top: 0;
       bottom: 0;
       position: absolute;
       &:hover {
-        background-color: darken($yellow, 10);
+        background-color: darken($teal, 10);
       }
       @include breakpoint($large) {
         display: none;
@@ -53,6 +53,6 @@
 }
 
 .active-menu-button {
-  background-color: $gray!important;
-  color: white!important;
+  background-color: $gray !important;
+  color: white !important;
 }
