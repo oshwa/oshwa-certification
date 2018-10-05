@@ -241,6 +241,12 @@ const ListFilter = {
       searchParams: ''
     };
   },
+  blurInputOnHover: () => {
+    // remove focus from input to fix double link clicking
+    $('.projects').on('mouseenter', () => {
+      $('#searchfield').blur();
+    });
+  },
   init() {
     this.createList();
     this.filterBySearch();
@@ -250,6 +256,7 @@ const ListFilter = {
     this.clearAllFilters();
     this.displayResults();
     this.handleSearchBehavior();
+    this.blurInputOnHover();
   }
 };
 

@@ -6,9 +6,11 @@ const MobileFilters = {
       $('.filters').toggleClass('activated');
 
       if ($('.toggle-filters').hasClass('expanded')) {
-        $('.toggle-filters').html('close');
+        $('.mobile-results-message').addClass('expanded');
+        $('.js-trigger-menu').html('close');
       } else {
-        $('.toggle-filters').html('tune');
+        $('.mobile-results-message').removeClass('expanded');
+        $('.js-trigger-menu').html('tune');
       }
     });
   },
