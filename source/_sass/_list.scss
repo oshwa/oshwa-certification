@@ -234,9 +234,13 @@
 }
 
 .mobile-results-message {
+  cursor: pointer;
   font-style: italic;
   text-align: center;
   display: block;
+  &:hover {
+    text-decoration: underline;
+  }
 
   @include breakpoint($large) {
     font-style: italic;
@@ -245,7 +249,8 @@
   }
 }
 
-.toggle-filters.expanded {
+.toggle-filters.expanded,
+.mobile-results-message.expanded {
   right: 180px;
 }
 .filters {
