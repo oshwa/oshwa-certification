@@ -31,8 +31,10 @@ Utils.markdownLinksNewPage();
 InternalNav.init();
 CompactPanel.init();
 MobileFilters.init();
-ListFilter.init();
 AddIcon.init();
+if (window.location.pathname === '/list.html') {
+  ListFilter.init();
+}
 SearchSubmit.init();
 TagFilter.init();
 Spectrum.init();
