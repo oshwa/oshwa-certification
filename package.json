@@ -18,7 +18,7 @@
     "babel-loader": "^7.1.4",
     "babel-preset-env": "^1.6.1",
     "chai": "^4.1.2",
-    "compression-webpack-plugin": "^1.1.11",
+    "compression-webpack-plugin": "^3.1.0",
     "eslint": "^4.19.1",
     "eslint-config-airbnb-base": "^12.1.0",
     "eslint-config-prettier": "^2.9.0",
@@ -28,9 +28,8 @@
     "gulp-autoprefixer": "^5.0.0",
     "gulp-changed": "^3.2.0",
     "gulp-clean-css": "^4.2.0",
-    "gulp-gh-pages": "github:tekd/gulp-gh-pages",
+    "gulp-gh-pages": "github:shinnn/gulp-gh-pages",
     "gulp-htmlmin": "^4.0.0",
-    "gulp-imagemin": "^6.0.0",
     "gulp-plumber": "^1.2.1",
     "gulp-sass": "^4.0.2",
     "gulp-shell": "^0.6.5",
@@ -40,8 +39,8 @@
     "jsdom-global": "3.0.2",
     "mocha": "^5.0.5",
     "prettier": "^1.18.2",
-    "uglifyjs-webpack-plugin": "^1.2.4",
-    "webpack-stream": "^4.0.3"
+    "terser-webpack-plugin": "^2.3.5",
+    "webpack-stream": "^5.2.1"
   },
   "dependencies": {
     "browser-cookies": "^1.2.0",
