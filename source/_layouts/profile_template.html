@@ -11,7 +11,7 @@ page_template: profile
   <section class="page-section page-section--profile">
     <div class="row align-left">
       <div class="column large-12">
-        <h1>{{ page.project_name }}</h1>
+        <h1>{{ page.project_name | decode_html }}</h1>
         <h2>{{ page.responsible_party }} {% if page.public_contact %}<a href="mailto:{{ page.public_contact }}"><i class="material-icons">mail</i></a>{% endif %}</h2>
       </div>
     </div>
@@ -31,8 +31,11 @@ page_template: profile
         <h3 class="info-title">Country</h3>
         <p class="info-data">{{ page.country }}</p>
       </div>
+
+      
       <div class="column small-12 large-6">
-        {{ page.project_description | markdownify }}
+       {{ page.project_description | decode_html }}
+       
       </div>
       <div class="column small-12 large-2">
         <h3>Version</h3>
@@ -93,7 +96,7 @@ page_template: profile
       <div class="row keywords">
         <div class="column large-12">
           <h5>Keywords</h5>
-            <span class="keywords__keyword">{{ page.project_keywords | join: ", " }}</span>
+            <span class="keywords__keyword">{{ page.project_keywords | join: ", " | decode_html }}</span>
         </div>
       </div>
     {% endif %}
