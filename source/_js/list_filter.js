@@ -22,7 +22,6 @@ const ListFilter = {
     }
   },
   projectList: undefined,
-
   allFilters: undefined,
   searchQueries: undefined,
   typeCheckedValues: [],
@@ -64,6 +63,7 @@ const ListFilter = {
     $('#searchfield').on('keyup', e => {
       ListFilter.searchQueries.searchParams = $(e.currentTarget).val();
       ListFilter.filterList(ListFilter.searchQueries);
+      sessionStorage.setItem('searchQueries', JSON.stringify(ListFilter.searchQueries));
     });
   },
   filterByDropdowns: () => {
@@ -79,15 +79,7 @@ const ListFilter = {
         });
       });
       ListFilter.filterList(ListFilter.searchQueries);
-    });
-  },
-  filterByLocation: () => {
-    $('.country-dropdown').on('change', e => {
-      ListFilter.location = $(e.currentTarget)
-        .children(':selected')
-        .attr('id');
-      ListFilter.searchQueries.location = ListFilter.location;
-      ListFilter.filterList(ListFilter.searchQueries);
+      sessionStorage.setItem('searchQueries', JSON.stringify(ListFilter.searchQueries));
     });
   },
   mapCheckBoxes: () => {
@@ -102,6 +94,7 @@ const ListFilter = {
     }
     ListFilter.searchQueries.projectTypes = ListFilter.typeCheckedValues;
     ListFilter.filterList(ListFilter.searchQueries);
+    sessionStorage.setItem('searchQueries', JSON.stringify(ListFilter.searchQueries));
   },
   filterByCheckboxes: () => {
     $('.filter-container').on('change', () => {
@@ -154,6 +147,7 @@ const ListFilter = {
       ListFilter.clearFormInputs();
       ListFilter.displayResults();
       ListFilter.displayResultQueries();
+      sessionStorage.setItem('searchQueries', JSON.stringify(ListFilter.searchQueries));
     });
   },
   clearFormInputs: () => {
@@ -182,12 +176,6 @@ const ListFilter = {
         activeSearchParams.push(item.value);
       }
       return activeSearchParams;
-    });
-
-    $('.country-dropdown').each((val, item) => {
-      if (item.value !== 'Country') {
-        activeSearchParams.push(item.value);
-      }
     });
 
     if (activeSearchParams.length > 0) {
@@ -247,11 +235,38 @@ const ListFilter = {
       $('#searchfield').blur();
     });
   },
+  filterByLocalStorage: () => {
+    const urlSearchParam = window.location.search.split('=')[0];
+
+    if ((sessionStorage.searchQueries && !urlSearchParam) || urlSearchParam === '?search') {
+      const storage = JSON.parse(sessionStorage.searchQueries);
+      console.log(storage);
+      ListFilter.searchQueries = storage;
+
+      for (let key in ListFilter.searchQueries) {
+        let value = ListFilter.searchQueries[key];
+        console.log(key, value);
+
+        if (value !== 'all') {
+          document.querySelectorAll('.dropdown').forEach(select => {
+            if (select.id === key) {
+              select.childNodes.forEach(option => {
+                if (option.id === value) {
+                  option.selected = true;
+                }
+              });
+            }
+          });
+        }
+      }
+      ListFilter.displayResultQueries();
+    }
+  },
   init() {
     this.createList();
+    this.filterByLocalStorage();
     this.filterBySearch();
     this.filterByDropdowns();
-    this.filterByLocation();
     this.filterByCheckboxes();
     this.clearAllFilters();
     this.displayResults();
