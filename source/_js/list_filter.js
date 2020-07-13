@@ -22,7 +22,6 @@ const ListFilter = {
     }
   },
   projectList: undefined,
-
   allFilters: undefined,
   searchQueries: undefined,
   typeCheckedValues: [],
@@ -64,6 +63,7 @@ const ListFilter = {
     $('#searchfield').on('keyup', e => {
       ListFilter.searchQueries.searchParams = $(e.currentTarget).val();
       ListFilter.filterList(ListFilter.searchQueries);
+      sessionStorage.setItem('searchQueries', JSON.stringify(ListFilter.searchQueries));
     });
   },
   filterByDropdowns: () => {
@@ -79,15 +79,7 @@ const ListFilter = {
         });
       });
       ListFilter.filterList(ListFilter.searchQueries);
-    });
-  },
-  filterByLocation: () => {
-    $('.country-dropdown').on('change', e => {
-      ListFilter.location = $(e.currentTarget)
-        .children(':selected')
-        .attr('id');
-      ListFilter.searchQueries.location = ListFilter.location;
-      ListFilter.filterList(ListFilter.searchQueries);
+      sessionStorage.setItem('searchQueries', JSON.stringify(ListFilter.searchQueries));
     });
   },
   mapCheckBoxes: () => {
@@ -102,6 +94,7 @@ const ListFilter = {
     }
     ListFilter.searchQueries.projectTypes = ListFilter.typeCheckedValues;
     ListFilter.filterList(ListFilter.searchQueries);
+    sessionStorage.setItem('searchQueries', JSON.stringify(ListFilter.searchQueries));
   },
   filterByCheckboxes: () => {
     $('.filter-container').on('change', () => {
@@ -154,6 +147,7 @@ const ListFilter = {
       ListFilter.clearFormInputs();
       ListFilter.displayResults();
       ListFilter.displayResultQueries();
+      sessionStorage.setItem('searchQueries', JSON.stringify(ListFilter.searchQueries));
     });
   },
   clearFormInputs: () => {
@@ -184,12 +178,6 @@ const ListFilter = {
       return activeSearchParams;
     });
 
-    $('.country-dropdown').each((val, item) => {
-      if (item.value !== 'Country') {
-        activeSearchParams.push(item.value);
-      }
-    });
-
     if (activeSearchParams.length > 0) {
       $('.results-message').show();
       if ($('.project').length === 0) {
@@ -203,7 +191,7 @@ const ListFilter = {
   },
   matchSearchQueriesToUI: () => {
     // grabs searchQueries values from the UI
-    ListFilter.searchQueries.searchParams = $('#searchfield').val();
+    ListFilter.searchQueries.searchParams = $('#searchfield').val() || ListFilter.searchQueries.searchParams;
     ListFilter.searchQueries.location = $('.country-dropdown')
       .children(':selected')
       .attr('id');
@@ -247,11 +235,50 @@ const ListFilter = {
       $('#searchfield').blur();
     });
   },
+  filterByLocalStorage: () => {
+    const urlSearchParam = window.location.search.split('=')[0];
+
+    if ((sessionStorage.searchQueries && !urlSearchParam) || urlSearchParam === '?search') {
+      const storage = JSON.parse(sessionStorage.searchQueries);
+      ListFilter.searchQueries = storage;
+
+      for (let key in ListFilter.searchQueries) {
+        let value = ListFilter.searchQueries[key];
+
+        if (value !== 'all') {
+          document.querySelectorAll('.dropdown').forEach(select => {
+            if (select.id === key) {
+              select.childNodes.forEach(option => {
+                if (option.id === value) {
+                  option.selected = true;
+                }
+              });
+            }
+          });
+        }
+
+        if (key === 'projectTypes') {
+          value.forEach(topic => {
+            document.querySelectorAll('.form-type').forEach(item => {
+              if (item.getAttribute('data-value') === topic) {
+                item.checked = true;
+              }
+            });
+          });
+        }
+
+        if (key === 'searchParams') {
+          document.querySelector('#searchfield').value = value;
+        }
+      }
+      ListFilter.displayResultQueries();
+    }
+  },
   init() {
     this.createList();
+    this.filterByLocalStorage();
     this.filterBySearch();
     this.filterByDropdowns();
-    this.filterByLocation();
     this.filterByCheckboxes();
     this.clearAllFilters();
     this.displayResults();
