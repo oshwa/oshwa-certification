@@ -4,16 +4,16 @@
     <div class="row expanded">
       <i class="menu__icon material-icons close-menu">close</i>
       <a href="{{'/' | relative_url}}"> <i class="menu__icon menu__icon--home material-icons">home</i></a>
-      <div class="column large-3 small-12">
-        <a class="menu__title-link" href="https://application.oshwa.org"><h1>Certify a project</h1></a>
+      <div class="column large-3 medium-6 small-12">
+        <a class="menu__title-link" href="https://application.oshwa.org"><span>Certify a project</span></a>
         <div class="menu__link-container">
           <a href="https://application.oshwa.org/apply">Get Started</a>
           <a href="{{'/requirements.html' | relative_url}}">Requirements</a>
           <a href="{{'/license-agreement.html' | relative_url}}">License Agreement</a>
         </div>
       </div>
-      <div class="column large-3 small-12">
-        <a class="menu__title-link" href="{{'/process.html' | relative_url}}"><h1>The Certification Process</h1></a>
+      <div class="column large-3 medium-6 small-12">
+        <a class="menu__title-link" href="{{'/process.html' | relative_url}}"><span>The Certification Process</span></a>
         <div class="menu__link-container">
           <a href="{{'/process.html' | relative_url}}">Introduction</a>
           <a href="{{'/process/hardware.html' | relative_url}}">Hardware</a>
@@ -22,14 +22,16 @@
           <a href="{{'/process/branding.html' | relative_url}}">Branding</a>
         </div>
       </div>
-      <div class="column large-3 small-12">
-        <a class="menu__title-link" href="{{'/directory.html' | relative_url}}"><h1>Projects</h1></a>
+      <div class="column large-3 medium-6 small-12">
+        <a class="menu__title-link" href="{{'/directory.html' | relative_url}}"><span>Projects</span></a>
         <div class="menu__link-container">
           <a href="{{'/list.html' | relative_url}}">Project Listing</a>
         </div>
       </div>
-      <div class="column large-3 small-12">
-        <a class="menu__title-link" href="{{'/basics.html' | relative_url}}"><h1>Open Source Hardware Basics</h1></a>
+      <div class="column large-3 medium-6 small-12">
+        <a class="menu__title-link" href="{{'/basics.html' | relative_url}}"
+          ><span>Open Source Hardware Basics</span></a
+        >
         <div class="menu__link-container">
           <a href="{{'/basics/faq.html' | relative_url}}">Frequently Asked Questions</a>
           <a href="{{'/about.html' | relative_url}}">About</a>
@@ -40,7 +42,7 @@
   </nav>
 
   {% if page.filter_nav %}
-    <span class="top-bar--float__button top-bar__button--right top-bar__button toggle-filters js-trigger-menu">tune</span>
-    <div class="filters js-active-menu"><p>filters</p></div>
+  <span class="top-bar--float__button top-bar__button--right top-bar__button toggle-filters js-trigger-menu">tune</span>
+  <div class="filters js-active-menu"><p>filters</p></div>
   {% endif %}
 </header>
