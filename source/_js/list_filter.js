@@ -191,7 +191,7 @@ const ListFilter = {
   },
   matchSearchQueriesToUI: () => {
     // grabs searchQueries values from the UI
-    ListFilter.searchQueries.searchParams = $('#searchfield').val();
+    ListFilter.searchQueries.searchParams = $('#searchfield').val() || ListFilter.searchQueries.searchParams;
     ListFilter.searchQueries.location = $('.country-dropdown')
       .children(':selected')
       .attr('id');
@@ -240,12 +240,10 @@ const ListFilter = {
 
     if ((sessionStorage.searchQueries && !urlSearchParam) || urlSearchParam === '?search') {
       const storage = JSON.parse(sessionStorage.searchQueries);
-      console.log(storage);
       ListFilter.searchQueries = storage;
 
       for (let key in ListFilter.searchQueries) {
         let value = ListFilter.searchQueries[key];
-        console.log(key, value);
 
         if (value !== 'all') {
           document.querySelectorAll('.dropdown').forEach(select => {
@@ -257,6 +255,20 @@ const ListFilter = {
               });
             }
           });
+        }
+
+        if (key === 'projectTypes') {
+          value.forEach(topic => {
+            document.querySelectorAll('.form-type').forEach(item => {
+              if (item.getAttribute('data-value') === topic) {
+                item.checked = true;
+              }
+            });
+          });
+        }
+
+        if (key === 'searchParams') {
+          document.querySelector('#searchfield').value = value;
         }
       }
       ListFilter.displayResultQueries();
