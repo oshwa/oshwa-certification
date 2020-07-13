@@ -172,7 +172,7 @@ const ListFilter = {
     $('input[type="checkbox"]:checked').each((val, item) => activeSearchParams.push(item.id));
 
     $('.dropdown').map((val, item) => {
-      if (item.value !== 'Select one') {
+      if (item.value !== 'Select one' && item.value !== 'Country') {
         activeSearchParams.push(item.value);
       }
       return activeSearchParams;
