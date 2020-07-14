@@ -63,7 +63,7 @@ const ListFilter = {
     $('#searchfield').on('keyup', e => {
       ListFilter.searchQueries.searchParams = $(e.currentTarget).val();
       ListFilter.filterList(ListFilter.searchQueries);
-      sessionStorage.setItem('searchQueries', JSON.stringify(ListFilter.searchQueries));
+      ListFilter.setSessionStorage();
     });
   },
   filterByDropdowns: () => {
@@ -79,7 +79,7 @@ const ListFilter = {
         });
       });
       ListFilter.filterList(ListFilter.searchQueries);
-      sessionStorage.setItem('searchQueries', JSON.stringify(ListFilter.searchQueries));
+      ListFilter.setSessionStorage();
     });
   },
   mapCheckBoxes: () => {
@@ -94,7 +94,7 @@ const ListFilter = {
     }
     ListFilter.searchQueries.projectTypes = ListFilter.typeCheckedValues;
     ListFilter.filterList(ListFilter.searchQueries);
-    sessionStorage.setItem('searchQueries', JSON.stringify(ListFilter.searchQueries));
+    ListFilter.setSessionStorage();
   },
   filterByCheckboxes: () => {
     $('.filter-container').on('change', () => {
@@ -147,7 +147,7 @@ const ListFilter = {
       ListFilter.clearFormInputs();
       ListFilter.displayResults();
       ListFilter.displayResultQueries();
-      sessionStorage.setItem('searchQueries', JSON.stringify(ListFilter.searchQueries));
+      ListFilter.setSessionStorage();
     });
   },
   clearFormInputs: () => {
@@ -234,6 +234,15 @@ const ListFilter = {
     $('.projects').on('mouseenter', () => {
       $('#searchfield').blur();
     });
+  },
+  setSessionStorage: () => {
+    const urlSearchParam = window.location.search;
+
+    if (urlSearchParam === '') {
+      sessionStorage.setItem('searchQueries', JSON.stringify(ListFilter.searchQueries));
+    } else {
+      sessionStorage.clear();
+    }
   },
   filterByLocalStorage: () => {
     const urlSearchParam = window.location.search.split('=')[0];
