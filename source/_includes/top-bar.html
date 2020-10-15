@@ -26,6 +26,7 @@
         <a class="menu__title-link" href="{{'/directory.html' | relative_url}}"><span>Projects</span></a>
         <div class="menu__link-container">
           <a href="{{'/list.html' | relative_url}}">Project Listing</a>
+          <a href="https://certificationapi.oshwa.org/documentation">API</a>
         </div>
       </div>
       <div class="column large-3 medium-6 small-12">
@@ -44,9 +45,7 @@
   {% if page.filter_nav %}
   <span class="top-bar--float__button top-bar__button--right top-bar__button toggle-filters js-trigger-menu">tune</span>
   <div class="filters js-active-menu"><p>filters</p></div>
-  {% endif %}
-
-  {% if include.page_template == 'list' %}
-    <a class="api-link" href="https://certificationapi.oshwa.org/documentation">USE THE API</a>
+  {% endif %} {% if include.page_template == 'list' %}
+  <a class="api-link" href="https://certificationapi.oshwa.org/documentation">USE THE API</a>
   {% endif %}
 </header>
