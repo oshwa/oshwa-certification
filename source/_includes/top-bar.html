@@ -45,4 +45,8 @@
   <span class="top-bar--float__button top-bar__button--right top-bar__button toggle-filters js-trigger-menu">tune</span>
   <div class="filters js-active-menu"><p>filters</p></div>
   {% endif %}
+
+  {% if include.page_template == 'list' %}
+    <a class="api-link" href="https://certificationapi.oshwa.org/documentation">USE THE API</a>
+  {% endif %}
 </header>
