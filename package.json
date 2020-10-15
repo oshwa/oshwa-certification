@@ -41,7 +41,7 @@
   },
   "dependencies": {
     "browser-cookies": "^1.2.0",
-    "browser-sync": "^2.26.7",
+    "browser-sync": "^2.26.12",
     "gulp-rename": "^1.4.0",
     "natives": "^1.1.6"
   }
