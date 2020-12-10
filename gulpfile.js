@@ -37,9 +37,7 @@ gulp.task('build:styles', () =>
     .pipe(plumber())
     .pipe(sass())
     .pipe(
-      autoprefixer({
-        browsers: ['last 2 versions', '> 5%', 'IE 9']
-      })
+      autoprefixer({Browserslist: ['last 2 versions', '> 5%', 'IE 9']})
     )
     .pipe(cleanCSS({ compatibility: 'ie8' }))
     .pipe(rename('style.min.css'))
