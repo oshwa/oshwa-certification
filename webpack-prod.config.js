@@ -14,18 +14,19 @@ module.exports = {
       {
         test: /\.js$/,
         exclude: /node_modules/,
-        loader: 'babel-loader',
-        query: {
-          presets: ['@babel/preset-env']
-        }
+        use: {
+          loader: 'babel-loader',
+          options: {
+            presets: ['@babel/preset-env']
+          },
+        }      
       }
     ]
   },
   optimization: {
     minimize: true,
     minimizer: [new TerserPlugin({
-      exclude: [/\.min\.js$/gi],
-      sourceMap: true // Must be set to true if using source-maps in production
+    exclude: [/\.min\.js$/gi],
     })],
   },
   plugins: [
@@ -36,6 +37,5 @@ module.exports = {
       threshold: 10240,
       minRatio: 0
     })
-  ],
-  devtool: 'source-maps'
+  ]
 };
