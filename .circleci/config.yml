@@ -12,7 +12,7 @@ orbs:
 jobs:
   build:
     docker:
-      - image: circleci/ruby:2.6.3-stretch-node
+      - image: cimg/ruby:3.1.0-node
     executor: ruby/default
     steps:
       - checkout
@@ -30,4 +30,4 @@ workflows:
       - build:
           filters:
             branches:
-              only: master
+              only: main
