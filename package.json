@@ -9,7 +9,8 @@
     "lint": "eslint ./source/_js/**/*.js",
     "test": "mocha $(find spec -name '*.js') --exit",
     "deploy": "gulp deploy",
-    "mocha-watch": "mocha -w --recursive $(find spec -name '*.js')"
+    "mocha-watch": "mocha -w --recursive $(find spec -name '*.js')",
+    "dev": "gulp"
   },
   "author": "",
   "license": "ISC",
