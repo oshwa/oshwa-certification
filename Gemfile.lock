@@ -80,7 +80,9 @@ GEM
       rb-inotify (~> 0.9, >= 0.9.10)
     mercenary (0.3.6)
     multi_json (1.15.0)
-    nokogiri (1.13.8-arm64-darwin)
+    nokogiri (1.13.9-arm64-darwin)
+      racc (~> 1.4)
+    nokogiri (1.13.9-x86_64-linux)
       racc (~> 1.4)
     parallel (1.22.1)
     pathutil (0.16.2)
@@ -112,6 +114,7 @@ GEM
 PLATFORMS
   arm64-darwin-20
   arm64-darwin-21
+  x86_64-linux
 
 DEPENDENCIES
   html-proofer
