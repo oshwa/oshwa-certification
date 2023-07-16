@@ -179,4 +179,43 @@
       }
     }
   }
+  .page-section {
+    // Limit the size of images on the mark usage page to improve readability,
+    // otherwise they can take up the entire screen.
+    img {
+      margin-top: 2rem;
+      margin-bottom: 2rem;
+      @include breakpoint($medium) {
+        max-width: min(80%, 60vh);
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+      }
+    }
+    // Make the little table listing the different color formats a little easier
+    // on the eyes.
+    table.mark-color-table {
+      margin-top: 2rem;
+      margin-bottom: 2rem;
+      @include breakpoint($large) {
+        max-width: 50%;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      th, td {
+        padding-left: 0.25rem;
+      }
+      td {
+        user-select: all;
+      }
+      th:first-child {
+        color: white;
+        background-color: #333;
+      }
+      th:last-child {
+        color: white;
+        background-color: #F44;
+      }
+    }
+  }
 }

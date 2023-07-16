@@ -17,6 +17,7 @@ import SearchSubmit from './search_submit';
 import TagFilter from './tag_filter';
 import Spectrum from './spectrum';
 import CookiesPopup from './cookies_popup';
+import MarkGenerator from './mark_generator';
 
 // Footer.init();
 Accordion.init();
@@ -39,3 +40,4 @@ SearchSubmit.init();
 TagFilter.init();
 Spectrum.init();
 CookiesPopup.init();
+MarkGenerator.init();
