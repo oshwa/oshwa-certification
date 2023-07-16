@@ -28,6 +28,8 @@ const ListFilter = {
   location: 'all',
   activeTag: undefined,
   createList: () => {
+    /* List is from third-party list.js */
+    /* global List */
     ListFilter.projectList = new List('project_data', ListFilter.options);
     if (document.location.href.indexOf('list') > -1) {
       ListFilter.projectList.sort('name', { order: 'asc' });
