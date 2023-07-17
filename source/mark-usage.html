@@ -4,8 +4,11 @@ title: OSHW Certification Mark Usage
 description: Guidelines for using the OSHW Certification Mark for your projects
 page_template: certification
 ---
-<!-- TODO: This should pull from the final page once its added in Contentful -->
-{% assign content = site.data.contentful.markusagePage.page[0] %}
+<!--
+  Note: This is stored in Contentful as a second licenseagreementPage to
+  avoid adding a new content type.
+-->
+{% assign content = site.data.contentful.licenseagreementPage.licenseagreementPage[1] %}
 
 <main role="main" id="{{page.page_template}}">
   <section class="top-section top-section--{{page.page_template}}">
