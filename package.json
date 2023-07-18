@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "engines": {
-    "node": "v18.9.0",
-    "npm": "8.19.1"
+    "node": ">= v18.9.0",
+    "npm": ">= 8.19.1"
   },
   "scripts": {
     "build:dev": "webpack",

@@ -15,6 +15,7 @@ describe('InternalNav', () => {
 
   beforeEach(function() {
     global.$ = require('jquery')(window);
+    global.window = window;
     body.innerHTML = templateHTML;
     InternalNav.init();
   });

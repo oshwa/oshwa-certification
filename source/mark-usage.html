@@ -1,0 +1,30 @@
+---
+layout: default
+title: OSHW Certification Mark Usage
+description: Guidelines for using the OSHW Certification Mark for your projects
+page_template: certification
+---
+<!--
+  Note: This is stored in Contentful as a second licenseagreementPage to
+  avoid adding a new content type.
+-->
+{% assign content = site.data.contentful.licenseagreementPage.licenseagreementPage[1] %}
+
+<main role="main" id="{{page.page_template}}">
+  <section class="top-section top-section--{{page.page_template}}">
+    <div class="img-overlay"></div>
+    <div class="row">
+      <div class="column large-10 large-offset-1 intro">
+        <h1>{{page.title}}</h1>
+      </div>
+    </div>
+  </section>
+
+  <section class="page-section">
+    <div class="row">
+      <div class="column">
+        {{ content.description | markdownify }}
+      </div>
+    </div>
+  </section>
+</main>

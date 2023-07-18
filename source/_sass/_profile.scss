@@ -172,6 +172,27 @@
     }
   }
 
+  .certification-mark {
+    p {
+      margin-top: 2rem;
+    }
+    img {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .button-container {
+      display: flex;
+      justify-content: center;
+
+      .button--naked {
+        color: $gray;
+        margin: 0 0.25rem;
+        padding: 0.25rem 1rem;
+      }
+    }
+  }
+
   hr {
     background-color: lighten($gray, 30);
     height: 1px;

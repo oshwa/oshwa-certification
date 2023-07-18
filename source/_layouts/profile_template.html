@@ -32,10 +32,10 @@ page_template: profile
         <p class="info-data">{{ page.country }}</p>
       </div>
 
-      
+
       <div class="column small-12 large-6">
        {{ page.project_description | decode_html }}
-       
+
       </div>
       <div class="column small-12 large-2">
         <h3>Version</h3>
@@ -71,6 +71,38 @@ page_template: profile
         <h6>Documentation</h6>
         <div class="licenses licenses--documentation">{{ page.documentation_license }}</div>
         <a href="{{ page.documentation_url }}" class="documentation-link" target="_blank">View Documentation</a>
+      </div>
+    </div>
+
+    <hr>
+
+    <div class="row certification-mark">
+      <div class="column">
+        <h5>Certification mark</h5>
+        <div id="certification-mark-generator" data-project-id="{{ page.oshwa_uid }}" class="row">
+          <div class="column medium-4 small-12">
+            <div data-variant="stacked">
+              <div class="button-container">
+                <a class="button--naked" data-format="svg" href="#">SVG</a>
+                <a class="button--naked" data-format="png" href="#">PNG</a>
+              </div>
+            </div>
+            <div data-variant="wide">
+              <div class="button-container">
+                <a class="button--naked" data-format="svg" href="#">SVG</a>
+                <a class="button--naked" data-format="png" href="#">PNG</a>
+              </div>
+            </div>
+          </div>
+          <div class="column medium-8 small-12">
+            <p>
+              The <em>OSHW Certification Mark</em> shows the project's unique certification ID and makes it easy for users to quickly find this page along with the project's details. This mark can be used throughout the project's design, documentation, and promotional material.
+            </p>
+            <p>
+              For more details, take a look at the <a href="{{ '/mark-usage.html' | relative_url }}">Certification Mark Usage Guide</a>.
+            </p>
+          </div>
+        </div>
       </div>
     </div>
 

@@ -72,7 +72,7 @@ const InternalNav = {
   },
   handleLearningModuleSelect: () => {
     // need to reset dropdown on back
-    $('.learning-module__dropdown').on('change', e => {
+    $('.learning-module__dropdown').on('change', () => {
       const learningModuleSelection = $('.learning-module__dropdown')
         .children(':selected')
         .attr('value');
