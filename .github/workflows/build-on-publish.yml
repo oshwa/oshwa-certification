@@ -1,0 +1,10 @@
+name: Jekyll Build on Contentful Publish Event
+on:
+  repository_dispatch:
+    types: [publish-event]
+jobs:
+  call-build-workflow:
+    uses: ./.github/workflows/build.yml
+    secrets:
+      OSHWA_CONTENTFUL_SPACE_ID: ${{ secrets.OSHWA_CONTENTFUL_SPACE_ID }}
+      OSHWA_CONTENTFUL_DELIVERY_TOKEN: ${{ secrets.OSHWA_CONTENTFUL_DELIVERY_TOKEN }}
