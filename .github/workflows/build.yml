@@ -3,15 +3,19 @@ run-name: Jekyll Contentful Build and Deploy
 on:
   workflow_call:
     secrets:
+      ACTIONS_DEPLOY_KEY:
+        description: GitHub Deploy Key
       OSHWA_CONTENTFUL_SPACE_ID:
         description: 'Contentful Space ID passed from the build-on-publish.yml workflow'
         required: true
       OSHWA_CONTENTFUL_DELIVERY_TOKEN:
         description: 'Contentful Access Token passed from the build-on-publish.yml workflow'
         required: true
+
   push:
     branches: [ main ]
 env:
+  ACTIONS_DEPLOY_KEY: ${{ secrets.ACTIONS_DEPLOY_KEY }}
   OSHWA_CONTENTFUL_SPACE_ID: ${{ secrets.OSHWA_CONTENTFUL_SPACE_ID }}
   OSHWA_CONTENTFUL_DELIVERY_TOKEN: ${{ secrets.OSHWA_CONTENTFUL_DELIVERY_TOKEN }}
 jobs:
