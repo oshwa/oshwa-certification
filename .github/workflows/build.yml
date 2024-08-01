@@ -27,6 +27,8 @@ jobs:
         node-version: [16.14]
     steps:
       - uses: actions/checkout@v4
+      - name: Update Main Branch
+        run: git pull origin main
       - name: Set up Ruby ${{ matrix.ruby-version }}
         uses: ruby/setup-ruby@8575951200e472d5f2d95c625da0c7bec8217c42 
         with:
