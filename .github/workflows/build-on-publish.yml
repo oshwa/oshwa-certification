@@ -1,5 +1,6 @@
 name: Jekyll Build on Contentful Publish Event
 on:
+  workflow_dispatch:
   repository_dispatch:
     types: [publish-event]
 jobs:
