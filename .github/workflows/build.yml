@@ -20,6 +20,9 @@ env:
   OSHWA_CONTENTFUL_DELIVERY_TOKEN: ${{ secrets.OSHWA_CONTENTFUL_DELIVERY_TOKEN }}
 jobs:
   pull-build-deploy:
+    permissions:
+      id-token: write
+      pages: write
     runs-on: ubuntu-22.04
     strategy:
       matrix:
