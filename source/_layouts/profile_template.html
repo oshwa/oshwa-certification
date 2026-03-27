@@ -34,7 +34,7 @@ page_template: profile
 
 
       <div class="column small-12 large-6">
-       {{ page.project_description | decode_html }}
+       {{ page.project_description | decode_html | escape }}
 
       </div>
       <div class="column small-12 large-2">
