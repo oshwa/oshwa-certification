@@ -1,5 +1,9 @@
 .page-section--profile {
   color: $gray;
+  .heading-container {
+    display: flex;
+    align-items: baseline;
+  }
   h1 {
     font-size: 3rem;
     font-weight: 800;
@@ -10,6 +14,11 @@
     @include breakpoint($small-only) {
       font-size: 2.3rem;
     }
+  }
+  .header-icon {
+    height: 32px;
+    margin: 0 16px;
+    
   }
   h2 {
     color: lighten($gray, 15);

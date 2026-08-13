@@ -11,8 +11,14 @@ page_template: profile
   <section class="page-section page-section--profile">
     <div class="row align-left">
       <div class="column large-12">
-        <h1>{{ page.project_name | decode_html }}</h1>
-        <h2>{{ page.responsible_party }} {% if page.public_contact %}<a href="mailto:{{ page.public_contact }}"><i class="material-icons">mail</i></a>{% endif %}</h2>
+        <div class="heading-container">
+          <h1>{{ page.project_name | decode_html }}</h1>
+          {% if page.primary_type == "Health" %}<img class="header-icon" src="{{'/images/ohc-icon-color.png' | relative_url }}" alt="healthware icon"/>{% endif%}
+        </div>
+        <div>
+          <h2>{{ page.responsible_party }}
+        {% if page.public_contact %}<a href="mailto:{{ page.public_contact }}"><i class="material-icons">mail</i></a>{% endif %}</h2>
+      </div>
       </div>
     </div>
     <div class="row">
