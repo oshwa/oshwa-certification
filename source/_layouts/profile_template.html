@@ -13,7 +13,7 @@ page_template: profile
       <div class="column large-12">
         <div class="heading-container">
           <h1>{{ page.project_name | decode_html }}</h1>
-          {% if page.primary_type == "Health" %}<img class="header-icon" src="{{'/images/ohc-icon-color.png' | relative_url }}" alt="healthware icon"/>{% endif%}
+          {% if page.primary_type == "Health" %}<a href="https://healthware.oshwa.org/projects/{{page.oshwa_uid | downcase }}" target="_blank"><img class="header-icon" src="{{'/images/ohc-icon-color.png' | relative_url }}" alt="healthware icon"/></a>{% endif%}
         </div>
         <div>
           <h2>{{ page.responsible_party }}
@@ -139,7 +139,7 @@ page_template: profile
       </div>
     {% endif %}
 
-    {% if page.citations %}
+    {% if page.citations.length > 0 %}
       <hr>
 
       <div class="row">
