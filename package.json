@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "engines": {
-    "node": ">= v18.9.0",
-    "npm": ">= 8.19.1"
+    "node": "v26.12.1",
+    "npm": "11.20.0"
   },
   "scripts": {
     "build:dev": "webpack",
@@ -50,5 +50,10 @@
     "browser-sync": "^2.27.7",
     "gulp-rename": "^2.0.0",
     "natives": "^1.1.6"
+  },
+  "allowScripts": {
+    "@parcel/watcher@2.6.0": true,
+    "es5-ext@0.10.64": true,
+    "fsevents@1.2.13": true
   }
 }
